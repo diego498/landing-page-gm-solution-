@@ -1720,6 +1720,13 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 
   /* HERO */
   .hero__content { padding: 5.5rem 1rem 3rem; }
+  .hero__title {
+    font-size: clamp(1.55rem, 7.5vw, 2.4rem);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .hero__tag { font-size: .68rem; letter-spacing: .07em; }
+  .hero__sub { font-size: .88rem; margin-bottom: 2rem; }
 
   /* QUIÉNES SOMOS */
   .about__img-placeholder { min-height: 260px; }
