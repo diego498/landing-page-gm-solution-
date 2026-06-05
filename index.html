@@ -443,8 +443,99 @@
             <h3>Híbrido</h3>
             <p>Lo mejor de ambos mundos</p>
           </div>
-          <div class="sist-card__photo sist-card__photo--svg">
-            <img src="assets/sistema-hibrido.svg" alt="Diagrama sistema Híbrido" loading="lazy">
+          <!-- Diagrama de flujo Híbrido -->
+          <div class="sist-flow-wrap">
+          <svg class="sist-flow" viewBox="0 0 300 266" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Flujo del sistema Híbrido">
+            <defs>
+              <marker id="hib-ag" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                <path d="M1,1 L6,3.5 L1,6 Z" fill="#c48b00"/>
+              </marker>
+              <marker id="hib-at" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                <path d="M1,1 L6,3.5 L1,6 Z" fill="#004763"/>
+              </marker>
+            </defs>
+
+            <!-- ── FLECHAS ── -->
+            <!-- Panel Solar → Inversor (dorada, vertical) -->
+            <line x1="150" y1="64" x2="150" y2="111" stroke="#c48b00" stroke-width="1.5" marker-end="url(#hib-ag)"/>
+            <!-- Inversor ← Medidor (teal, bidi horizontal) -->
+            <line x1="130" y1="127" x2="60" y2="127" stroke="#004763" stroke-width="1.5" marker-end="url(#hib-at)"/>
+            <line x1="62" y1="139" x2="132" y2="139" stroke="#004763" stroke-width="1.5" marker-end="url(#hib-at)"/>
+            <!-- Inversor → Casa (dorada, horizontal) -->
+            <line x1="170" y1="133" x2="242" y2="133" stroke="#c48b00" stroke-width="1.5" marker-end="url(#hib-ag)"/>
+            <!-- Medidor ↕ Red Eléctrica (teal, bidi vertical) -->
+            <line x1="31" y1="154" x2="31" y2="201" stroke="#004763" stroke-width="1.5" marker-end="url(#hib-at)"/>
+            <line x1="45" y1="203" x2="45" y2="156" stroke="#004763" stroke-width="1.5" marker-end="url(#hib-at)"/>
+            <!-- Inversor ↕ Baterías (teal, bidi vertical) -->
+            <line x1="143" y1="154" x2="143" y2="201" stroke="#004763" stroke-width="1.5" marker-end="url(#hib-at)"/>
+            <line x1="157" y1="203" x2="157" y2="156" stroke="#004763" stroke-width="1.5" marker-end="url(#hib-at)"/>
+
+            <!-- ── PANEL SOLAR (cx=150, cy=44) ── -->
+            <circle cx="150" cy="44" r="18" fill="#fff8e1" stroke="#c48b00" stroke-width="1.5"/>
+            <circle cx="150" cy="32" r="2.8" fill="#c48b00"/>
+            <line x1="150" y1="28" x2="150" y2="28.9" stroke="#c48b00" stroke-width="1.1" stroke-linecap="round"/>
+            <line x1="154" y1="32" x2="154.9" y2="32" stroke="#c48b00" stroke-width="1.1" stroke-linecap="round"/>
+            <line x1="146" y1="32" x2="145.1" y2="32" stroke="#c48b00" stroke-width="1.1" stroke-linecap="round"/>
+            <line x1="152.4" y1="29.6" x2="153.1" y2="28.9" stroke="#c48b00" stroke-width="1" stroke-linecap="round"/>
+            <line x1="147.6" y1="29.6" x2="146.9" y2="28.9" stroke="#c48b00" stroke-width="1" stroke-linecap="round"/>
+            <rect x="137" y="37" width="26" height="15" rx="1.5" fill="#1565c0" fill-opacity=".9" stroke="#c48b00" stroke-width="1.2"/>
+            <line x1="137" y1="42" x2="163" y2="42" stroke="#5ba3e8" stroke-width=".7" opacity=".9"/>
+            <line x1="137" y1="47" x2="163" y2="47" stroke="#5ba3e8" stroke-width=".7" opacity=".9"/>
+            <line x1="145.7" y1="37" x2="145.7" y2="52" stroke="#5ba3e8" stroke-width=".7" opacity=".9"/>
+            <line x1="154.3" y1="37" x2="154.3" y2="52" stroke="#5ba3e8" stroke-width=".7" opacity=".9"/>
+            <line x1="147" y1="52" x2="144" y2="57" stroke="#c48b00" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="153" y1="52" x2="156" y2="57" stroke="#c48b00" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="141" y1="57" x2="159" y2="57" stroke="#c48b00" stroke-width="1.5" stroke-linecap="round"/>
+            <text x="150" y="69" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Panel</text>
+            <text x="150" y="77" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Solar</text>
+
+            <!-- ── MEDIDOR (cx=38, cy=133) ── -->
+            <circle cx="38" cy="133" r="18" fill="#f0f7fa" stroke="#004763" stroke-width="1.5"/>
+            <rect x="25" y="120" width="26" height="26" rx="2" fill="none" stroke="#004763" stroke-width="1.5"/>
+            <rect x="28" y="123" width="20" height="8" rx="1" fill="none" stroke="#004763" stroke-width="1" opacity=".7"/>
+            <rect x="29" y="124.5" width="3.5" height="4.5" rx=".5" fill="none" stroke="#004763" stroke-width=".8" opacity=".8"/>
+            <rect x="34" y="124.5" width="3.5" height="4.5" rx=".5" fill="none" stroke="#004763" stroke-width=".8" opacity=".8"/>
+            <rect x="39" y="124.5" width="3.5" height="4.5" rx=".5" fill="none" stroke="#004763" stroke-width=".8" opacity=".8"/>
+            <rect x="44" y="124.5" width="3.5" height="4.5" rx=".5" fill="none" stroke="#004763" stroke-width=".8" opacity=".8"/>
+            <line x1="25" y1="134" x2="51" y2="134" stroke="#004763" stroke-width=".8" opacity=".4"/>
+            <circle cx="31" cy="140" r="2.2" fill="none" stroke="#004763" stroke-width="1" opacity=".7"/>
+            <circle cx="38" cy="140" r="2.2" fill="none" stroke="#004763" stroke-width="1" opacity=".7"/>
+            <circle cx="45" cy="140" r="2.2" fill="none" stroke="#004763" stroke-width="1" opacity=".7"/>
+            <text x="38" y="158" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Medidor</text>
+
+            <!-- ── INVERSOR (cx=150, cy=133) ── -->
+            <circle cx="150" cy="133" r="18" fill="#f0f7fa" stroke="#004763" stroke-width="1.5"/>
+            <path d="M155 123 L145 135 L151 135 L145 143 L156 131 L150 131 Z" fill="#004763"/>
+            <text x="150" y="158" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Inversor</text>
+
+            <!-- ── CASA (cx=262, cy=133) ── -->
+            <circle cx="262" cy="133" r="18" fill="#f0f7fa" stroke="#004763" stroke-width="1.5"/>
+            <path d="M248 135 L262 120 L276 135 L276 148 L270 148 L270 141 L254 141 L254 148 L248 148 Z" fill="none" stroke="#004763" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+            <text x="262" y="158" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Casa</text>
+
+            <!-- ── RED ELÉCTRICA (cx=38, cy=222) ── -->
+            <circle cx="38" cy="222" r="18" fill="#f0f7fa" stroke="#004763" stroke-width="1.5"/>
+            <line x1="38" y1="208" x2="38" y2="236" stroke="#004763" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="24" y1="215" x2="52" y2="215" stroke="#004763" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="27" y1="222" x2="49" y2="222" stroke="#004763" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="28" y1="215" x2="38" y2="223" stroke="#004763" stroke-width="1" opacity=".45"/>
+            <line x1="48" y1="215" x2="38" y2="223" stroke="#004763" stroke-width="1" opacity=".45"/>
+            <circle cx="24" cy="217" r="2" fill="none" stroke="#004763" stroke-width="1"/>
+            <circle cx="52" cy="217" r="2" fill="none" stroke="#004763" stroke-width="1"/>
+            <line x1="38" y1="236" x2="30" y2="240" stroke="#004763" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="38" y1="236" x2="46" y2="240" stroke="#004763" stroke-width="1.3" stroke-linecap="round"/>
+            <text x="38" y="247" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Red</text>
+            <text x="38" y="255" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Eléctrica</text>
+
+            <!-- ── BATERÍAS (cx=150, cy=222) ── -->
+            <circle cx="150" cy="222" r="18" fill="#f0f7fa" stroke="#004763" stroke-width="1.5"/>
+            <rect x="140" y="213" width="20" height="24" rx="2" fill="none" stroke="#004763" stroke-width="1.5"/>
+            <rect x="145" y="208" width="10" height="6" rx="1.5" fill="#004763"/>
+            <rect x="142" y="229" width="16" height="4" rx="1" fill="#004763" opacity=".85"/>
+            <rect x="142" y="223" width="16" height="4" rx="1" fill="#004763" opacity=".7"/>
+            <rect x="142" y="217" width="16" height="4" rx="1" fill="#004763" opacity=".45"/>
+            <text x="150" y="247" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Baterías</text>
+          </svg>
           </div>
           <div class="sist-card__body">
             <p class="sist-card__ideal">Para quienes quieren <strong>ahorro máximo con respaldo total</strong> ante cortes.</p>
