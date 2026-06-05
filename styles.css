@@ -1102,6 +1102,18 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   line-height: 1.5;
 }
 
+/* Flow diagram On-Grid */
+.sist-flow {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+  margin: .1rem 0;
+  background: var(--gray-50);
+  border-radius: 10px;
+  padding: .5rem 0 .25rem;
+}
+
 .sist-help {
   text-align: center;
   margin-top: 2.5rem;
