@@ -1029,6 +1029,19 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   transform: scale(1.04);
 }
 
+/* SVG diagram variant (On-Grid) — full height, no crop */
+.sist-card__photo--svg {
+  height: auto;
+  overflow: visible;
+}
+.sist-card__photo--svg img {
+  height: auto;
+  object-fit: unset;
+}
+.sist-card:hover .sist-card__photo--svg img {
+  transform: none;
+}
+
 .sist-card__head {
   padding: 2rem 2rem 1.25rem;
   text-align: center;
