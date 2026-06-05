@@ -237,112 +237,104 @@
         <h2 class="section-title">¿Cuál es el ideal<br />para ti?</h2>
         <p class="section-desc">Tres opciones, un mismo objetivo: genera tu propia energía y paga menos desde el primer mes.</p>
       </div>
-      <div class="sist-grid">
+      <!-- ON-GRID FEATURED -->
+      <div class="sist-featured reveal-up">
+        <div class="sist-featured__pop">★ Más popular</div>
 
-        <!-- ON-GRID -->
-        <div class="sist-card sist-card--gold reveal-up">
-          <div class="sist-card__pop">★ Más popular</div>
-          <div class="sist-card__head">
-            <div class="sist-card__icon">
-              <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="16" width="44" height="28" rx="2.5" stroke="currentColor" stroke-width="2.2"/>
-                <line x1="4" y1="28" x2="48" y2="28" stroke="currentColor" stroke-width="2.2"/>
-                <line x1="26" y1="16" x2="26" y2="44" stroke="currentColor" stroke-width="2.2"/>
-                <path d="M26 8l-3 8h6l-3-8z" fill="currentColor" opacity=".6"/>
-                <line x1="48" y1="30" x2="54" y2="30" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
-                <line x1="48" y1="34" x2="52" y2="34" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
-              </svg>
-            </div>
-            <h3>On-Grid</h3>
-            <p>Conectado a la red eléctrica</p>
-
-            <!-- Diagrama de flujo On-Grid -->
-            <div class="sist-flow-wrap">
-            <svg class="sist-flow" viewBox="0 0 300 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Flujo del sistema On-Grid">
+        <!-- Visual izquierdo: fondo oscuro + diagrama (reemplaza fondo con tu foto cuando la tengas) -->
+        <div class="sist-featured__visual">
+          <div class="sist-featured__diagram">
+            <p class="sist-featured__diagram-label">Cómo funciona el sistema On-Grid</p>
+            <svg class="sist-featured__svg" viewBox="0 0 300 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Flujo del sistema On-Grid">
               <defs>
-                <marker id="og-ag" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-                  <path d="M1,1 L6,3.5 L1,6 Z" fill="#c48b00"/>
+                <marker id="fg-ag" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                  <path d="M1,1 L6,3.5 L1,6 Z" fill="#edb015"/>
                 </marker>
-                <marker id="og-at" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-                  <path d="M1,1 L6,3.5 L1,6 Z" fill="#004763"/>
+                <marker id="fg-at" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                  <path d="M1,1 L6,3.5 L1,6 Z" fill="white"/>
                 </marker>
-                <marker id="og-atr" markerWidth="7" markerHeight="7" refX="1" refY="3.5" orient="auto">
-                  <path d="M6,1 L1,3.5 L6,6 Z" fill="#004763"/>
+                <marker id="fg-atr" markerWidth="7" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                  <path d="M6,1 L1,3.5 L6,6 Z" fill="white"/>
                 </marker>
-                <marker id="og-agr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-                  <path d="M1,1 L6,3.5 L1,6 Z" fill="#06752E"/>
+                <marker id="fg-agr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                  <path d="M1,1 L6,3.5 L1,6 Z" fill="#4ade80"/>
                 </marker>
               </defs>
-              <!-- Líneas de flecha -->
-              <line x1="43" y1="57" x2="66" y2="57" stroke="#c48b00" stroke-width="1.5" marker-end="url(#og-ag)"/>
-              <line x1="103" y1="57" x2="131" y2="57" stroke="#c48b00" stroke-width="1.5" marker-end="url(#og-ag)"/>
-              <line x1="168" y1="57" x2="196" y2="57" stroke="#c48b00" stroke-width="1.5" marker-end="url(#og-ag)"/>
-              <line x1="233" y1="53" x2="261" y2="53" stroke="#004763" stroke-width="1.5" marker-end="url(#og-at)"/>
-              <line x1="261" y1="61" x2="234" y2="61" stroke="#004763" stroke-width="1.5" marker-end="url(#og-atr)"/>
-              <line x1="215" y1="39" x2="215" y2="21" stroke="#06752E" stroke-width="1.5" marker-end="url(#og-agr)"/>
-              <!-- Badge Venta de Excedentes -->
-              <rect x="176" y="4" width="78" height="16" rx="8" fill="#e8f7ee" stroke="#06752E" stroke-width="1.5"/>
-              <text x="215" y="15" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6" font-weight="700" fill="#06752E">Venta excedentes</text>
-              <!-- Panel Solar (cx=25) -->
-              <circle cx="25" cy="57" r="17" fill="#fff8e1" stroke="#c48b00" stroke-width="1.5"/>
-              <!-- Sol pequeño arriba -->
-              <circle cx="25" cy="44.5" r="2.8" fill="#c48b00"/>
-              <line x1="25" y1="40.5" x2="25" y2="41.4" stroke="#c48b00" stroke-width="1.1" stroke-linecap="round"/>
-              <line x1="29" y1="44.5" x2="29.9" y2="44.5" stroke="#c48b00" stroke-width="1.1" stroke-linecap="round"/>
-              <line x1="21" y1="44.5" x2="20.1" y2="44.5" stroke="#c48b00" stroke-width="1.1" stroke-linecap="round"/>
-              <line x1="27.4" y1="42.1" x2="28.1" y2="41.4" stroke="#c48b00" stroke-width="1" stroke-linecap="round"/>
-              <line x1="22.6" y1="42.1" x2="21.9" y2="41.4" stroke="#c48b00" stroke-width="1" stroke-linecap="round"/>
-              <!-- Panel: rectángulo azul con cuadrícula 3×3 -->
-              <rect x="12" y="50" width="26" height="15" rx="1.5" fill="#1565c0" fill-opacity=".9" stroke="#c48b00" stroke-width="1.2"/>
+              <!-- Flechas doradas y blancas -->
+              <line x1="43" y1="57" x2="66" y2="57" stroke="#edb015" stroke-width="1.5" marker-end="url(#fg-ag)"/>
+              <line x1="103" y1="57" x2="131" y2="57" stroke="#edb015" stroke-width="1.5" marker-end="url(#fg-ag)"/>
+              <line x1="168" y1="57" x2="196" y2="57" stroke="#edb015" stroke-width="1.5" marker-end="url(#fg-ag)"/>
+              <line x1="233" y1="53" x2="261" y2="53" stroke="rgba(255,255,255,.7)" stroke-width="1.5" marker-end="url(#fg-at)"/>
+              <line x1="261" y1="61" x2="234" y2="61" stroke="rgba(255,255,255,.7)" stroke-width="1.5" marker-end="url(#fg-atr)"/>
+              <line x1="215" y1="39" x2="215" y2="21" stroke="#4ade80" stroke-width="1.5" marker-end="url(#fg-agr)"/>
+              <!-- Badge Venta de Excedentes (verde) -->
+              <rect x="176" y="4" width="78" height="16" rx="8" fill="rgba(74,222,128,.15)" stroke="#4ade80" stroke-width="1.5"/>
+              <text x="215" y="15" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6" font-weight="700" fill="#4ade80">Venta excedentes</text>
+              <!-- Panel Solar (cx=25) — dorado sobre fondo oscuro -->
+              <circle cx="25" cy="57" r="17" fill="rgba(237,176,21,.15)" stroke="#edb015" stroke-width="1.5"/>
+              <circle cx="25" cy="44.5" r="2.8" fill="#edb015"/>
+              <line x1="25" y1="40.5" x2="25" y2="41.4" stroke="#edb015" stroke-width="1.1" stroke-linecap="round"/>
+              <line x1="29" y1="44.5" x2="29.9" y2="44.5" stroke="#edb015" stroke-width="1.1" stroke-linecap="round"/>
+              <line x1="21" y1="44.5" x2="20.1" y2="44.5" stroke="#edb015" stroke-width="1.1" stroke-linecap="round"/>
+              <line x1="27.4" y1="42.1" x2="28.1" y2="41.4" stroke="#edb015" stroke-width="1" stroke-linecap="round"/>
+              <line x1="22.6" y1="42.1" x2="21.9" y2="41.4" stroke="#edb015" stroke-width="1" stroke-linecap="round"/>
+              <rect x="12" y="50" width="26" height="15" rx="1.5" fill="#1565c0" fill-opacity=".9" stroke="#edb015" stroke-width="1.2"/>
               <line x1="12" y1="55" x2="38" y2="55" stroke="#5ba3e8" stroke-width=".7" opacity=".9"/>
               <line x1="12" y1="60" x2="38" y2="60" stroke="#5ba3e8" stroke-width=".7" opacity=".9"/>
               <line x1="20.7" y1="50" x2="20.7" y2="65" stroke="#5ba3e8" stroke-width=".7" opacity=".9"/>
               <line x1="29.3" y1="50" x2="29.3" y2="65" stroke="#5ba3e8" stroke-width=".7" opacity=".9"/>
-              <!-- Soporte/estructura -->
-              <line x1="22" y1="65" x2="19" y2="70" stroke="#c48b00" stroke-width="1.3" stroke-linecap="round"/>
-              <line x1="28" y1="65" x2="31" y2="70" stroke="#c48b00" stroke-width="1.3" stroke-linecap="round"/>
-              <line x1="16" y1="70" x2="34" y2="70" stroke="#c48b00" stroke-width="1.5" stroke-linecap="round"/>
-              <!-- Inversor (cx=85) -->
-              <circle cx="85" cy="57" r="17" fill="#f0f7fa" stroke="#004763" stroke-width="1.5"/>
-              <path d="M90 47 L80 59 L86 59 L80 67 L91 55 L85 55 Z" fill="#004763"/>
+              <line x1="22" y1="65" x2="19" y2="70" stroke="#edb015" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="28" y1="65" x2="31" y2="70" stroke="#edb015" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="16" y1="70" x2="34" y2="70" stroke="#edb015" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- Inversor (cx=85) — blanco sobre fondo oscuro -->
+              <circle cx="85" cy="57" r="17" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/>
+              <path d="M90 47 L80 59 L86 59 L80 67 L91 55 L85 55 Z" fill="white"/>
               <!-- Casa (cx=150) -->
-              <circle cx="150" cy="57" r="17" fill="#f0f7fa" stroke="#004763" stroke-width="1.5"/>
-              <path d="M143 59 L150 49 L157 59 L157 66 L153 66 L153 61 L147 61 L147 66 L143 66 Z" fill="none" stroke="#004763" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+              <circle cx="150" cy="57" r="17" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/>
+              <path d="M143 59 L150 49 L157 59 L157 66 L153 66 L153 61 L147 61 L147 66 L143 66 Z" fill="none" stroke="white" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
               <!-- Medidor (cx=215) -->
-              <circle cx="215" cy="57" r="17" fill="#f0f7fa" stroke="#004763" stroke-width="1.5"/>
-              <path d="M207 63 A8 8 0 0 1 223 63" fill="none" stroke="#004763" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="215" y1="63" x2="221" y2="55" stroke="#004763" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="207" y1="63" x2="206" y2="63" stroke="#004763" stroke-width="1" stroke-linecap="round"/>
-              <line x1="223" y1="63" x2="224" y2="63" stroke="#004763" stroke-width="1" stroke-linecap="round"/>
+              <circle cx="215" cy="57" r="17" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/>
+              <path d="M207 63 A8 8 0 0 1 223 63" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="215" y1="63" x2="221" y2="55" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="207" y1="63" x2="206" y2="63" stroke="white" stroke-width="1" stroke-linecap="round"/>
+              <line x1="223" y1="63" x2="224" y2="63" stroke="white" stroke-width="1" stroke-linecap="round"/>
               <!-- Red Eléctrica (cx=280) -->
-              <circle cx="280" cy="57" r="17" fill="#f0f7fa" stroke="#004763" stroke-width="1.5"/>
-              <line x1="280" y1="46" x2="280" y2="68" stroke="#004763" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="273" y1="51" x2="287" y2="51" stroke="#004763" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="275" y1="60" x2="285" y2="60" stroke="#004763" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="273" y1="51" x2="271" y2="68" stroke="#004763" stroke-width="1.3" stroke-linecap="round"/>
-              <line x1="287" y1="51" x2="289" y2="68" stroke="#004763" stroke-width="1.3" stroke-linecap="round"/>
-              <!-- Etiquetas -->
-              <text x="25" y="80" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Panel</text>
-              <text x="25" y="88" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Solar</text>
-              <text x="85" y="80" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Inversor</text>
-              <text x="150" y="80" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Casa</text>
-              <text x="215" y="80" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Medidor</text>
-              <text x="280" y="80" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Red</text>
-              <text x="280" y="88" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="#555">Eléctrica</text>
+              <circle cx="280" cy="57" r="17" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/>
+              <line x1="280" y1="46" x2="280" y2="68" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="273" y1="51" x2="287" y2="51" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="275" y1="60" x2="285" y2="60" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="273" y1="51" x2="271" y2="68" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="287" y1="51" x2="289" y2="68" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+              <!-- Etiquetas blancas -->
+              <text x="25" y="80" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="rgba(255,255,255,.65)">Panel</text>
+              <text x="25" y="88" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="rgba(255,255,255,.65)">Solar</text>
+              <text x="85" y="80" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="rgba(255,255,255,.65)">Inversor</text>
+              <text x="150" y="80" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="rgba(255,255,255,.65)">Casa</text>
+              <text x="215" y="80" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="rgba(255,255,255,.65)">Medidor</text>
+              <text x="280" y="80" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="rgba(255,255,255,.65)">Red</text>
+              <text x="280" y="88" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="6.5" font-weight="600" fill="rgba(255,255,255,.65)">Eléctrica</text>
             </svg>
-            </div>
           </div>
-          <div class="sist-card__body">
-            <p class="sist-card__ideal">Para <strong>hogares y empresas urbanas</strong> con acceso estable a luz.</p>
-            <ul class="sist-card__list">
-              <li>Hasta 90% de ahorro en tu cuenta de luz</li>
-              <li>Vende la energía sobrante a la distribuidora</li>
-              <li>Sin baterías: menor inversión inicial</li>
-            </ul>
-            <p class="sist-card__note">💡 El sistema más económico y rápido de instalar.</p>
-            <a href="#contacto" class="btn btn--primary btn--full">Quiero cotizar</a>
-          </div>
+          <p class="sist-featured__img-note">📷 Aquí irá tu foto On-Grid</p>
         </div>
+
+        <!-- Contenido derecho -->
+        <div class="sist-featured__content">
+          <p class="sist-featured__tag">Sistema On-Grid</p>
+          <h3 class="sist-featured__title">Conectado a<br>la red eléctrica</h3>
+          <p class="sist-featured__desc">Para <strong>hogares y empresas urbanas</strong> con acceso estable a luz.</p>
+          <ul class="sist-featured__list">
+            <li>Hasta 90% de ahorro en tu cuenta de luz</li>
+            <li>Vende la energía sobrante a la distribuidora</li>
+            <li>Sin baterías: menor inversión inicial</li>
+          </ul>
+          <p class="sist-featured__note">💡 El sistema más económico y rápido de instalar.</p>
+          <a href="#contacto" class="btn btn--primary">Quiero cotizar</a>
+        </div>
+      </div>
+
+      <!-- OFF-GRID + HÍBRIDO -->
+      <div class="sist-grid sist-grid--two">
 
         <!-- OFF-GRID -->
         <div class="sist-card sist-card--teal reveal-up">
