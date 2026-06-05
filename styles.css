@@ -965,154 +965,159 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 }
 
 /* ===========================
-   SISTEMAS SOLARES
+   SISTEMAS SOLARES (cards)
 =========================== */
-.sistemas__list {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+.sist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
 }
 
-.sistema {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+.sist-card {
+  position: relative;
   background: var(--white);
   border-radius: calc(var(--radius) * 1.5);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.sistema:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0,71,99,.14);
+.sist-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
 }
 
-.sistema--reverse .sistema__img { order: 2; }
-.sistema--reverse .sistema__content { order: 1; }
+.sist-card--gold  { border-top: 4px solid var(--gold); }
+.sist-card--teal  { border-top: 4px solid var(--teal); }
+.sist-card--green { border-top: 4px solid var(--green); }
 
-.sistema__img {
-  position: relative;
-  height: 100%;
-  min-height: 320px;
-  overflow: hidden;
-}
-
-.sistema__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.6s ease;
-}
-
-.sistema:hover .sistema__img img { transform: scale(1.04); }
-
-.sistema__badge {
+.sist-card__pop {
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  padding: .4rem 1.1rem;
-  border-radius: 50px;
-  font-size: .72rem;
+  top: 1rem; right: 1rem;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: .62rem;
   font-weight: 800;
-  letter-spacing: .1em;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  padding: .28rem .8rem;
+  border-radius: 50px;
+  z-index: 1;
 }
 
-.sistema__badge--gold  { background: var(--gold); color: var(--dark); }
-.sistema__badge--teal  { background: var(--teal); color: var(--white); }
-.sistema__badge--green { background: var(--green); color: var(--white); }
+.sist-card__pop--green { background: var(--green); color: var(--white); }
 
-.sistema__content {
-  padding: 3rem 3.5rem;
+.sist-card__head {
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+  border-bottom: 1.5px solid var(--gray-100);
 }
 
-.sistema__title {
-  font-size: 1.9rem;
+.sist-card__icon {
+  width: 52px; height: 52px;
+  margin: 0 auto 1rem;
+}
+.sist-card__icon svg { width: 100%; height: 100%; }
+
+.sist-card--gold .sist-card__icon  { color: #c48b00; }
+.sist-card--teal .sist-card__icon  { color: var(--teal); }
+.sist-card--green .sist-card__icon { color: var(--green); }
+
+.sist-card__head h3 {
+  font-size: 1.45rem;
   font-weight: 900;
   color: var(--teal);
-  line-height: 1.1;
-  letter-spacing: -.03em;
-  margin-bottom: .6rem;
+  letter-spacing: -.02em;
+  margin-bottom: .25rem;
 }
 
-.sistema__title span { color: var(--gold); }
-
-.sistema__subtitle {
-  font-size: .9rem;
-  color: var(--gray-700);
+.sist-card__head p {
+  font-size: .75rem;
+  color: var(--gray-400);
   font-weight: 600;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1.5px solid var(--gray-100);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.sist-card__body {
+  padding: 1.75rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex: 1;
+}
+
+.sist-card__ideal {
+  font-size: .875rem;
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+.sist-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  flex: 1;
+}
+
+.sist-card__list li {
+  display: flex;
+  gap: .7rem;
+  align-items: flex-start;
+  font-size: .875rem;
+  color: var(--gray-700);
   line-height: 1.55;
 }
 
-.sistema__list {
-  display: flex;
-  flex-direction: column;
-  gap: .85rem;
-  margin-bottom: 1.75rem;
-  list-style: none;
-}
-
-.sistema__list li {
-  display: flex;
-  gap: .85rem;
-  align-items: flex-start;
-  font-size: .9rem;
-  line-height: 1.65;
-  color: var(--gray-700);
-}
-
-.sistema__list li::before {
+.sist-card__list li::before {
   content: '✓';
-  color: var(--green);
+  font-size: .65rem;
   font-weight: 900;
-  font-size: .8rem;
   flex-shrink: 0;
-  margin-top: .25rem;
-  background: rgba(6,117,46,.1);
-  width: 20px;
-  height: 20px;
+  margin-top: .18rem;
+  width: 17px; height: 17px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.sistema__tip {
-  display: flex;
-  gap: .85rem;
-  align-items: flex-start;
-  background: var(--gray-50);
-  border-radius: var(--radius);
-  padding: 1rem 1.25rem;
-  border-left: 4px solid var(--gold);
-}
+.sist-card--gold  .sist-card__list li::before { background: rgba(237,176,21,.15); color: #a07200; }
+.sist-card--teal  .sist-card__list li::before { background: rgba(0,71,99,.1);      color: var(--teal); }
+.sist-card--green .sist-card__list li::before { background: rgba(6,117,46,.1);     color: var(--green); }
 
-.sistema__tip span { font-size: 1.1rem; flex-shrink: 0; line-height: 1.5; }
-
-.sistema__tip p {
-  font-size: .875rem;
+.sist-card__note {
+  font-size: .8rem;
   font-weight: 600;
   color: var(--teal);
-  line-height: 1.55;
   font-style: italic;
+  background: var(--gray-50);
+  border-left: 3px solid var(--gold);
+  padding: .65rem .9rem;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.5;
 }
 
+.sist-help {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: .9rem;
+  color: var(--gray-400);
+}
+
+.sist-help a {
+  color: var(--teal);
+  font-weight: 700;
+  transition: color var(--transition);
+}
+.sist-help a:hover { color: var(--gold); }
+
 @media (max-width: 900px) {
-  .sistema {
-    grid-template-columns: 1fr;
-  }
-  .sistema--reverse .sistema__img { order: 0; }
-  .sistema--reverse .sistema__content { order: 0; }
-  .sistema__img { min-height: 240px; }
-  .sistema__content { padding: 2rem; }
-  .sistema__title { font-size: 1.5rem; }
+  .sist-grid { grid-template-columns: 1fr; }
 }
 
 /* ===========================
