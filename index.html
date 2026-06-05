@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GMsolution – Paneles Solares en el Sur de Chile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__logo">
+      <img src="assets/logo.svg" alt="GMsolution" class="nav__logo-img" />
+    </a>
+    <ul class="nav__links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#beneficios">Beneficios</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#cobertura">Cobertura</a></li>
+      <li><a href="#contacto" class="nav__cta">Cotizar gratis</a></li>
+    </ul>
+    <button class="nav__burger" id="burger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#servicios" class="mobile-link">Servicios</a></li>
+      <li><a href="#beneficios" class="mobile-link">Beneficios</a></li>
+      <li><a href="#proceso" class="mobile-link">Proceso</a></li>
+      <li><a href="#cobertura" class="mobile-link">Cobertura</a></li>
+      <li><a href="#contacto" class="mobile-link">Cotizar gratis</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__overlay"></div>
+      <!-- Si tienes imagen, ponla en assets/hero.jpg -->
+      <div class="hero__placeholder-img"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__tag reveal-up">Expertos en energía solar · Sur de Chile</p>
+      <h1 class="hero__title reveal-up">
+        Tu casa<br />
+        <span>autosustentable</span><br />
+        empieza aquí
+      </h1>
+      <p class="hero__sub reveal-up">Instalamos paneles solares desde Concepción al sur.<br />Ahorra hasta un 90% en tu cuenta de luz.</p>
+      <div class="hero__actions reveal-up">
+        <a href="#contacto" class="btn btn--primary">Cotizar gratis</a>
+        <a href="#proceso" class="btn btn--ghost">Ver cómo funciona</a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- NÚMEROS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat reveal-up">
+          <span class="stat__num" data-target="90">0</span><span class="stat__unit">%</span>
+          <p>Ahorro en luz</p>
+        </div>
+        <div class="stat reveal-up">
+          <span class="stat__num" data-target="5">0</span><span class="stat__unit">+</span>
+          <p>Años de experiencia</p>
+        </div>
+        <div class="stat reveal-up">
+          <span class="stat__num" data-target="200">0</span><span class="stat__unit">+</span>
+          <p>Instalaciones realizadas</p>
+        </div>
+        <div class="stat reveal-up">
+          <span class="stat__num" data-target="100">0</span><span class="stat__unit">%</span>
+          <p>Garantía de satisfacción</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+  <section class="section about" id="nosotros">
+    <div class="about__inner">
+      <div class="about__image reveal-left">
+        <!-- Reemplaza con tu foto real: assets/about.jpg -->
+        <div class="about__img-placeholder"></div>
+        <div class="about__badge-top">Desde 2014</div>
+        <div class="about__badge">
+          <span class="about__badge-num">+200</span>
+          <span class="about__badge-txt">instalaciones<br/>realizadas</span>
+        </div>
+      </div>
+      <div class="about__content reveal-right">
+        <p class="section-tag">Quiénes somos</p>
+        <h2 class="section-title">Energía solar hecha<br />a tu medida</h2>
+        <blockquote class="about__quote">
+          "Ahorra, cuida el planeta y transforma tu hogar con energía solar."
+        </blockquote>
+        <p class="about__text">
+          En GmSolution entendemos lo importante que es ahorrar y garantizar un futuro más sustentable. Diseñamos soluciones solares personalizadas para hogares y empresas en el sur de Chile, combinando tecnología, eficiencia y diseño.
+        </p>
+        <p class="about__text">
+          Cada proyecto refleja tu visión y necesidades, maximizando el aprovechamiento de la luz solar para reducir costos y cuidar el medioambiente. Nos mueve la excelencia y el compromiso con un mundo más limpio y accesible para todos.
+        </p>
+        <div class="about__actions">
+          <a href="#contacto" class="btn btn--primary">Conoce tu solución</a>
+          <a href="#galeria" class="btn btn--ghost-teal">Ver proyectos →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULADORA DE AHORRO -->
+  <section class="section section--gray" id="calculadora">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Calcula tu ahorro</p>
+        <h2 class="section-title">¿Cuánto podrías ahorrar<br />con paneles solares?</h2>
+      </div>
+      <div class="calc__wrap reveal-up">
+        <div class="calc__inputs">
+          <div class="calc__field">
+            <label>¿Cuánto pagas de luz al mes?</label>
+            <div class="calc__slider-wrap">
+              <input type="range" id="billSlider" min="20000" max="500000" step="5000" value="80000" class="calc__slider" />
+              <div class="calc__value">$<span id="billDisplay">80.000</span></div>
+            </div>
+          </div>
+          <div class="calc__field">
+            <label>Tipo de propiedad</label>
+            <div class="calc__options">
+              <button class="calc__opt active" data-factor="0.85">Casa</button>
+              <button class="calc__opt" data-factor="0.80">Departamento</button>
+              <button class="calc__opt" data-factor="0.88">Empresa</button>
+              <button class="calc__opt" data-factor="0.90">Campo</button>
+            </div>
+          </div>
+        </div>
+        <div class="calc__results">
+          <div class="calc__result-card">
+            <p class="calc__result-label">Ahorro mensual</p>
+            <p class="calc__result-num" id="monthlySaving">$68.000</p>
+          </div>
+          <div class="calc__result-card calc__result-card--gold">
+            <p class="calc__result-label">Ahorro anual</p>
+            <p class="calc__result-num" id="yearlySaving">$816.000</p>
+          </div>
+          <div class="calc__result-card">
+            <p class="calc__result-label">Retorno inversión</p>
+            <p class="calc__result-num" id="roi">~4 años</p>
+          </div>
+          <a href="#contacto" class="btn btn--primary btn--full">Quiero este ahorro</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Lo que hacemos</p>
+        <h2 class="section-title">Soluciones a medida<br />para cada instalación</h2>
+      </div>
+      <div class="services__grid">
+        <div class="service-card reveal-up">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="20" width="48" height="30" rx="3" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="8" y1="32" x2="56" y2="32" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="32" y1="20" x2="32" y2="50" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M32 14L28 20H36L32 14Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Paneles residenciales</h3>
+          <p>Sistemas personalizados para hogares. Analizamos tu consumo y diseñamos la instalación perfecta para tu vivienda.</p>
+        </div>
+        <div class="service-card reveal-up">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="16" width="52" height="32" rx="3" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="6" y1="28" x2="58" y2="28" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="6" y1="40" x2="58" y2="40" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="22" y1="16" x2="22" y2="48" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="42" y1="16" x2="42" y2="48" stroke="currentColor" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h3>Paneles comerciales</h3>
+          <p>Reducimos los costos energéticos de tu empresa. Soluciones escalables para negocios de cualquier tamaño.</p>
+        </div>
+        <div class="service-card reveal-up">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="32" y1="8" x2="32" y2="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="32" y1="48" x2="32" y2="56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="8" y1="32" x2="16" y2="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="48" y1="32" x2="56" y2="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="16" y1="16" x2="21" y2="21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="43" y1="43" x2="48" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Sistemas off-grid</h3>
+          <p>Independencia energética total. Perfectos para zonas rurales o propiedades sin acceso a la red eléctrica.</p>
+        </div>
+        <div class="service-card reveal-up">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 44V28l12-12 12 12v16" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <rect x="26" y="34" width="12" height="10" stroke="currentColor" stroke-width="2.5"/>
+              <rect x="10" y="22" width="44" height="6" rx="2" stroke="currentColor" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h3>Mantención y monitoreo</h3>
+          <p>Revisión periódica, limpieza de paneles y monitoreo de rendimiento para que tu sistema siempre opere al máximo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES / DESPUÉS -->
+  <section class="section section--gray" id="ahorro">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">El impacto real</p>
+        <h2 class="section-title">Lo que cambia en tu cuenta<br />desde el primer mes</h2>
+      </div>
+      <div class="compare__wrap reveal-up">
+        <div class="compare__card compare__card--before">
+          <div class="compare__label">Sin paneles solares</div>
+          <div class="compare__bill">
+            <p class="compare__company">Cuenta eléctrica</p>
+            <p class="compare__amount">$150.000</p>
+            <p class="compare__period">mensual promedio</p>
+            <ul class="compare__list compare__list--bad">
+              <li>Pago completo a la distribuidora</li>
+              <li>Tarifa sube cada año</li>
+              <li>Sin control sobre tu gasto</li>
+              <li>Dependencia total de la red</li>
+            </ul>
+          </div>
+        </div>
+        <div class="compare__arrow">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M8 24h32M28 14l12 10-12 10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>GmSolution</span>
+        </div>
+        <div class="compare__card compare__card--after">
+          <div class="compare__label">Con paneles solares</div>
+          <div class="compare__bill">
+            <p class="compare__company">Cuenta eléctrica</p>
+            <p class="compare__amount">$15.000</p>
+            <p class="compare__period">mensual promedio</p>
+            <ul class="compare__list compare__list--good">
+              <li>90% de ahorro inmediato</li>
+              <li>Precio fijo, sin sorpresas</li>
+              <li>Tú generas tu propia energía</li>
+              <li>Puedes vender excedentes a la red</li>
+            </ul>
+          </div>
+          <div class="compare__savings">Ahorras $135.000/mes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="section" id="galeria">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Proyectos reales</p>
+        <h2 class="section-title">Instalaciones que<br />hablan por sí solas</h2>
+      </div>
+      <div class="gallery__grid">
+        <div class="gallery__item gallery__item--wide reveal-up">
+          <img src="assets/gallery1.png" alt="Instalación GmSolution" loading="lazy" />
+          <div class="gallery__overlay"><span>Proyecto residencial · Sur de Chile</span></div>
+        </div>
+        <div class="gallery__item reveal-up">
+          <img src="assets/about.jpg" alt="Casa con paneles solares" loading="lazy" />
+          <div class="gallery__overlay"><span>Vivienda familiar · Temuco</span></div>
+        </div>
+        <div class="gallery__item reveal-up">
+          <img src="assets/sistema-hibrido.png" alt="Sistema híbrido" loading="lazy" />
+          <div class="gallery__overlay"><span>Sistema híbrido</span></div>
+        </div>
+        <div class="gallery__item reveal-up">
+          <img src="assets/sistema-offgrid.png" alt="Sistema off-grid" loading="lazy" />
+          <div class="gallery__overlay"><span>Sistema off-grid</span></div>
+        </div>
+        <div class="gallery__item gallery__item--wide reveal-up">
+          <img src="assets/gallery2.png" alt="Proyecto GmSolution" loading="lazy" />
+          <div class="gallery__overlay"><span>Instalación comercial · Concepción</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="section section--gray" id="testimonios">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Lo que dicen nuestros clientes</p>
+        <h2 class="section-title">Familias que ya<br />viven con energía solar</h2>
+      </div>
+      <div class="testimonials__grid">
+        <div class="testimonial reveal-up">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__text">"Llevamos 8 meses con los paneles y nuestra cuenta bajó de $130.000 a menos de $12.000. El equipo de GmSolution fue súper profesional y rápido. 100% recomendado."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">CR</div>
+            <div>
+              <strong>Carlos Rodríguez</strong>
+              <span>Temuco · Sistema residencial 6kW</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial reveal-up">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__text">"Tenía dudas de que los paneles funcionaran en el sur con tanta lluvia. Me explicaron todo con paciencia y los resultados superaron mis expectativas. Ahorro un 87% cada mes."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">MF</div>
+            <div>
+              <strong>María Fernández</strong>
+              <span>Valdivia · Sistema residencial 4kW</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial reveal-up">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__text">"Instalamos un sistema off-grid en nuestra parcela en Los Lagos. Ya no dependemos de nadie para tener luz. La inversión se pagó en 3 años y medio."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">JP</div>
+            <div>
+              <strong>Juan Pérez</strong>
+              <span>Puerto Montt · Sistema off-grid 8kW</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="section section--dark" id="beneficios">
+    <div class="container">
+      <div class="benefits__wrap">
+        <div class="benefits__visual reveal-left">
+          <div class="benefits__sun">
+            <div class="sun-core"></div>
+            <div class="sun-ring sun-ring--1"></div>
+            <div class="sun-ring sun-ring--2"></div>
+            <div class="sun-ring sun-ring--3"></div>
+          </div>
+        </div>
+        <div class="benefits__content reveal-right">
+          <p class="section-tag">¿Por qué solar?</p>
+          <h2 class="section-title">Invierte hoy,<br />ahorra siempre</h2>
+          <ul class="benefits__list">
+            <li>
+              <div class="benefit-dot"></div>
+              <div>
+                <strong>Ahorro inmediato</strong>
+                <p>Desde el primer mes notas la diferencia en tu cuenta de luz. Hasta 90% de reducción.</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-dot"></div>
+              <div>
+                <strong>Retorno de inversión en 3–5 años</strong>
+                <p>Tu sistema se paga solo. Después de eso, la energía es prácticamente gratis.</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-dot"></div>
+              <div>
+                <strong>Ideal para el sur lluvioso</strong>
+                <p>Los paneles modernos funcionan con luz difusa. El sur de Chile tiene energía solar todo el año.</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-dot"></div>
+              <div>
+                <strong>Valoriza tu propiedad</strong>
+                <p>Una casa con paneles solares vale hasta un 20% más en el mercado.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="section" id="proceso">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">¿Cómo funciona?</p>
+        <h2 class="section-title">Del contacto a la luz solar<br />en 4 pasos</h2>
+      </div>
+      <div class="process__steps">
+        <div class="process__line"></div>
+        <div class="step reveal-up">
+          <div class="step__num">01</div>
+          <div class="step__body">
+            <h3>Cotización gratuita</h3>
+            <p>Nos contactas por WhatsApp o formulario. Analizamos tu factura eléctrica y te enviamos una propuesta personalizada sin costo.</p>
+          </div>
+        </div>
+        <div class="step reveal-up">
+          <div class="step__num">02</div>
+          <div class="step__body">
+            <h3>Visita técnica</h3>
+            <p>Un ingeniero visita tu propiedad para evaluar el techo, orientación e instalación eléctrica existente.</p>
+          </div>
+        </div>
+        <div class="step reveal-up">
+          <div class="step__num">03</div>
+          <div class="step__body">
+            <h3>Instalación profesional</h3>
+            <p>Nuestro equipo certificado instala el sistema en 1–2 días. Gestionamos todos los permisos con la distribuidora eléctrica.</p>
+          </div>
+        </div>
+        <div class="step reveal-up">
+          <div class="step__num">04</div>
+          <div class="step__body">
+            <h3>Encendido y seguimiento</h3>
+            <p>Activamos tu sistema, te enseñamos a monitorearlo y te acompañamos con soporte post-instalación.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Preguntas frecuentes</p>
+        <h2 class="section-title">Todo lo que necesitas<br />saber antes de instalar</h2>
+      </div>
+      <div class="faq__list reveal-up">
+        <div class="faq__item">
+          <button class="faq__question">¿Los paneles solares funcionan en el sur de Chile con tanta lluvia y nubosidad?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>Sí. Los paneles fotovoltaicos modernos generan electricidad con luz difusa, no solo con sol directo. Alemania, uno de los países con mayor cobertura solar del mundo, tiene un clima similar al sur de Chile. Tu sistema funcionará los 365 días del año.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question">¿Cuánto tiempo tarda la instalación?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>Una instalación residencial estándar toma entre 1 y 2 días de trabajo. Nosotros también nos encargamos de gestionar todos los permisos y trámites con la distribuidora eléctrica, lo que puede tomar 2 a 4 semanas adicionales.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question">¿Qué pasa cuando hay corte de luz o de noche?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>Con un sistema conectado a la red (on-grid), en la noche o cortes el sistema se detiene por seguridad. Con baterías o sistema híbrido, almacenas la energía del día para usarla de noche. Te asesoramos sobre cuál es la mejor opción para tu caso.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question">¿Cuánto tiempo tarda en pagarse la inversión?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>En el sur de Chile el retorno de inversión típico es entre 3 y 5 años, dependiendo de tu consumo eléctrico actual y el sistema instalado. Después de ese período, la energía es prácticamente gratis durante los 20+ años restantes de vida útil.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question">¿Puedo vender la energía que genero de más?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>Sí. La Ley 21.118 en Chile permite inyectar excedentes a la red eléctrica y recibir créditos en tu factura (net metering). Te ayudamos a gestionar este proceso con tu distribuidora eléctrica local.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question">¿Qué mantenimiento requieren los paneles?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>Los paneles solares son de muy bajo mantenimiento. Se recomienda una limpieza superficial 1-2 veces al año y una revisión técnica anual del sistema. Ofrecemos planes de mantención y monitoreo remoto para que siempre estés al tanto del rendimiento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COBERTURA -->
+  <section class="section section--teal" id="cobertura">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Dónde llegamos</p>
+        <h2 class="section-title">Desde Concepción<br />hasta Puerto Montt</h2>
+      </div>
+      <div class="coverage__grid">
+        <div class="city-card reveal-up">
+          <div class="city-card__dot"></div>
+          <span>Concepción</span>
+        </div>
+        <div class="city-card reveal-up">
+          <div class="city-card__dot"></div>
+          <span>Los Ángeles</span>
+        </div>
+        <div class="city-card reveal-up">
+          <div class="city-card__dot"></div>
+          <span>Temuco</span>
+        </div>
+        <div class="city-card reveal-up">
+          <div class="city-card__dot"></div>
+          <span>Valdivia</span>
+        </div>
+        <div class="city-card reveal-up">
+          <div class="city-card__dot"></div>
+          <span>Osorno</span>
+        </div>
+        <div class="city-card reveal-up">
+          <div class="city-card__dot"></div>
+          <span>Puerto Montt</span>
+        </div>
+      </div>
+      <p class="coverage__note reveal-up">¿Tu ciudad no está en la lista? Consúltanos igualmente.</p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <div class="contact__wrap">
+        <div class="contact__info reveal-left">
+          <p class="section-tag">Hablemos</p>
+          <h2 class="section-title">Cotiza tu instalación<br />sin compromiso</h2>
+          <p class="contact__desc">Cuéntanos sobre tu propiedad y te preparamos una propuesta personalizada sin costo. Respuesta en menos de 24 horas.</p>
+          <div class="contact__channels">
+            <a href="https://wa.me/56900000000" class="contact__channel" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.85L0 24l6.335-1.513A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.032-1.383l-.36-.214-3.733.892.946-3.618-.235-.372A9.793 9.793 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+              WhatsApp
+            </a>
+            <a href="https://instagram.com/gmsolution_chile" class="contact__channel" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              @gmsolution_chile
+            </a>
+            <a href="mailto:contacto@gmsolution.cl" class="contact__channel">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              contacto@gmsolution.cl
+            </a>
+          </div>
+        </div>
+        <form class="contact__form reveal-right" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+56 9 XXXX XXXX" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" id="ciudad" name="ciudad" placeholder="¿Dónde está tu propiedad?" required />
+          </div>
+          <div class="form-group">
+            <label for="tipo">Tipo de instalación</label>
+            <select id="tipo" name="tipo">
+              <option value="">Selecciona una opción</option>
+              <option value="residencial">Residencial – casa o departamento</option>
+              <option value="comercial">Comercial – empresa o local</option>
+              <option value="agricola">Agrícola – campo o sector rural</option>
+              <option value="industrial">Industrial</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje (opcional)</label>
+            <textarea id="mensaje" name="mensaje" rows="3" placeholder="¿Algo más que quieras contarnos?"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Enviar cotización</button>
+          <p class="form__note">Sin compromiso · Respuesta en &lt;24h</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="assets/logo.svg" alt="GMsolution" class="footer__logo-img" />
+          <p>Casas autosustentables<br />con energía solar.</p>
+        </div>
+        <div class="footer__links">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#servicios">Paneles residenciales</a></li>
+            <li><a href="#servicios">Paneles comerciales</a></li>
+            <li><a href="#servicios">Sistemas off-grid</a></li>
+            <li><a href="#servicios">Mantención</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Cobertura</h4>
+          <ul>
+            <li><a href="#cobertura">Concepción</a></li>
+            <li><a href="#cobertura">Temuco</a></li>
+            <li><a href="#cobertura">Puerto Montt</a></li>
+            <li><a href="#cobertura">Todo el sur</a></li>
+          </ul>
+        </div>
+        <div class="footer__social">
+          <h4>Síguenos</h4>
+          <a href="https://instagram.com/gmsolution_chile" target="_blank" rel="noopener">Instagram @gmsolution_chile</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 GMsolution · Todos los derechos reservados</p>
+        <p>Instaladores certificados de paneles solares · Sur de Chile</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/56900000000" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.85L0 24l6.335-1.513A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.032-1.383l-.36-.214-3.733.892.946-3.618-.235-.372A9.793 9.793 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

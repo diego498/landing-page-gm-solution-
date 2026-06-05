@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220" fill="none">
+  <!-- Dots arc -->
+  <circle cx="148" cy="118" r="7"  fill="white"/>
+  <circle cx="167" cy="94"  r="11" fill="white"/>
+  <circle cx="192" cy="74"  r="15" fill="white"/>
+  <circle cx="222" cy="60"  r="19" fill="white"/>
+  <circle cx="256" cy="68"  r="13" fill="white"/>
+  <circle cx="284" cy="84"  r="9"  fill="white"/>
+  <circle cx="306" cy="106" r="6"  fill="white"/>
+  <!-- Wordmark -->
+  <text
+    x="50" y="190"
+    font-family="Montserrat, Arial, sans-serif"
+    font-size="78"
+    font-weight="700"
+    letter-spacing="-1"
+    fill="white"
+  >GmSolution</text>
+</svg>
