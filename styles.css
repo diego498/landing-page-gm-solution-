@@ -1061,6 +1061,17 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   margin: 0;
 }
 
+/* Flow diagram as direct child of card (between head and body) */
+.sist-card > .sist-flow-wrap {
+  border-top: 1.5px solid var(--gray-100);
+  border-bottom: 1.5px solid var(--gray-100);
+  border-radius: 0;
+}
+.sist-card > .sist-flow-wrap .sist-flow {
+  border-radius: 0;
+  margin: 0;
+}
+
 .sist-card__icon {
   width: 52px; height: 52px;
   margin: 0 auto 1rem;
