@@ -1011,9 +1011,22 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 .sist-card__pop--green { background: var(--green); color: var(--white); }
 
 .sist-card__head {
-  padding: 2rem 2rem 1.5rem;
+  padding: 2rem 2rem 1.25rem;
   text-align: center;
   border-bottom: 1.5px solid var(--gray-100);
+}
+
+/* Flow diagram inside head */
+.sist-card__head .sist-flow-wrap {
+  margin-top: 1.25rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-bottom: -.25rem;
+  border-radius: 0;
+}
+.sist-card__head .sist-flow {
+  border-radius: 0;
+  margin: 0;
 }
 
 .sist-card__icon {
