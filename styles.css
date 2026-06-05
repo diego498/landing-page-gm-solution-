@@ -1699,3 +1699,103 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   .hero__actions { flex-direction: column; }
   .hero__actions .btn { text-align: center; justify-content: center; }
 }
+
+/* ===========================
+   MÓVIL (≤ 480px) — mejoras completas
+=========================== */
+@media (max-width: 480px) {
+
+  /* Contenedor más estrecho */
+  .container { width: calc(100% - 2rem); }
+
+  /* Secciones: menos espacio vertical */
+  .section { padding: 3.5rem 0; }
+  .section-header { margin-bottom: 2.5rem; }
+  .section-title { font-size: clamp(1.35rem, 7.5vw, 2.2rem); }
+  .section-desc { font-size: .88rem; }
+
+  /* NAV */
+  .nav { padding: .75rem 1rem; }
+  .nav.scrolled { padding: .6rem 1rem; }
+
+  /* HERO */
+  .hero__content { padding: 5.5rem 1rem 3rem; }
+
+  /* QUIÉNES SOMOS */
+  .about__img-placeholder { min-height: 260px; }
+  .about__content { padding: 2rem 1.25rem; }
+  .about__badge { bottom: 1.5rem; right: .25rem; }
+  .about__badge-top { top: 1rem; right: .75rem; }
+  .about__actions { flex-wrap: wrap; gap: .75rem; }
+  .btn--ghost-teal { padding: .75rem 1.25rem; font-size: .82rem; }
+
+  /* STATS */
+  .stats { padding: 2.5rem 0; }
+
+  /* CALCULATOR */
+  .calc__wrap { padding: 1.5rem 1.25rem; }
+  .calc__result-card { padding: 1rem 1.25rem; }
+  .calc__result-num { font-size: 1.6rem; }
+
+  /* ANTES / DESPUÉS */
+  .compare__bill { padding: 1.25rem 1rem; }
+  .compare__amount { font-size: 2.2rem; }
+  .compare__list li { font-size: .82rem; }
+
+  /* GALERÍA */
+  .gallery__grid { grid-template-columns: 1fr; }
+
+  /* SISTEMAS SOLARES */
+  .sist-card__head { padding: 1.5rem 1.25rem 1.25rem; }
+  .sist-card__body { padding: 1.5rem 1.25rem 1.75rem; }
+  .sist-card__head h3 { font-size: 1.2rem; }
+  .sist-flow-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+    margin: 0 -.25rem;
+  }
+  .sist-flow { min-width: 260px; width: 260px; margin: 0 auto; }
+
+  /* TESTIMONIOS */
+  .testimonial { padding: 1.25rem 1rem; }
+  .testimonials__grid { gap: 1.25rem; }
+
+  /* GARANTÍAS */
+  .warranties__grid { grid-template-columns: 1fr; gap: 1rem; }
+  .warranty { padding: 1.5rem 1.25rem; }
+  .warranty__num { font-size: 2.75rem; }
+
+  /* FAQ */
+  .faq__question { padding: 1rem 1.25rem; font-size: .88rem; }
+  .faq__answer p { padding: 1rem 1.25rem; font-size: .85rem; }
+  .faq__item.open .faq__answer { max-height: 400px; }
+
+  /* BENEFICIOS */
+  .benefits__visual { height: 200px; }
+  .sun-ring--2, .sun-ring--3 { display: none; }
+  .benefits__list { gap: 1.25rem; margin-top: 1.75rem; }
+
+  /* PROCESO */
+  .process__steps { gap: 2rem; }
+  .process__line { left: 1.5rem; }
+
+  /* COBERTURA */
+  .coverage__grid { gap: .65rem; }
+  .city-card { padding: .85rem .9rem; font-size: .82rem; gap: .55rem; }
+  .city-card__dot { width: 8px; height: 8px; }
+
+  /* CONTACTO */
+  .contact__form { padding: 1.25rem; gap: 1rem; }
+  .contact__channels { gap: .65rem; }
+  .contact__channel { padding: .75rem 1rem; font-size: .85rem; }
+
+  /* FOOTER */
+  .footer { padding: 3rem 0 1.5rem; }
+  .footer__top { gap: 1.5rem; padding-bottom: 2rem; }
+  .footer__links a, .footer__social a { font-size: .82rem; }
+
+  /* WHATSAPP FAB */
+  .whatsapp-fab { bottom: 1.25rem; right: 1.25rem; width: 52px; height: 52px; }
+  .whatsapp-fab svg { width: 24px; height: 24px; }
+}
