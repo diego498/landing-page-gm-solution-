@@ -1984,12 +1984,18 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   .sist-card__body { padding: 1.5rem 1.25rem 1.75rem; }
   .sist-card__head h3 { font-size: 1.2rem; }
   .sist-flow-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
     border-radius: 10px;
-    margin: 0 -.25rem;
+    margin: 0;
   }
-  .sist-flow { min-width: 260px; width: 260px; margin: 0 auto; }
+  /* Override desktop negative margins for On-Grid's head-embedded diagram */
+  .sist-card__head .sist-flow-wrap {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+  }
+  .sist-flow { min-width: 260px; width: 260px; margin: 0; }
 
   /* TESTIMONIOS */
   .testimonial { padding: 1.25rem 1rem; }
