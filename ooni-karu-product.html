@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horno Eléctrico Palermo para Pizza y Carnes | 450°C – Hornos Fuoco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: #fff; color: #262626; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── VARIABLES ─── */
+    :root {
+      --black:   #26180a;
+      --yellow:  #DD7B39;
+      --cream:   #fff8f3;
+      --gray:    #888;
+      --mid:     #555;
+      --green:   #22c55e;
+      --red:     #e53935;
+      --r-sm:    8px;
+      --r-md:    12px;
+      --r-lg:    18px;
+      --ease:    cubic-bezier(.65,0,.35,1);
+    }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      background: var(--black);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .4px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .topbar span { display: flex; align-items: center; gap: 6px; }
+
+    /* ─── HEADER ─── */
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: 0 2px 8px rgba(38,38,38,.06);
+    }
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .logo { flex-shrink: 0; display: flex; align-items: center; }
+    .logo img { height: 44px; width: auto; object-fit: contain; }
+    .main-nav { display: flex; flex: 1; }
+    .main-nav a {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--r-sm);
+      transition: background .2s;
+    }
+    .main-nav a:hover { background: var(--cream); }
+    .header-actions { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+    .btn-icon {
+      width: 40px; height: 40px;
+      background: none; border: none; border-radius: var(--r-sm);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .btn-icon:hover { background: var(--cream); }
+    .cart-wrap { position: relative; }
+    .cart-count {
+      position: absolute; top: -4px; right: -4px;
+      background: var(--yellow); color: var(--black);
+      font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
+      width: 18px; height: 18px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ─── BREADCRUMB ─── */
+    .breadcrumb {
+      max-width: 1280px; margin: 0 auto; padding: 14px 40px;
+      font-family: 'Inter', sans-serif; font-size: 13px; color: var(--gray);
+      display: flex; gap: 6px; align-items: center;
+    }
+    .breadcrumb a { color: var(--gray); transition: color .2s; }
+    .breadcrumb a:hover { color: var(--black); }
+    .breadcrumb .sep { opacity: .4; }
+
+    /* ─── STICKY BUY BAR ─── */
+    .sticky-bar {
+      position: fixed;
+      top: -80px;
+      left: 0; right: 0;
+      z-index: 190;
+      background: var(--black);
+      color: #fff;
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.25);
+      transition: top .35s var(--ease);
+    }
+    .sticky-bar.visible { top: 0; }
+    .sticky-bar-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 22px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sticky-bar-price {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 26px;
+      letter-spacing: 1px;
+      color: var(--yellow);
+      flex-shrink: 0;
+    }
+    .sticky-bar-btn {
+      background: var(--yellow);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 28px;
+      border: none;
+      border-radius: var(--r-sm);
+      cursor: pointer;
+      letter-spacing: .3px;
+      flex-shrink: 0;
+      transition: background .2s;
+    }
+    .sticky-bar-btn:hover { background: #ffe94a; }
+
+    /* ─── PRODUCT HERO ─── */
+    .product-hero { background: var(--cream); padding: 40px 0 56px; }
+    .product-hero-inner {
+      max-width: 1280px; margin: 0 auto; padding: 0 40px;
+      display: grid; grid-template-columns: 52% 1fr;
+      gap: 56px; align-items: start;
+    }
+
+    /* ── Gallery ── */
+    .product-gallery { position: sticky; top: 90px; }
+    .gallery-main {
+      background: #fff; border-radius: var(--r-lg);
+      overflow: hidden; box-shadow: 0 8px 24px rgba(38,38,38,.10);
+      position: relative; aspect-ratio: 1;
+    }
+    .gallery-slides { display: flex; transition: transform .55s var(--ease); height: 100%; }
+    .gallery-slide {
+      min-width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center; padding: 24px;
+    }
+    .gallery-slide img { width: 100%; height: 100%; object-fit: contain; border-radius: 12px; }
+    .gallery-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 40px; height: 40px; background: #fff; border: none;
+      border-radius: 50%; box-shadow: 0 2px 8px rgba(38,38,38,.15);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: box-shadow .2s, transform .2s var(--ease); z-index: 2;
+    }
+    .gallery-btn:hover { box-shadow: 0 4px 16px rgba(38,38,38,.2); transform: translateY(calc(-50% - 2px)); }
+    .gallery-btn.prev { left: 12px; }
+    .gallery-btn.next { right: 12px; }
+    .gallery-counter {
+      position: absolute; bottom: 14px; right: 14px;
+      background: rgba(38,38,38,.55); color: #fff;
+      font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+      padding: 4px 10px; border-radius: 999px;
+    }
+    /* Sale ribbon */
+    .gallery-ribbon {
+      position: absolute; top: 16px; left: -4px;
+      background: var(--red); color: #fff;
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 800;
+      padding: 6px 16px 6px 12px;
+      border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      letter-spacing: .3px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,.2);
+      z-index: 3;
+    }
+    .gallery-ribbon::before {
+      content: '';
+      position: absolute; bottom: -6px; left: 0;
+      border-top: 6px solid #b71c1c;
+      border-left: 4px solid transparent;
+    }
+    .gallery-dots { display: flex; justify-content: center; gap: 6px; margin-top: 16px; }
+    .gallery-dot {
+      width: 8px; height: 8px; background: #ccc;
+      border-radius: 50%; cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .gallery-dot.active { background: var(--black); transform: scale(1.3); }
+    .gallery-thumbs { display: flex; gap: 10px; margin-top: 14px; overflow-x: auto; padding-bottom: 4px; }
+    .gallery-thumbs::-webkit-scrollbar { height: 4px; }
+    .gallery-thumbs::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
+    .gallery-thumb {
+      flex-shrink: 0; width: 72px; height: 72px; background: #fff;
+      border-radius: var(--r-md); border: 2px solid transparent;
+      cursor: pointer; overflow: hidden; transition: border-color .2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .gallery-thumb.active { border-color: var(--black); }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+
+    /* ── Product Info ── */
+    .product-info { padding-top: 8px; }
+    .product-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--yellow); color: var(--black);
+      font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700;
+      padding: 4px 12px; border-radius: 999px; letter-spacing: .3px;
+    }
+    .badge.dark { background: var(--black); color: #fff; }
+    .badge.red  { background: var(--red);   color: #fff; }
+    .badge.outline { background: transparent; border: 1.5px solid var(--black); }
+
+    .product-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: .95; letter-spacing: 1px; margin-bottom: 6px;
+    }
+    .product-subtitle { font-size: 16px; color: var(--mid); margin-bottom: 16px; }
+
+    /* Rating */
+    .product-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+    .stars { display: flex; gap: 2px; color: #f5a623; font-size: 16px; }
+    .rating-count { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--gray); }
+    .rating-count span { color: var(--black); font-weight: 600; }
+
+    /* Stock */
+    .stock-row {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .stock-indicator {
+      display: flex; align-items: center; gap: 7px;
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+    }
+    .stock-dot {
+      width: 9px; height: 9px; background: var(--green);
+      border-radius: 50%; animation: pulse 1.6s infinite; flex-shrink: 0;
+    }
+    .stock-dot.low { background: #f59e0b; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.2)} }
+    .stock-count {
+      font-family: 'Inter', sans-serif; font-size: 13px; color: var(--mid);
+    }
+    .social-proof {
+      font-family: 'Inter', sans-serif; font-size: 13px; color: var(--mid);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .social-proof::before {
+      content: '🔥'; font-size: 14px;
+    }
+
+    .divider { height: 1px; background: #e5e0d8; margin: 20px 0; }
+
+    /* Price */
+    .product-price-block { margin-bottom: 20px; }
+    .price-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+    .product-price {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(40px, 4vw, 56px);
+      line-height: 1; letter-spacing: 1px;
+    }
+    .product-price-original {
+      font-family: 'Inter', sans-serif; font-size: 18px;
+      color: var(--gray); text-decoration: line-through;
+    }
+    .price-save {
+      background: var(--red); color: #fff;
+      font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700;
+      padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+    }
+    .product-installments {
+      font-family: 'Inter', sans-serif; font-size: 14px;
+      color: var(--mid); margin-top: 6px;
+    }
+    .product-installments strong { color: var(--black); }
+
+    /* Spec badges */
+    .spec-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+    .spec-badge {
+      background: #fff; border: 1.5px solid #e5e0d8;
+      border-radius: var(--r-md); padding: 10px 16px; text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+    .spec-badge strong { display: block; font-size: 20px; font-family: 'Bebas Neue', cursive; letter-spacing: .5px; }
+    .spec-badge small { display: block; font-size: 11px; color: var(--gray); font-weight: 500; }
+
+    /* Quantity + CTA */
+    .buy-row { display: flex; gap: 12px; align-items: stretch; margin-bottom: 14px; }
+    .qty-selector {
+      display: flex; align-items: center;
+      background: #fff; border: 2px solid #e5e0d8;
+      border-radius: var(--r-sm); overflow: hidden; flex-shrink: 0;
+    }
+    .qty-btn {
+      width: 40px; height: 100%; background: none; border: none;
+      font-size: 20px; font-weight: 300; cursor: pointer;
+      color: var(--black); transition: background .15s;
+      display: flex; align-items: center; justify-content: center;
+      padding: 0 8px;
+    }
+    .qty-btn:hover { background: var(--cream); }
+    .qty-input {
+      width: 44px; border: none; border-left: 1px solid #e5e0d8;
+      border-right: 1px solid #e5e0d8;
+      text-align: center; font-family: 'Inter', sans-serif;
+      font-size: 16px; font-weight: 700; color: var(--black);
+      background: #fff; outline: none; padding: 0;
+    }
+    .qty-input::-webkit-outer-spin-button,
+    .qty-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+    .btn-primary {
+      flex: 1; background: var(--black); color: var(--yellow);
+      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
+      padding: 16px 28px; border: none; border-radius: var(--r-sm);
+      cursor: pointer; letter-spacing: .5px;
+      transition: background .2s var(--ease), transform .2s var(--ease);
+    }
+    .btn-primary:hover { background: #111; transform: translateY(-2px); }
+
+    .btn-secondary {
+      padding: 14px 22px; background: transparent;
+      color: var(--black); font-family: 'Inter', sans-serif;
+      font-size: 14px; font-weight: 700;
+      border: 2px solid var(--black); border-radius: var(--r-sm);
+      cursor: pointer; transition: background .2s, color .2s, transform .2s;
+      display: flex; align-items: center; gap: 6px; flex-shrink: 0;
+    }
+    .btn-secondary:hover { background: var(--black); color: var(--yellow); transform: translateY(-2px); }
+
+    /* Payment methods */
+    .payment-methods { margin-bottom: 20px; }
+    .payment-label {
+      font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
+      color: var(--gray); text-transform: uppercase; letter-spacing: .5px;
+      margin-bottom: 10px; display: block;
+    }
+    .payment-icons { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .pay-badge {
+      background: var(--cream); border: 1px solid #e5e0d8;
+      border-radius: 6px; padding: 5px 12px;
+      font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
+      color: var(--black); letter-spacing: .3px; white-space: nowrap;
+    }
+    .pay-badge.mp  { background: #009ee3; color: #fff; border-color: #009ee3; }
+    .pay-badge.wp  { background: #003893; color: #fff; border-color: #003893; }
+    .pay-badge.tc  { background: #eb0028; color: #fff; border-color: #eb0028; }
+
+    /* Footer brand logo */
+    .footer-brand .logo-big img { height: 52px; width: auto; filter: brightness(0) invert(1); }
+
+    /* Trust badges */
+    .trust-badges {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 10px; margin-bottom: 20px;
+    }
+    .trust-item {
+      background: var(--cream); border-radius: var(--r-md);
+      padding: 12px; text-align: center;
+    }
+    .trust-icon { font-size: 22px; margin-bottom: 4px; }
+    .trust-title {
+      font-family: 'Inter', sans-serif; font-size: 12px;
+      font-weight: 700; color: var(--black); display: block;
+    }
+    .trust-sub {
+      font-family: 'Inter', sans-serif; font-size: 11px;
+      color: var(--gray); display: block; margin-top: 2px;
+    }
+
+    /* Delivery */
+    .delivery-list { display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
+    .delivery-item {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Inter', sans-serif; font-size: 13px; color: var(--mid);
+    }
+    .delivery-item svg { color: var(--green); flex-shrink: 0; }
+
+    /* ─── TABS ─── */
+    .product-tabs {
+      background: #fff; border-bottom: 1px solid #eee;
+      position: sticky; top: 72px; z-index: 90;
+    }
+    .tabs-inner {
+      max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex;
+    }
+    .tab-btn {
+      font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+      color: var(--gray); background: none; border: none;
+      border-bottom: 3px solid transparent;
+      padding: 18px 24px 15px; cursor: pointer; letter-spacing: .3px;
+      transition: color .2s, border-color .2s; white-space: nowrap;
+    }
+    .tab-btn.active { color: var(--black); border-bottom-color: var(--black); }
+    .tab-btn:hover:not(.active) { color: var(--black); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ─── TAB BODY ─── */
+    .tabs-body { max-width: 1280px; margin: 0 auto; padding: 56px 40px; }
+
+    /* Description */
+    .description-grid { display: grid; grid-template-columns: 1fr 380px; gap: 64px; }
+    .description-text h2 {
+      font-family: 'Bebas Neue', cursive; font-size: 36px;
+      letter-spacing: 1px; margin-bottom: 16px;
+    }
+    .description-text p { font-size: 15px; color: var(--mid); margin-bottom: 16px; line-height: 1.7; }
+    .description-text h3 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; margin: 28px 0 12px; }
+    .feature-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .feature-item { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--mid); line-height: 1.5; }
+    .feature-icon {
+      width: 24px; height: 24px; background: var(--yellow);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* Video section */
+    .video-section { margin-top: 40px; }
+    .video-section h3 { font-family: 'Bebas Neue', cursive; font-size: 28px; letter-spacing: 1px; margin-bottom: 16px; }
+    .video-wrapper {
+      border-radius: var(--r-lg); overflow: hidden;
+      box-shadow: 0 8px 24px rgba(38,38,38,.12);
+      max-width: 360px;
+    }
+    .video-wrapper video {
+      width: 100%; display: block;
+    }
+
+    /* Specs */
+    .specs-box { background: var(--cream); border-radius: var(--r-lg); padding: 32px; }
+    .specs-box h3 { font-family: 'Bebas Neue', cursive; font-size: 24px; letter-spacing: 1px; margin-bottom: 20px; }
+    .specs-table { width: 100%; }
+    .specs-table tr { border-bottom: 1px solid #e5e0d8; }
+    .specs-table tr:last-child { border-bottom: none; }
+    .specs-table td { padding: 10px 0; font-family: 'Inter', sans-serif; font-size: 13px; }
+    .specs-table td:first-child { color: var(--gray); font-weight: 500; width: 50%; }
+    .specs-table td:last-child { color: var(--black); font-weight: 600; }
+
+    /* Reviews */
+    .reviews-summary {
+      display: flex; gap: 48px; align-items: center;
+      margin-bottom: 40px; padding: 32px;
+      background: var(--cream); border-radius: var(--r-lg);
+    }
+    .reviews-score { text-align: center; flex-shrink: 0; }
+    .reviews-score .big-num { font-family: 'Bebas Neue', cursive; font-size: 80px; line-height: 1; letter-spacing: 2px; }
+    .reviews-score .stars { justify-content: center; font-size: 20px; margin: 4px 0; }
+    .reviews-score small { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--gray); }
+    .rating-bars { flex: 1; }
+    .rating-bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 13px; }
+    .rating-bar-row span:first-child { width: 30px; text-align: right; color: var(--gray); }
+    .rating-bar-track { flex: 1; height: 8px; background: #e5e0d8; border-radius: 4px; overflow: hidden; }
+    .rating-bar-fill { height: 100%; background: var(--yellow); border-radius: 4px; }
+    .rating-bar-row span:last-child { width: 24px; color: var(--mid); font-weight: 600; }
+    .review-card { border: 1px solid #eee; border-radius: var(--r-md); padding: 24px; margin-bottom: 16px; }
+    .review-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+    .reviewer-name { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 15px; }
+    .reviewer-date { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--gray); }
+    .review-verified { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--green); font-weight: 600; display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
+    .review-text { font-size: 14px; color: var(--mid); line-height: 1.6; }
+    .review-img { width: 72px; height: 72px; border-radius: var(--r-md); object-fit: cover; margin-top: 12px; }
+
+    /* ─── RELATED ─── */
+    .related-section { background: var(--cream); padding: 64px 0; }
+    .related-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+    .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .section-title { font-family: 'Bebas Neue', cursive; font-size: 36px; letter-spacing: 1px; }
+    .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .product-card {
+      background: #fff; border-radius: var(--r-lg); overflow: hidden;
+      box-shadow: 0 2px 8px rgba(38,38,38,.06);
+      transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+    }
+    .product-card:hover { box-shadow: 0 8px 24px rgba(38,38,38,.12); transform: translateY(-4px); }
+    .card-img { aspect-ratio: 1; background: var(--cream); display: flex; align-items: center; justify-content: center; padding: 20px; position: relative; }
+    .card-img img { width: 100%; height: 100%; object-fit: contain; }
+    .card-badge { position: absolute; top: 12px; left: 12px; background: var(--yellow); color: var(--black); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+    .card-body { padding: 16px 20px 20px; }
+    .card-category { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+    .card-title { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+    .card-stars { color: #f5a623; font-size: 13px; margin-bottom: 12px; }
+    .card-price { font-family: 'Bebas Neue', cursive; font-size: 24px; letter-spacing: .5px; margin-bottom: 12px; }
+    .card-price small { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--gray); text-decoration: line-through; margin-left: 8px; font-weight: 400; }
+    .card-btn { width: 100%; background: var(--black); color: var(--yellow); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; padding: 10px; border: none; border-radius: var(--r-sm); cursor: pointer; transition: background .2s; }
+    .card-btn:hover { background: #111; }
+
+    /* ─── FOOTER ─── */
+    .site-footer { background: var(--black); color: #fff; padding: 80px 40px 40px; position: relative; overflow: hidden; }
+    .footer-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1600&auto=format&fit=crop&q=40') center/cover no-repeat; opacity: .12; z-index: 0; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 48px; margin-bottom: 56px; }
+    .footer-brand .logo-big { font-family: 'Bebas Neue', cursive; font-size: 52px; letter-spacing: 4px; line-height: 1; margin-bottom: 4px; }
+    .footer-brand .logo-big span { color: var(--yellow); }
+    .footer-brand p { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.6; margin: 12px 0 20px; }
+    .social-links { display: flex; gap: 10px; }
+    .social-link { width: 38px; height: 38px; background: rgba(255,255,255,.1); border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; transition: background .2s; }
+    .social-link:hover { background: var(--yellow); color: var(--black); }
+    .footer-col h4 { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--yellow); margin-bottom: 20px; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 14px; color: rgba(255,255,255,.65); transition: color .2s; }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-contact { font-size: 14px; color: rgba(255,255,255,.65); }
+    .footer-contact p { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,.4); }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a { color: rgba(255,255,255,.4); transition: color .2s; }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,.8); }
+
+    /* ─── WHATSAPP BUTTON ─── */
+    .whatsapp-btn {
+      position: fixed; bottom: 24px; right: 24px; z-index: 300;
+      width: 58px; height: 58px;
+      background: #25d366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45);
+      transition: transform .25s var(--ease), box-shadow .25s;
+      cursor: pointer;
+    }
+    .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.6); }
+    .whatsapp-btn svg { width: 30px; height: 30px; fill: #fff; }
+    .whatsapp-tooltip {
+      position: absolute; right: 68px; top: 50%; transform: translateY(-50%);
+      background: var(--black); color: #fff;
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+      padding: 8px 14px; border-radius: var(--r-sm); white-space: nowrap;
+      opacity: 0; pointer-events: none; transition: opacity .2s;
+    }
+    .whatsapp-tooltip::after { content: ''; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); border: 6px solid transparent; border-left-color: var(--black); border-right: none; }
+    .whatsapp-btn:hover .whatsapp-tooltip { opacity: 1; }
+
+    /* ─── TOAST ─── */
+    .toast {
+      position: fixed; bottom: 96px; left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--black); color: #fff;
+      font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500;
+      padding: 14px 24px; border-radius: 999px;
+      box-shadow: 0 12px 32px rgba(0,0,0,.25); z-index: 400;
+      display: flex; align-items: center; gap: 10px;
+      transition: transform .4s var(--ease), opacity .4s var(--ease);
+      opacity: 0;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .product-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .product-gallery { position: static; }
+      .description-grid { grid-template-columns: 1fr; gap: 32px; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .topbar { font-size: 11px; gap: 16px; }
+      .header-inner { padding: 0 20px; }
+      .main-nav { display: none; }
+      .breadcrumb, .product-hero-inner, .tabs-body, .related-inner, .tabs-inner { padding-left: 20px; padding-right: 20px; }
+      .product-title { font-size: 52px; }
+      .spec-badges { display: grid; grid-template-columns: repeat(2, 1fr); }
+      .buy-row { flex-wrap: wrap; }
+      .btn-primary { order: -1; min-width: 100%; }
+      .trust-badges { grid-template-columns: repeat(3, 1fr); }
+      .related-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .site-footer { padding: 48px 20px 32px; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .sticky-bar { padding: 10px 20px; }
+      .sticky-bar-title { font-size: 16px; max-width: 120px; }
+      .reviews-summary { flex-direction: column; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+    Despacho express Santiago
+  </span>
+  <span>
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    Entrega 24–48 hrs
+  </span>
+  <span>
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+    3 cuotas sin interés
+  </span>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="fuoco-home.html" class="logo">
+      <img src="https://www.hornosfuoco.cl/wp-content/uploads/2025/03/Logo-Fuoco.webp" alt="Hornos Fuoco" />
+    </a>
+    <nav class="main-nav">
+      <a href="#">Hornos</a>
+      <a href="#">Accesorios</a>
+      <a href="#">Palas</a>
+      <a href="#">Packs</a>
+      <a href="#">Ofertas</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-icon" aria-label="Buscar">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <div class="cart-wrap">
+        <button class="btn-icon" aria-label="Carrito">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </button>
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY BUY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <span class="sticky-bar-title">Horno Palermo 450°C</span>
+  <span class="sticky-bar-price">$630.000 CLP</span>
+  <button class="sticky-bar-btn" onclick="addToCart()">Comprar ahora →</button>
+</div>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+  <a href="fuoco-home.html">Inicio</a><span class="sep">/</span>
+  <a href="#">Hornos</a><span class="sep">/</span>
+  <a href="#">Eléctricos</a><span class="sep">/</span>
+  <span>Horno Palermo</span>
+</nav>
+
+<!-- PRODUCT HERO -->
+<section class="product-hero" id="productHero">
+  <div class="product-hero-inner">
+
+    <!-- GALLERY -->
+    <div class="product-gallery">
+      <div class="gallery-main">
+        <div class="gallery-slides" id="gallerySlides">
+          <div class="gallery-slide">
+            <img src="https://www.hornosfuoco.cl/wp-content/uploads/2025/03/DERECHA-1.webp" alt="Horno Palermo vista derecha" />
+          </div>
+          <div class="gallery-slide">
+            <img src="https://www.hornosfuoco.cl/wp-content/uploads/2025/03/FRENTE-1.webp" alt="Horno Palermo vista frontal" />
+          </div>
+          <div class="gallery-slide">
+            <img src="https://www.hornosfuoco.cl/wp-content/uploads/2025/03/IZQUIERDA-1.webp" alt="Horno Palermo vista izquierda" />
+          </div>
+          <div class="gallery-slide">
+            <img src="https://www.hornosfuoco.cl/wp-content/uploads/2025/03/Recurso-5.webp" alt="Horno Palermo detalle" />
+          </div>
+        </div>
+        <div class="gallery-ribbon">¡OFERTA! −25%</div>
+        <button class="gallery-btn prev" id="prevBtn" aria-label="Anterior">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="gallery-btn next" id="nextBtn" aria-label="Siguiente">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <div class="gallery-counter" id="galleryCounter">1 / 5</div>
+      </div>
+      <div class="gallery-dots" id="galleryDots"></div>
+      <div class="gallery-thumbs" id="galleryThumbs"></div>
+    </div>
+
+    <!-- PRODUCT INFO -->
+    <div class="product-info" id="productInfo">
+      <div class="product-badges">
+        <span class="badge red">🔥 Oferta</span>
+        <span class="badge dark">Más vendido</span>
+        <span class="badge">Eléctrico</span>
+      </div>
+
+      <h1 class="product-title">HORNO PALERMO<br>PIZZA Y CARNES</h1>
+      <p class="product-subtitle">Eléctrico · 450°C · Acero inox 443 · Uso doméstico y profesional</p>
+
+      <div class="product-rating">
+        <div class="stars">★★★★★</div>
+        <span class="rating-count"><span>4.9</span> · 47 reseñas verificadas</span>
+      </div>
+
+      <!-- Stock + social proof -->
+      <div class="stock-row">
+        <div class="stock-indicator">
+          <span class="stock-dot low"></span>
+          <span>¡Quedan solo 7 unidades!</span>
+        </div>
+        <span class="social-proof">8 personas lo compraron esta semana</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Spec badges -->
+      <div class="spec-badges">
+        <div class="spec-badge"><strong>450°C</strong><small>Temp. máx.</small></div>
+        <div class="spec-badge"><strong>1800W</strong><small>Potencia</small></div>
+        <div class="spec-badge"><strong>Inox 443</strong><small>Material</small></div>
+        <div class="spec-badge"><strong>61 cm</strong><small>Ancho</small></div>
+      </div>
+
+      <!-- Price -->
+      <div class="product-price-block">
+        <div class="price-row">
+          <div class="product-price">$630.000 CLP</div>
+          <div class="product-price-original">$840.000</div>
+          <span class="price-save">Ahorras $210.000</span>
+        </div>
+        <p class="product-installments">o <strong>3 cuotas sin interés de $210.000</strong> con Mercado Pago</p>
+      </div>
+
+      <!-- Quantity + CTA -->
+      <div class="buy-row">
+        <div class="qty-selector">
+          <button class="qty-btn" id="qtyMinus" aria-label="Disminuir cantidad">−</button>
+          <input class="qty-input" type="number" id="qtyInput" value="1" min="1" max="99" readonly />
+          <button class="qty-btn" id="qtyPlus" aria-label="Aumentar cantidad">+</button>
+        </div>
+        <button class="btn-primary" onclick="addToCart()">Comprar ahora →</button>
+        <button class="btn-secondary" onclick="addToCart()" title="Agregar al carrito">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Agregar
+        </button>
+      </div>
+
+      <!-- Payment methods -->
+      <div class="payment-methods">
+        <span class="payment-label">Medios de pago aceptados</span>
+        <div class="payment-icons">
+          <span class="pay-badge wp">WebPay</span>
+          <span class="pay-badge mp">Mercado Pago</span>
+          <span class="pay-badge tc">Tarjetas</span>
+          <span class="pay-badge">Transferencia</span>
+          <span class="pay-badge">Efectivo</span>
+        </div>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="trust-badges">
+        <div class="trust-item">
+          <div class="trust-icon">🛡️</div>
+          <span class="trust-title">Garantía 2 años</span>
+          <span class="trust-sub">Oficial Fuoco</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🚚</div>
+          <span class="trust-title">Envío gratis</span>
+          <span class="trust-sub">RM mismo día</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">↩️</div>
+          <span class="trust-title">30 días</span>
+          <span class="trust-sub">Devolución</span>
+        </div>
+      </div>
+
+      <!-- Delivery -->
+      <div class="delivery-list">
+        <div class="delivery-item">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+          Despacho express para Santiago — pedidos antes de las 12:00 hrs
+        </div>
+        <div class="delivery-item">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+          Regiones: 3–5 días hábiles por StarKen o Correos Chile
+        </div>
+        <div class="delivery-item">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+          Retiro en tienda Santiago disponible — listo en 2 hrs
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TABS -->
+<div class="product-tabs">
+  <div class="tabs-inner">
+    <button class="tab-btn active" data-tab="description">Descripción</button>
+    <button class="tab-btn" data-tab="specs">Especificaciones</button>
+    <button class="tab-btn" data-tab="reviews">Reseñas (47)</button>
+    <button class="tab-btn" data-tab="shipping">Despacho</button>
+  </div>
+</div>
+
+<!-- TAB CONTENT -->
+<div class="tabs-body">
+
+  <!-- DESCRIPTION -->
+  <div class="tab-content active" id="tab-description">
+    <div class="description-grid">
+      <div class="description-text">
+        <h2>El horno eléctrico que lo hace todo</h2>
+        <p>El <strong>Horno Palermo</strong> de Hornos Fuoco es el horno eléctrico para pizza y carnes más completo del mercado. Fabricado en acero inoxidable 443 de alta resistencia, alcanza los 450°C para entregar resultados de pizzería profesional directamente en tu hogar o negocio.</p>
+        <p>Con su sistema de control de temperatura preciso, resistencia de apagado retardado y encendido eléctrico, cocinar una pizza perfecta nunca fue tan fácil. Ideal para pizzas, carnes, empanadas y todo tipo de preparaciones al horno.</p>
+
+        <h3>¿Qué hace genial al Horno Palermo?</h3>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <div class="feature-icon"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>
+            <div><strong>450°C de temperatura máxima</strong> — Resultados de pizzería profesional en tu hogar. Pizza lista en minutos.</div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-icon"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>
+            <div><strong>Acero inoxidable 443</strong> — Material de alta resistencia al calor y la corrosión, fácil de limpiar y muy duradero.</div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-icon"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>
+            <div><strong>Control de temperatura</strong> — Termostato preciso para ajustar el calor según lo que estés cocinando.</div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-icon"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>
+            <div><strong>Apagado retardado</strong> — La resistencia se apaga automáticamente al terminar, protegiendo el horno y ahorrando energía.</div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-icon"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></div>
+            <div><strong>Encendido eléctrico</strong> — Sin complicaciones. Conéctalo, enciéndelo y cocina. Perfecto para uso doméstico y comercial.</div>
+          </li>
+        </ul>
+
+        <!-- VIDEO SECTION -->
+        <div class="video-section">
+          <h3>Ver el horno en acción</h3>
+          <div class="video-wrapper">
+            <video controls playsinline>
+              <source src="assets/Lleva tu cocina a otro nivel 🔥Con los hornos para pizza y carne Fuoco, vive una auténtica exper.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Specs sidebar -->
+      <div class="specs-box">
+        <h3>Especificaciones técnicas</h3>
+        <table class="specs-table">
+          <tr><td>Marca</td><td>Hornos Fuoco</td></tr>
+          <tr><td>Modelo</td><td>Palermo</td></tr>
+          <tr><td>Dimensiones</td><td>61 × 53.3 × 29.3 cm</td></tr>
+          <tr><td>Temperatura máx.</td><td>450°C</td></tr>
+          <tr><td>Potencia</td><td>1800 W</td></tr>
+          <tr><td>Material exterior</td><td>Acero inox 443</td></tr>
+          <tr><td>Material interior</td><td>Acero inox 443</td></tr>
+          <tr><td>Tipo</td><td>Eléctrico</td></tr>
+          <tr><td>Encendido</td><td>Eléctrico automático</td></tr>
+          <tr><td>Apagado retardado</td><td>Sí</td></tr>
+          <tr><td>Control temp.</td><td>Termostato regulable</td></tr>
+          <tr><td>Garantía</td><td>1 año</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPECS -->
+  <div class="tab-content" id="tab-specs">
+    <h2 style="font-family:'Bebas Neue',cursive;font-size:36px;letter-spacing:1px;margin-bottom:32px;">Especificaciones completas</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:32px;">
+      <div class="specs-box"><h3>Dimensiones</h3><table class="specs-table"><tr><td>Ancho</td><td>61 cm</td></tr><tr><td>Profundidad</td><td>53.3 cm</td></tr><tr><td>Alto</td><td>29.3 cm</td></tr></table></div>
+      <div class="specs-box"><h3>Rendimiento</h3><table class="specs-table"><tr><td>Temp. máxima</td><td>450°C</td></tr><tr><td>Potencia</td><td>1800 W</td></tr><tr><td>Tipo</td><td>Eléctrico</td></tr></table></div>
+      <div class="specs-box"><h3>Materiales</h3><table class="specs-table"><tr><td>Exterior</td><td>Acero inox 443</td></tr><tr><td>Interior</td><td>Acero inox 443</td></tr><tr><td>Sup. cocción</td><td>Acero refractario</td></tr></table></div>
+      <div class="specs-box"><h3>Funciones</h3><table class="specs-table"><tr><td>Encendido</td><td>Eléctrico</td></tr><tr><td>Apagado retardado</td><td>Sí</td></tr><tr><td>Control temp.</td><td>Termostato</td></tr><tr><td>Garantía</td><td>1 año</td></tr></table></div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="tab-content" id="tab-reviews">
+    <div class="reviews-summary">
+      <div class="reviews-score">
+        <div class="big-num">4.9</div>
+        <div class="stars">★★★★★</div>
+        <small>47 reseñas verificadas</small>
+      </div>
+      <div class="rating-bars">
+        <div class="rating-bar-row"><span>5 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:88%"></div></div><span>41</span></div>
+        <div class="rating-bar-row"><span>4 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:8%"></div></div><span>4</span></div>
+        <div class="rating-bar-row"><span>3 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:2%"></div></div><span>1</span></div>
+        <div class="rating-bar-row"><span>2 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:2%"></div></div><span>1</span></div>
+        <div class="rating-bar-row"><span>1 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div><span>0</span></div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header"><div><div class="reviewer-name">Carlos M.</div><div style="color:#f5a623;font-size:14px;margin-top:4px;">★★★★★</div></div><div class="reviewer-date">12 abril 2025</div></div>
+      <div class="review-verified">✓ Compra verificada</div>
+      <p class="review-text">Increíble horno. Las pizzas quedaron perfectas — base crujiente, bordes perfectamente carbonizados como en Nápoles. El Horno Palermo de Fuoco es un cambio total, puedes ver exactamente cómo va la cocción. Vale cada peso.</p>
+    </div>
+    <div class="review-card">
+      <div class="review-header"><div><div class="reviewer-name">María P.</div><div style="color:#f5a623;font-size:14px;margin-top:4px;">★★★★★</div></div><div class="reviewer-date">3 marzo 2025</div></div>
+      <div class="review-verified">✓ Compra verificada</div>
+      <p class="review-text">La entrega fue rapidísima, llegó al día siguiente en Santiago. El Fuoco Palermo es muy fácil de usar y el manual está en español. Ya hicimos pizzas 5 veces y cada vez mejor. 100% recomendado para toda la familia.</p>
+    </div>
+    <div class="review-card">
+      <div class="review-header"><div><div class="reviewer-name">Felipe G.</div><div style="color:#f5a623;font-size:14px;margin-top:4px;">★★★★★</div></div><div class="reviewer-date">18 febrero 2025</div></div>
+      <div class="review-verified">✓ Compra verificada</div>
+      <p class="review-text">Vengo de tener otro horno de otra marca y la diferencia es enorme. El Fuoco Palermo llega a los 450°C reales y el control de temperatura es muy preciso. Si están dudando, el Palermo de Hornos Fuoco es perfecto.</p>
+    </div>
+  </div>
+
+  <!-- SHIPPING -->
+  <div class="tab-content" id="tab-shipping">
+    <div style="max-width:680px;">
+      <h2 style="font-family:'Bebas Neue',cursive;font-size:36px;letter-spacing:1px;margin-bottom:24px;">Información de despacho</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="padding:24px;background:var(--cream);border-radius:var(--r-lg);"><h3 style="font-family:'Inter',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;">🚀 Despacho Express – Santiago RM</h3><p style="font-size:14px;color:var(--mid);line-height:1.6;margin:0">Pedidos antes de las 12:00 hrs se despachan el mismo día. Pedidos después salen el día hábil siguiente.</p></div>
+        <div style="padding:24px;background:var(--cream);border-radius:var(--r-lg);"><h3 style="font-family:'Inter',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;">📦 Despacho a Regiones</h3><p style="font-size:14px;color:var(--mid);line-height:1.6;margin:0">3 a 5 días hábiles por StarKen o Correos de Chile. Con número de seguimiento.</p></div>
+        <div style="padding:24px;background:var(--cream);border-radius:var(--r-lg);"><h3 style="font-family:'Inter',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;">🏪 Retiro en tienda</h3><p style="font-size:14px;color:var(--mid);line-height:1.6;margin:0">Listo para retirar en 2 horas hábiles tras confirmar el pago.</p></div>
+        <div style="padding:24px;background:var(--cream);border-radius:var(--r-lg);"><h3 style="font-family:'Inter',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;">🔄 Devoluciones</h3><p style="font-size:14px;color:var(--mid);line-height:1.6;margin:0">30 días sin preguntas. Garantía oficial Ooni de 2 años.</p></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- RELATED PRODUCTS -->
+<section class="related-section">
+  <div class="related-inner">
+    <div class="section-header">
+      <h2 class="section-title">También te puede interesar</h2>
+      <a href="#" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:var(--black)">Ver todo →</a>
+    </div>
+    <div class="related-grid">
+      <div class="product-card"><div class="card-img"><img src="assets/Espatula-redonda-para-pizza.webp" alt="Pala giratoria" /><span class="card-badge">Accesorio</span></div><div class="card-body"><div class="card-category">Palas</div><div class="card-title">Pala giratoria Ooni 12"</div><div class="card-stars">★★★★★</div><div class="card-price">$39.990 <small>$49.990</small></div><button class="card-btn" onclick="addToCart('Pala giratoria')">Agregar al carrito</button></div></div>
+      <div class="product-card"><div class="card-img"><img src="assets/Espatula-para-pizza-600x672.webp" alt="Espátula pizza" /></div><div class="card-body"><div class="card-category">Accesorios</div><div class="card-title">Espátula multifuncional</div><div class="card-stars">★★★★★</div><div class="card-price">$12.990</div><button class="card-btn" onclick="addToCart('Espátula')">Agregar al carrito</button></div></div>
+      <div class="product-card"><div class="card-img"><img src="assets/Cortador-de-pizza-.webp" alt="Cortador de pizza" /><span class="card-badge" style="background:var(--black);color:#fff;">Popular</span></div><div class="card-body"><div class="card-category">Accesorios</div><div class="card-title">Cortador de pizza profesional</div><div class="card-stars">★★★★☆</div><div class="card-price">$15.990</div><button class="card-btn" onclick="addToCart('Cortador pizza')">Agregar al carrito</button></div></div>
+      <div class="product-card"><div class="card-img"><img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=300&auto=format&fit=crop&q=70" alt="Pala perforada" /></div><div class="card-body"><div class="card-category">Palas</div><div class="card-title">Pala perforada para pizza</div><div class="card-stars">★★★★★</div><div class="card-price">$25.990 <small>$29.990</small></div><button class="card-btn" onclick="addToCart('Pala perforada')">Agregar al carrito</button></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-bg"></div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-big">
+          <img src="https://www.hornosfuoco.cl/wp-content/uploads/2025/03/Logo-Fuoco.webp" alt="Hornos Fuoco" />
+        </div>
+        <p>Hornos eléctricos para pizza y carnes fabricados en acero inoxidable 443. Calidad profesional para tu hogar o negocio.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-link" aria-label="Facebook"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="social-link" aria-label="YouTube"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.96 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Tienda</h4><ul><li><a href="#">Hornos de pizza</a></li><li><a href="#">Palas y utensilios</a></li><li><a href="#">Accesorios Ooni</a></li><li><a href="#">Ingredientes</a></li><li><a href="#">Ofertas</a></li></ul></div>
+      <div class="footer-col"><h4>Información</h4><ul><li><a href="#">Sobre Fuoco</a></li><li><a href="#">Cómo comprar</a></li><li><a href="#">Despacho y retiro</a></li><li><a href="#">Garantía</a></li><li><a href="#">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Contacto</h4><div class="footer-contact"><p><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Santiago, Chile</p><p><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>contacto@hornosfuoco.cl</p><p><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+56 9 XXXX XXXX</p></div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Hornos Fuoco. Todos los derechos reservados.</span>
+      <div class="footer-bottom-links"><a href="#">Privacidad</a><a href="#">Términos</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/56912345678?text=Hola,%20me%20interesa%20el%20Ooni%20Karu%2012G"
+   class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <div class="whatsapp-tooltip">¿Tienes dudas? Escríbenos</div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span>🛒</span>
+  <span id="toastMsg">¡Producto agregado al carrito!</span>
+</div>
+
+<script>
+  /* ── Gallery ── */
+  const slides  = document.getElementById('gallerySlides');
+  const dotsW   = document.getElementById('galleryDots');
+  const thumbsW = document.getElementById('galleryThumbs');
+  const counter = document.getElementById('galleryCounter');
+  const slideEls = slides.querySelectorAll('.gallery-slide');
+  const total = 4;
+  let current = 0;
+
+  slideEls.forEach((s, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsW.appendChild(dot);
+
+    const thumb = document.createElement('div');
+    thumb.className = 'gallery-thumb' + (i === 0 ? ' active' : '');
+    const img = s.querySelector('img');
+    if (img) { const t = document.createElement('img'); t.src = img.src; t.alt = img.alt; thumb.appendChild(t); }
+    thumb.addEventListener('click', () => goTo(i));
+    thumbsW.appendChild(thumb);
+  });
+
+  function goTo(n) {
+    current = ((n % total) + total) % total;
+    slides.style.transform = `translateX(-${current * 100}%)`;
+    counter.textContent = `${current + 1} / 4`;
+    dotsW.querySelectorAll('.gallery-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    thumbsW.querySelectorAll('.gallery-thumb').forEach((t, i) => t.classList.toggle('active', i === current));
+  }
+  document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+  document.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') goTo(current - 1); if (e.key === 'ArrowRight') goTo(current + 1); });
+  let tx = 0;
+  slides.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
+  slides.addEventListener('touchend',   e => { const dx = e.changedTouches[0].screenX - tx; if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1); });
+
+  /* ── Tabs ── */
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  /* ── Quantity ── */
+  const qtyInput = document.getElementById('qtyInput');
+  document.getElementById('qtyMinus').addEventListener('click', () => { const v = parseInt(qtyInput.value); if (v > 1) qtyInput.value = v - 1; });
+  document.getElementById('qtyPlus').addEventListener('click',  () => { const v = parseInt(qtyInput.value); if (v < 99) qtyInput.value = v + 1; });
+
+  /* ── Sticky bar ── */
+  const stickyBar  = document.getElementById('stickyBar');
+  const heroSection = document.getElementById('productHero');
+  const observer = new IntersectionObserver(([entry]) => {
+    stickyBar.classList.toggle('visible', !entry.isIntersecting);
+  }, { rootMargin: '-80px 0px 0px 0px' });
+  observer.observe(heroSection);
+
+  /* ── Cart ── */
+  let cartCount = 0;
+  function addToCart(name) {
+    cartCount++;
+    document.getElementById('cartCount').textContent = cartCount;
+    showToast(name ? `¡${name} agregado al carrito!` : '¡Horno Palermo agregado al carrito!');
+  }
+
+  /* ── Toast ── */
+  let toastTimer;
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 3200);
+  }
+
+
+</script>
+
+</body>
+</html>
