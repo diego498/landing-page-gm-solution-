@@ -1,5 +1,5 @@
 /* ===========================
-   GMsolution – script.js
+   LeadMed – script.js
 =========================== */
 
 /* ---- NAV scroll state ---- */
@@ -122,50 +122,6 @@ if (form) {
   });
 }
 
-/* ---- Calculadora de ahorro ---- */
-const billSlider   = document.getElementById('billSlider');
-const billDisplay  = document.getElementById('billDisplay');
-const monthlySaving = document.getElementById('monthlySaving');
-const yearlySaving  = document.getElementById('yearlySaving');
-const roiEl         = document.getElementById('roi');
-
-let savingFactor = 0.85;
-
-function formatCLP(n) {
-  return '$' + Math.round(n).toLocaleString('es-CL');
-}
-
-function updateCalc() {
-  if (!billSlider) return;
-  const bill = +billSlider.value;
-  billDisplay.textContent = bill.toLocaleString('es-CL');
-  const monthly = bill * savingFactor;
-  const yearly  = monthly * 12;
-  // Avg system cost ~3.5M CLP, ROI in years
-  const systemCost = bill < 50000 ? 1800000 : bill < 150000 ? 3500000 : 6000000;
-  const roiYears = (systemCost / yearly).toFixed(1);
-  monthlySaving.textContent = formatCLP(monthly);
-  yearlySaving.textContent  = formatCLP(yearly);
-  roiEl.textContent = `~${roiYears} años`;
-
-  // Update slider gradient
-  const pct = ((bill - 20000) / (500000 - 20000)) * 100;
-  billSlider.style.background = `linear-gradient(to right, var(--teal) ${pct}%, #ddd ${pct}%)`;
-}
-
-if (billSlider) {
-  billSlider.addEventListener('input', updateCalc);
-  updateCalc();
-}
-
-document.querySelectorAll('.calc__opt').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.calc__opt').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    savingFactor = +btn.dataset.factor;
-    updateCalc();
-  });
-});
 
 /* ---- FAQ accordion ---- */
 document.querySelectorAll('.faq__question').forEach(btn => {
@@ -198,3 +154,203 @@ const sectionObserver = new IntersectionObserver(
 );
 
 sections.forEach(s => sectionObserver.observe(s));
+
+/* ---- Hero bill counter con confetti (GlobalSun style) ---- */
+(function () {
+  const counter = document.getElementById('heroCounter');
+  const canvas  = document.getElementById('confettiCanvas');
+  if (!counter) return;
+
+  const START_VAL  = 150786;
+  const END_VAL    = 12786;
+  const COUNT_DUR  = 3000;   // ms para bajar el contador
+  const PAUSE_DUR  = 2200;   // ms que se ve el valor bajo antes de reiniciar
+  const LOOP_DELAY = 1000;   // ms antes de volver a animar
+
+  const fmt = (n) => '$' + Math.round(n).toLocaleString('es-CL');
+
+  /* --- Confetti --- */
+  function launchConfetti() {
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    canvas.width  = canvas.offsetWidth  || window.innerWidth;
+    canvas.height = canvas.offsetHeight || window.innerHeight;
+
+    const colors = ['#00d563','#004763','#15D0B5','#ffffff','#edb015','#00a84e'];
+    const particles = Array.from({ length: 140 }, () => ({
+      x: Math.random() * canvas.width,
+      y: -10 - Math.random() * 40,
+      r: Math.random() * 5 + 2,
+      vx: (Math.random() - 0.5) * 5,
+      vy: Math.random() * 4 + 2,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      opacity: 1,
+      rot: Math.random() * Math.PI * 2,
+      rotV: (Math.random() - 0.5) * 0.2,
+      w: Math.random() * 10 + 4,
+      h: Math.random() * 5 + 3,
+    }));
+
+    let frame = 0;
+    const maxFrames = 90;
+
+    const draw = () => {
+      if (frame > maxFrames) { ctx.clearRect(0, 0, canvas.width, canvas.height); return; }
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.y   += p.vy;
+        p.x   += p.vx;
+        p.rot += p.rotV;
+        p.vy  += 0.06;
+        p.opacity -= 0.011;
+        if (p.opacity <= 0) return;
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, p.opacity);
+        ctx.fillStyle = p.color;
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      });
+      frame++;
+      requestAnimationFrame(draw);
+    };
+    draw();
+  }
+
+  /* --- Contador descendente --- */
+  function runCounter() {
+    counter.textContent = fmt(START_VAL);
+    const t0 = performance.now();
+
+    const tick = (now) => {
+      const elapsed  = now - t0;
+      const progress = Math.min(elapsed / COUNT_DUR, 1);
+      const ease     = 1 - Math.pow(1 - progress, 3);
+      counter.textContent = fmt(START_VAL - (START_VAL - END_VAL) * ease);
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        counter.textContent = fmt(END_VAL);
+        launchConfetti();
+        // Pausa y repite el loop
+        setTimeout(() => {
+          counter.textContent = fmt(START_VAL);
+          setTimeout(runCounter, LOOP_DELAY);
+        }, PAUSE_DUR);
+      }
+    };
+
+    requestAnimationFrame(tick);
+  }
+
+  // Arrancar después de que entra la boleta con bounce
+  setTimeout(runCounter, 2000);
+})();
+
+/* ---- Why-us stagger observer ---- */
+const whyCards = document.querySelectorAll('.why-card');
+if (whyCards.length) {
+  const whyObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          whyObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+  whyCards.forEach(c => whyObserver.observe(c));
+}
+
+/* ---- Payment cards stagger observer ---- */
+const paymentCards = document.querySelectorAll('.payment-card');
+if (paymentCards.length) {
+  const payObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          payObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  paymentCards.forEach(c => payObserver.observe(c));
+}
+
+
+
+/* ---- Calculadora de ahorro solar ---- */
+(function () {
+  const slider   = document.getElementById('calcSlider');
+  const valEl    = document.getElementById('calcValue');
+  const barFill  = document.getElementById('calcBarFill');
+  const barSav   = document.getElementById('calcBarSaving');
+  const resMon   = document.getElementById('resMonthlySaving');
+  const resSys   = document.getElementById('resSystemSize');
+  const resPay   = document.getElementById('resPayback');
+  const resAnn   = document.getElementById('resAnnualSaving');
+  const res25    = document.getElementById('res25years');
+
+  if (!slider) return;
+
+  function fmt(n) {
+    return '$' + Math.round(n).toLocaleString('es-CL');
+  }
+
+  function calc(bill) {
+    const savingsRate   = 0.85;            // 85% de reducción de cuenta
+    const tariff        = 130;             // CLP/kWh tarifa residencial sur Chile
+    const peakSunH      = 3.5;            // horas sol pico, sur de Chile
+    const perfFactor    = 0.80;
+    const costPerKw     = 850000;          // CLP por kWp instalado
+
+    const monthlyKwh  = bill / tariff;
+    const sysKw       = Math.max(2, Math.round(monthlyKwh / (peakSunH * 30 * perfFactor)));
+    const sysCost     = sysKw * costPerKw;
+    const monthlySav  = bill * savingsRate;
+    const annualSav   = monthlySav * 12;
+    const paybackYrs  = sysCost / annualSav;
+    const payLow      = Math.max(3, Math.floor(paybackYrs * 0.9));
+    const payHigh     = Math.ceil(paybackYrs * 1.1);
+
+    return { monthlySav, sysKw, annualSav, payLow, payHigh };
+  }
+
+  function update() {
+    const bill = parseInt(slider.value);
+    const min  = parseInt(slider.min);
+    const max  = parseInt(slider.max);
+    const pct  = (bill - min) / (max - min) * 100;
+
+    // Actualizar display del valor
+    valEl.textContent = bill.toLocaleString('es-CL');
+
+    // Actualizar color del slider
+    slider.style.background =
+      `linear-gradient(to right, var(--teal) 0%, var(--teal) ${pct}%, #e2e8e6 ${pct}%, #e2e8e6 100%)`;
+
+    // Calcular resultados
+    const r = calc(bill);
+
+    // Barra de ahorro (% ahorrado)
+    const savPct = 85;
+    barFill.style.width = savPct + '%';
+    barSav.textContent  = fmt(r.monthlySav) + ' ahorrado';
+
+    // Cards de resultado
+    resMon.textContent = fmt(r.monthlySav);
+    resSys.textContent = r.sysKw + ' kWp';
+    resPay.textContent = r.payLow + '–' + r.payHigh + ' años';
+    resAnn.textContent = fmt(r.annualSav);
+    res25.textContent  = fmt(r.annualSav * 25);
+  }
+
+  slider.addEventListener('input', update);
+  update();
+})();

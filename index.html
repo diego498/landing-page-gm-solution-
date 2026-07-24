@@ -6,7 +6,7 @@
   <title>GMsolution – Paneles Solares en el Sur de Chile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,6 +21,7 @@
       <li><a href="#beneficios">Beneficios</a></li>
       <li><a href="#proceso">Proceso</a></li>
       <li><a href="#cobertura">Cobertura</a></li>
+      <li><a href="#calculadora">Calculadora</a></li>
       <li><a href="#contacto" class="nav__cta">Cotizar gratis</a></li>
     </ul>
     <button class="nav__burger" id="burger" aria-label="Menú">
@@ -35,30 +36,103 @@
       <li><a href="#beneficios" class="mobile-link">Beneficios</a></li>
       <li><a href="#proceso" class="mobile-link">Proceso</a></li>
       <li><a href="#cobertura" class="mobile-link">Cobertura</a></li>
+      <li><a href="#calculadora" class="mobile-link">Calculadora</a></li>
       <li><a href="#contacto" class="mobile-link">Cotizar gratis</a></li>
     </ul>
   </div>
 
   <!-- HERO -->
   <section class="hero" id="hero">
+    <canvas class="hero__confetti" id="confettiCanvas"></canvas>
     <div class="hero__bg">
       <div class="hero__overlay"></div>
-      <!-- Si tienes imagen, ponla en assets/hero.jpg -->
       <div class="hero__placeholder-img"></div>
     </div>
-    <div class="hero__content">
-      <p class="hero__tag reveal-up">Expertos en energía solar · Sur de Chile</p>
-      <h1 class="hero__title reveal-up">
-        Tu casa<br />
-        <span>autosustentable</span><br />
-        empieza aquí
-      </h1>
-      <p class="hero__sub reveal-up">Instalamos paneles solares desde Concepción al sur.<br />Ahorra hasta un 90% en tu cuenta de luz.</p>
-      <div class="hero__actions reveal-up">
-        <a href="#contacto" class="btn btn--primary">Cotizar gratis</a>
-        <a href="#proceso" class="btn btn--ghost">Ver cómo funciona</a>
+
+    <div class="hero__inner">
+      <!-- Texto izquierda -->
+      <div class="hero__content">
+        <p class="hero__tag reveal-up">Expertos en energía solar · Sur de Chile</p>
+        <h1 class="hero__title reveal-up">
+          Ahorra energía,<br />
+          tu boleta puede<br />
+          ser <span>$0</span>
+        </h1>
+        <p class="hero__sub reveal-up">Envíanos tu boleta o cuéntanos qué necesitas energizar.<br />En solo 2 semanas tu sistema puede estar instalado.</p>
+        <div class="hero__actions reveal-up">
+          <a href="#contacto" class="btn btn--primary">Cotizar gratis</a>
+          <a href="#proceso" class="btn btn--ghost">Ver cómo funciona</a>
+        </div>
+      </div>
+
+      <!-- Boleta realista derecha -->
+      <div class="hero__bill-side">
+        <div class="bill-doc" id="billDoc">
+
+          <!-- Encabezado -->
+          <div class="bill-doc__head">
+            <div class="bill-doc__logo-cell">
+              <div class="bill-doc__brand">⚡ GmSolution</div>
+              <div class="bill-doc__brand-sub">Energía Solar · Sur de Chile</div>
+            </div>
+            <div class="bill-doc__id-cell">
+              <div class="bill-doc__rut">R.U.T: 77.906.424-7</div>
+              <div class="bill-doc__type">BOLETA ELECTRÓNICA</div>
+              <div class="bill-doc__num">N° 000847</div>
+            </div>
+          </div>
+
+          <!-- Barra de región -->
+          <div class="bill-doc__region">XXX: SUR DE CHILE – LA ARAUCANÍA</div>
+
+          <!-- N° Cliente -->
+          <div class="bill-doc__client">
+            <span class="bill-doc__client-lbl">N° CLIENTE</span>
+            <span class="bill-doc__client-val">000847</span>
+          </div>
+
+          <!-- Info empresa -->
+          <div class="bill-doc__info">
+            <div>GIRO: Instalaciones de Energía Solar Fotovoltaica</div>
+            <div>CASA MATRIZ: Temuco, La Araucanía, Chile</div>
+          </div>
+
+          <!-- Destinatario -->
+          <div class="bill-doc__recipient">
+            <div>Sr. (a) <strong>Nombre y Apellido</strong></div>
+            <div>Dirección de Envío: CALLE NOMBRE N°</div>
+            <div>CIUDAD, SUR DE CHILE</div>
+          </div>
+
+          <!-- Total a pagar -->
+          <div class="bill-doc__total">
+            <div class="bill-doc__total-q">¿Cuánto<br/>debo?</div>
+            <div class="bill-doc__total-mid">
+              <div class="bill-doc__total-lbl">Total a pagar</div>
+              <div class="bill-doc__total-sub">Con GmSolution →</div>
+            </div>
+            <div class="bill-doc__total-amount" id="heroCounter">$150.786</div>
+          </div>
+
+          <!-- Nota período -->
+          <div class="bill-doc__period">
+            Período 19 FEB – 20 MAR · Incluye saldo anterior.<br />
+            *Revisa el detalle de tu cuenta al reverso de esta página →
+          </div>
+
+          <!-- Vencimiento -->
+          <div class="bill-doc__due">
+            <div class="bill-doc__due-q">¿Hasta cuándo<br />puedo pagar?</div>
+            <div class="bill-doc__due-box">
+              <div class="bill-doc__due-lbl">Fecha de vencimiento</div>
+              <div class="bill-doc__due-date">04 Abr 20XX</div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
+
     <div class="hero__scroll-hint">
       <span>Scroll</span>
       <div class="hero__scroll-line"></div>
@@ -70,7 +144,7 @@
     <div class="container">
       <div class="stats__grid">
         <div class="stat reveal-up">
-          <span class="stat__num" data-target="90">0</span><span class="stat__unit">%</span>
+          <span class="stat__num" data-target="100">0</span><span class="stat__unit">%</span>
           <p>Ahorro en luz</p>
         </div>
         <div class="stat reveal-up">
@@ -89,82 +163,61 @@
     </div>
   </section>
 
-  <!-- QUIÉNES SOMOS -->
-  <section class="section about" id="nosotros">
-    <div class="about__inner">
-      <div class="about__image reveal-left">
-        <!-- Reemplaza con tu foto real: assets/about.jpg -->
-        <div class="about__img-placeholder"></div>
-        <div class="about__badge-top">Desde 2014</div>
-        <div class="about__badge">
-          <span class="about__badge-num">+200</span>
-          <span class="about__badge-txt">instalaciones<br/>realizadas</span>
-        </div>
+  <!-- CASOS DE ÉXITO -->
+  <section class="section casos" id="casos">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Casos de éxito</p>
+        <h2 class="section-title">Energía que cambia vidas</h2>
       </div>
-      <div class="about__content reveal-right">
-        <p class="section-tag">Quiénes somos</p>
-        <h2 class="section-title">Energía solar hecha<br />a tu medida</h2>
-        <blockquote class="about__quote">
-          "Ahorra, cuida el planeta y transforma tu hogar con energía solar."
-        </blockquote>
-        <p class="about__text">
-          En GmSolution entendemos lo importante que es ahorrar y garantizar un futuro más sustentable. Diseñamos soluciones solares personalizadas para hogares y empresas en el sur de Chile, combinando tecnología, eficiencia y diseño.
-        </p>
-        <p class="about__text">
-          Cada proyecto refleja tu visión y necesidades, maximizando el aprovechamiento de la luz solar para reducir costos y cuidar el medioambiente. Nos mueve la excelencia y el compromiso con un mundo más limpio y accesible para todos.
-        </p>
-        <div class="about__actions">
-          <a href="#contacto" class="btn btn--primary">Conoce tu solución</a>
-          <a href="#galeria" class="btn btn--ghost-teal">Ver proyectos →</a>
+      <div class="casos__grid">
+
+        <div class="caso-card reveal-up">
+          <div class="caso-card__thumb">
+            <img src="assets/gallery1.png" alt="Proyecto residencial Temuco" loading="lazy" />
+            <div class="caso-card__play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="caso-card__body">
+            <p class="caso-card__tag">On-Grid · 6 kWp</p>
+            <h3 class="caso-card__title">Proyecto Residencial Temuco</h3>
+          </div>
         </div>
+
+        <div class="caso-card reveal-up">
+          <div class="caso-card__thumb">
+            <img src="assets/gallery2.png" alt="Proyecto comercial Valdivia" loading="lazy" />
+            <div class="caso-card__play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="caso-card__body">
+            <p class="caso-card__tag">On-Grid Trifásico · 22 kWp</p>
+            <h3 class="caso-card__title">Proyecto Comercial Valdivia</h3>
+          </div>
+        </div>
+
+        <div class="caso-card reveal-up">
+          <div class="caso-card__thumb">
+            <div class="caso-card__placeholder"></div>
+            <div class="caso-card__play">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="caso-card__body">
+            <p class="caso-card__tag">Off-Grid · 8 kWp</p>
+            <h3 class="caso-card__title">Proyecto Parcela Los Lagos</h3>
+          </div>
+        </div>
+
+      </div>
+      <div class="casos__cta reveal-up">
+        <a href="#contacto" class="btn btn--primary">Ver más casos de éxito</a>
       </div>
     </div>
   </section>
 
-  <!-- CALCULADORA DE AHORRO -->
-  <section class="section section--gray" id="calculadora">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <p class="section-tag">Calcula tu ahorro</p>
-        <h2 class="section-title">¿Cuánto podrías ahorrar<br />con paneles solares?</h2>
-      </div>
-      <div class="calc__wrap reveal-up">
-        <div class="calc__inputs">
-          <div class="calc__field">
-            <label>¿Cuánto pagas de luz al mes?</label>
-            <div class="calc__slider-wrap">
-              <input type="range" id="billSlider" min="20000" max="500000" step="5000" value="80000" class="calc__slider" />
-              <div class="calc__value">$<span id="billDisplay">80.000</span></div>
-            </div>
-          </div>
-          <div class="calc__field">
-            <label>Tipo de propiedad</label>
-            <div class="calc__options">
-              <button class="calc__opt active" data-factor="0.85">Casa</button>
-              <button class="calc__opt" data-factor="0.80">Departamento</button>
-              <button class="calc__opt" data-factor="0.88">Empresa</button>
-              <button class="calc__opt" data-factor="0.90">Campo</button>
-            </div>
-          </div>
-        </div>
-        <div class="calc__results">
-          <div class="calc__result-card">
-            <p class="calc__result-label">Ahorro mensual</p>
-            <p class="calc__result-num" id="monthlySaving">$68.000</p>
-          </div>
-          <div class="calc__result-card calc__result-card--gold">
-            <p class="calc__result-label">Ahorro anual</p>
-            <p class="calc__result-num" id="yearlySaving">$816.000</p>
-          </div>
-          <div class="calc__result-card">
-            <p class="calc__result-label">Retorno inversión</p>
-            <p class="calc__result-num" id="roi">~4 años</p>
-          </div>
-          <a href="#contacto" class="btn btn--primary btn--full">Quiero este ahorro</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- SERVICIOS -->
   <section class="section" id="servicios">
@@ -225,6 +278,100 @@
           <h3>Mantención y monitoreo</h3>
           <p>Revisión periódica, limpieza de paneles y monitoreo de rendimiento para que tu sistema siempre opere al máximo.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿POR QUÉ ELEGIRNOS? -->
+  <section class="section section--gray" id="porque">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">¿Por qué elegirnos?</p>
+        <h2 class="section-title">8 razones para elegir<br />GmSolution</h2>
+      </div>
+      <div class="why__grid">
+        <div class="why-card reveal-up">
+          <div class="why-card__num">01</div>
+          <h3>Diseño personalizado</h3>
+          <p>Cada sistema se diseña según tu consumo real y las características de tu propiedad. Sin soluciones genéricas.</p>
+        </div>
+        <div class="why-card reveal-up">
+          <div class="why-card__num">02</div>
+          <h3>Pasión solar</h3>
+          <p>La energía solar es nuestra única dedicación. Conocemos cada detalle del mercado y las mejores tecnologías.</p>
+        </div>
+        <div class="why-card reveal-up">
+          <div class="why-card__num">03</div>
+          <h3>Respuesta en 24h</h3>
+          <p>Recibes tu propuesta personalizada en menos de 24 horas desde que nos contactas. Sin esperas.</p>
+        </div>
+        <div class="why-card reveal-up">
+          <div class="why-card__num">04</div>
+          <h3>Cumplimos la normativa</h3>
+          <p>Tramitamos todos los permisos con tu distribuidora eléctrica. Sin trámites complicados para ti.</p>
+        </div>
+        <div class="why-card reveal-up">
+          <div class="why-card__num">05</div>
+          <h3>Equipo certificado</h3>
+          <p>Ingenieros y técnicos en constante capacitación con las últimas tecnologías fotovoltaicas del mercado.</p>
+        </div>
+        <div class="why-card reveal-up">
+          <div class="why-card__num">06</div>
+          <h3>Supervisión de ingeniería</h3>
+          <p>Cada instalación es supervisada por un ingeniero electricista certificado. Calidad garantizada.</p>
+        </div>
+        <div class="why-card reveal-up">
+          <div class="why-card__num">07</div>
+          <h3>Garantía extendida</h3>
+          <p>25 años en paneles, 10 en inversores y 5 en instalación. Tu inversión protegida por largo plazo.</p>
+        </div>
+        <div class="why-card reveal-up">
+          <div class="why-card__num">08</div>
+          <h3>Sistema llave en mano</h3>
+          <p>Nos encargamos de todo: diseño, permisos, instalación y puesta en marcha. Tú solo disfrutas el ahorro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SISTEMAS FOTOVOLTAICOS -->
+  <section class="section section--gray" id="fotovoltaicos">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Lo que hacemos</p>
+        <h2 class="section-title">Sistemas Fotovoltaicos</h2>
+        <p class="section-desc">Diseñamos e implementamos soluciones integrales que utilizan la radiación solar para producir energía limpia y segura, brindando soluciones sostenibles tanto para hogares como para empresas e industrias.</p>
+      </div>
+      <div class="fotov-grid reveal-up">
+
+        <div class="fotov-card">
+          <img src="assets/solar-ongrid.jpg" alt="Sistemas On-Grid" loading="lazy"/>
+          <div class="fotov-card__overlay">
+            <h3 class="fotov-card__title">Sistemas On-Grid</h3>
+          </div>
+        </div>
+
+        <div class="fotov-card">
+          <img src="assets/solar-offgrid.jpg" alt="Sistemas Off-Grid" loading="lazy"/>
+          <div class="fotov-card__overlay">
+            <h3 class="fotov-card__title">Sistemas Off-Grid</h3>
+          </div>
+        </div>
+
+        <div class="fotov-card">
+          <img src="assets/solar-hibrido.jpg" alt="Sistemas Híbridos" loading="lazy"/>
+          <div class="fotov-card__overlay">
+            <h3 class="fotov-card__title">Sistemas Híbridos</h3>
+          </div>
+        </div>
+
+        <div class="fotov-card">
+          <img src="assets/solar-respaldo.jpg" alt="Sistema de Respaldo Energético" loading="lazy"/>
+          <div class="fotov-card__overlay">
+            <h3 class="fotov-card__title">Sistema de Respaldo Energético</h3>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -518,51 +665,6 @@
     </div>
   </section>
 
-  <!-- ANTES / DESPUÉS -->
-  <section class="section section--gray" id="ahorro">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <p class="section-tag">El impacto real</p>
-        <h2 class="section-title">Lo que cambia en tu cuenta<br />desde el primer mes</h2>
-      </div>
-      <div class="compare__wrap reveal-up">
-        <div class="compare__card compare__card--before">
-          <div class="compare__label">Sin paneles solares</div>
-          <div class="compare__bill">
-            <p class="compare__company">Cuenta eléctrica</p>
-            <p class="compare__amount">$150.000</p>
-            <p class="compare__period">mensual promedio</p>
-            <ul class="compare__list compare__list--bad">
-              <li>Pago completo a la distribuidora</li>
-              <li>Tarifa sube cada año</li>
-              <li>Sin control sobre tu gasto</li>
-              <li>Dependencia total de la red</li>
-            </ul>
-          </div>
-        </div>
-        <div class="compare__arrow">
-          <svg viewBox="0 0 48 48" fill="none"><path d="M8 24h32M28 14l12 10-12 10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>GmSolution</span>
-        </div>
-        <div class="compare__card compare__card--after">
-          <div class="compare__label">Con paneles solares</div>
-          <div class="compare__bill">
-            <p class="compare__company">Cuenta eléctrica</p>
-            <p class="compare__amount">$15.000</p>
-            <p class="compare__period">mensual promedio</p>
-            <ul class="compare__list compare__list--good">
-              <li>90% de ahorro inmediato</li>
-              <li>Precio fijo, sin sorpresas</li>
-              <li>Tú generas tu propia energía</li>
-              <li>Puedes vender excedentes a la red</li>
-            </ul>
-          </div>
-          <div class="compare__savings">Ahorras $135.000/mes</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- GALERÍA -->
   <section class="section" id="galeria">
     <div class="container">
@@ -572,7 +674,7 @@
       </div>
       <div class="gallery__grid">
         <div class="gallery__item gallery__item--wide reveal-up">
-          <img src="assets/gallery1.png" alt="Instalación GmSolution" loading="lazy" />
+          <img src="assets/solar-respaldo.jpg" alt="Instalación GmSolution" loading="lazy" />
           <div class="gallery__overlay"><span>Proyecto residencial · Sur de Chile</span></div>
         </div>
         <div class="gallery__item reveal-up">
@@ -580,11 +682,11 @@
           <div class="gallery__overlay"><span>Vivienda familiar · Temuco</span></div>
         </div>
         <div class="gallery__item reveal-up">
-          <img src="assets/sistema-hibrido.png" alt="Sistema híbrido" loading="lazy" />
+          <img src="assets/solar-hibrido.jpg" alt="Sistema híbrido" loading="lazy" />
           <div class="gallery__overlay"><span>Sistema híbrido</span></div>
         </div>
         <div class="gallery__item reveal-up">
-          <img src="assets/sistema-offgrid.png" alt="Sistema off-grid" loading="lazy" />
+          <img src="assets/solar-offgrid.jpg" alt="Sistema off-grid" loading="lazy" />
           <div class="gallery__overlay"><span>Sistema off-grid</span></div>
         </div>
         <div class="gallery__item gallery__item--wide reveal-up">
@@ -595,96 +697,143 @@
     </div>
   </section>
 
+  <!-- ALTERNATIVAS DE PAGO -->
+  <section class="section" id="pago">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Facilidades de pago</p>
+        <h2 class="section-title">Elige cómo quieres<br />financiar tu sistema</h2>
+      </div>
+      <div class="payment__grid">
+        <div class="payment-card reveal-up">
+          <div class="payment-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="10" width="40" height="28" rx="4" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="4" y1="20" x2="44" y2="20" stroke="currentColor" stroke-width="2.5"/>
+              <rect x="8" y="26" width="12" height="5" rx="1.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Transferencia / Efectivo</h3>
+          <p>Pago directo sin intermediarios ni comisiones adicionales. La opción más simple.</p>
+          <ul class="payment-card__list">
+            <li>Sin costos extra</li>
+            <li>Contrato claro y transparente</li>
+            <li>Pago en cuotas acordadas</li>
+          </ul>
+        </div>
+        <div class="payment-card reveal-up">
+          <div class="payment-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="10" width="40" height="28" rx="4" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="4" y1="20" x2="44" y2="20" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="34" cy="30" r="5" fill="currentColor"/>
+              <circle cx="28" cy="30" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <h3>Tarjetas de crédito</h3>
+          <p>Acepta tarjetas de los principales bancos. Consulta disponibilidad de cuotas sin interés.</p>
+          <ul class="payment-card__list">
+            <li>Principales tarjetas aceptadas</li>
+            <li>Hasta 12 cuotas sin interés</li>
+            <li>Proceso rápido y seguro</li>
+          </ul>
+        </div>
+        <div class="payment-card reveal-up">
+          <div class="payment-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 6L6 16v4h36v-4L24 6Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <rect x="10" y="20" width="5" height="16" stroke="currentColor" stroke-width="2"/>
+              <rect x="21.5" y="20" width="5" height="16" stroke="currentColor" stroke-width="2"/>
+              <rect x="33" y="20" width="5" height="16" stroke="currentColor" stroke-width="2"/>
+              <line x1="6" y1="36" x2="42" y2="36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Financiamiento solar</h3>
+          <p>Accede a tasas preferenciales para energía solar. En muchos casos la cuota es menor a lo que ahorras.</p>
+          <ul class="payment-card__list">
+            <li>Tasas preferenciales</li>
+            <li>Hasta 60 meses plazo</li>
+            <li>Tu sistema se paga solo</li>
+          </ul>
+        </div>
+      </div>
+      <p class="payment__note reveal-up">¿Tienes dudas sobre el financiamiento? <a href="#contacto">Conversemos →</a></p>
+    </div>
+  </section>
+
   <!-- TESTIMONIOS -->
   <section class="section section--gray" id="testimonios">
     <div class="container">
       <div class="section-header reveal-up">
         <p class="section-tag">Lo que dicen nuestros clientes</p>
         <h2 class="section-title">Familias que ya<br />viven con energía solar</h2>
+        <div class="google-badge reveal-up">
+          <svg viewBox="0 0 24 24" width="28" height="28">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          <div>
+            <div class="google-score">5.0 <span class="google-stars">★★★★★</span></div>
+            <div class="google-count">Opiniones verificadas en Google</div>
+          </div>
+        </div>
       </div>
       <div class="testimonials__grid">
         <div class="testimonial reveal-up">
+          <div class="testimonial__top">
+            <div class="testimonial__avatar">CR</div>
+            <div class="testimonial__meta">
+              <strong>Carlos Rodríguez</strong>
+              <span>Temuco</span>
+            </div>
+            <svg class="testimonial__g" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
           <div class="testimonial__stars">★★★★★</div>
           <p class="testimonial__text">"Llevamos 8 meses con los paneles y nuestra cuenta bajó de $130.000 a menos de $12.000. El equipo de GmSolution fue súper profesional y rápido. 100% recomendado."</p>
-          <div class="testimonial__author">
-            <div class="testimonial__avatar">CR</div>
-            <div>
-              <strong>Carlos Rodríguez</strong>
-              <span>Temuco · Sistema residencial 6kW</span>
-            </div>
-          </div>
+          <span class="testimonial__tag">Sistema residencial 6kW</span>
         </div>
         <div class="testimonial reveal-up">
+          <div class="testimonial__top">
+            <div class="testimonial__avatar">MF</div>
+            <div class="testimonial__meta">
+              <strong>María Fernández</strong>
+              <span>Valdivia</span>
+            </div>
+            <svg class="testimonial__g" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
           <div class="testimonial__stars">★★★★★</div>
           <p class="testimonial__text">"Tenía dudas de que los paneles funcionaran en el sur con tanta lluvia. Me explicaron todo con paciencia y los resultados superaron mis expectativas. Ahorro un 87% cada mes."</p>
-          <div class="testimonial__author">
-            <div class="testimonial__avatar">MF</div>
-            <div>
-              <strong>María Fernández</strong>
-              <span>Valdivia · Sistema residencial 4kW</span>
-            </div>
-          </div>
+          <span class="testimonial__tag">Sistema residencial 4kW</span>
         </div>
         <div class="testimonial reveal-up">
+          <div class="testimonial__top">
+            <div class="testimonial__avatar">JP</div>
+            <div class="testimonial__meta">
+              <strong>Juan Pérez</strong>
+              <span>Puerto Montt</span>
+            </div>
+            <svg class="testimonial__g" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
           <div class="testimonial__stars">★★★★★</div>
           <p class="testimonial__text">"Instalamos un sistema off-grid en nuestra parcela en Los Lagos. Ya no dependemos de nadie para tener luz. La inversión se pagó en 3 años y medio."</p>
-          <div class="testimonial__author">
-            <div class="testimonial__avatar">JP</div>
-            <div>
-              <strong>Juan Pérez</strong>
-              <span>Puerto Montt · Sistema off-grid 8kW</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BENEFICIOS -->
-  <section class="section section--dark" id="beneficios">
-    <div class="container">
-      <div class="benefits__wrap">
-        <div class="benefits__visual reveal-left">
-          <div class="benefits__sun">
-            <div class="sun-core"></div>
-            <div class="sun-ring sun-ring--1"></div>
-            <div class="sun-ring sun-ring--2"></div>
-            <div class="sun-ring sun-ring--3"></div>
-          </div>
-        </div>
-        <div class="benefits__content reveal-right">
-          <p class="section-tag">¿Por qué energía solar?</p>
-          <h2 class="section-title">Invierte hoy,<br />ahorra siempre</h2>
-          <ul class="benefits__list">
-            <li>
-              <div class="benefit-dot"></div>
-              <div>
-                <strong>Ahorro inmediato</strong>
-                <p>Desde el primer mes notas la diferencia en tu cuenta de luz. Hasta 90% de reducción.</p>
-              </div>
-            </li>
-            <li>
-              <div class="benefit-dot"></div>
-              <div>
-                <strong>Retorno de inversión en 3–5 años</strong>
-                <p>Tu sistema se paga solo. Después de eso, la energía es prácticamente gratis.</p>
-              </div>
-            </li>
-            <li>
-              <div class="benefit-dot"></div>
-              <div>
-                <strong>Ideal para el sur lluvioso</strong>
-                <p>Los paneles modernos funcionan con luz difusa. El sur de Chile tiene energía solar todo el año.</p>
-              </div>
-            </li>
-            <li>
-              <div class="benefit-dot"></div>
-              <div>
-                <strong>Valoriza tu propiedad</strong>
-                <p>Una casa con paneles solares vale hasta un 20% más en el mercado.</p>
-              </div>
-            </li>
-          </ul>
+          <span class="testimonial__tag">Sistema off-grid 8kW</span>
         </div>
       </div>
     </div>
@@ -792,39 +941,218 @@
   </section>
 
   <!-- COBERTURA -->
-  <section class="section section--teal" id="cobertura">
+  <section class="section cobertura-nueva" id="cobertura">
     <div class="container">
       <div class="section-header reveal-up">
         <p class="section-tag">Dónde llegamos</p>
-        <h2 class="section-title">Desde Concepción<br />hasta Puerto Montt</h2>
+        <h2 class="section-title">Zonas de Cobertura</h2>
       </div>
-      <div class="coverage__grid">
-        <div class="city-card reveal-up">
-          <div class="city-card__dot"></div>
-          <span>Concepción</span>
-        </div>
-        <div class="city-card reveal-up">
-          <div class="city-card__dot"></div>
-          <span>Los Ángeles</span>
-        </div>
-        <div class="city-card reveal-up">
-          <div class="city-card__dot"></div>
-          <span>Temuco</span>
-        </div>
-        <div class="city-card reveal-up">
-          <div class="city-card__dot"></div>
-          <span>Valdivia</span>
-        </div>
-        <div class="city-card reveal-up">
-          <div class="city-card__dot"></div>
-          <span>Osorno</span>
-        </div>
-        <div class="city-card reveal-up">
-          <div class="city-card__dot"></div>
-          <span>Puerto Montt</span>
-        </div>
+    </div>
+
+    <div class="chile-svg-wrap reveal-up">
+      <svg class="chile-svg-map" viewBox="8 0 1387 314" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa de cobertura Chile">
+        <defs>
+          <filter id="icon-shadow" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.22)"/>
+          </filter>
+        </defs>
+    <path d="M 68.6,228.1 L 74.6,221.1 L 75.6,216.3 L 71.8,212.1 L 72.1,196.6 L 79,183.2 L 63.8,180.7 L 51.3,182.6 L 47.9,180.1 L 45,193.3 L 39.6,199 L 33.6,201.2 L 22.9,199.7 L 23.4,204 L 17.7,210.7 L 34.4,217 L 37.6,224.5 L 41.1,221.7 L 46.9,225.2 L 68.6,228.1 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 113.2,188.2 L 96.9,187.7 L 79,183.2 L 72.7,194.4 L 71.8,212.1 L 75.6,216.3 L 74.6,221.1 L 68.6,228.1 L 85.6,246.5 L 97.5,236.9 L 100.9,242.3 L 107.1,241.6 L 110.9,234.1 L 111.1,236.4 L 117.6,237.9 L 119.4,235.2 L 122.5,235.3 L 129.3,245 L 132.1,241.5 L 137,241.4 L 139.8,243.9 L 144.1,242.1 L 151.9,231.2 L 155.9,215.9 L 164.1,207.9 L 158.2,204 L 157,190.8 L 155.1,189.8 L 142.6,186.8 L 139.5,188.5 L 135.1,185.8 L 113.2,188.2 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 294.1,241.8 L 297.8,233.8 L 296.9,227 L 312,223.2 L 313.9,212.1 L 317.2,209.5 L 315.3,195.9 L 317.7,190.2 L 315.3,182.9 L 321.1,170.7 L 319.1,171.7 L 312.7,168 L 302.6,171 L 296.9,177.6 L 292.6,178.2 L 267.7,173.3 L 254.4,175.9 L 243.1,175.2 L 233.2,179.6 L 229.4,177.1 L 231.6,174.7 L 230.7,172.1 L 216.4,173.2 L 213.5,175.4 L 216.1,176.4 L 215.2,179.8 L 209.5,183.1 L 165,187.7 L 157,190.8 L 158.2,204 L 164.1,207.9 L 155.9,215.9 L 151.9,231.2 L 139.5,246.2 L 152.5,254.1 L 163.2,254 L 169.1,258.1 L 176.6,257.7 L 181,262.2 L 191,262.3 L 196.3,265.5 L 206.7,264.1 L 209,274.6 L 206.1,287.7 L 212.7,294.1 L 249.3,282.9 L 262.1,251.8 L 270,243.2 L 276.3,241 L 287.5,248.6 L 289.3,243.3 L 294.1,241.8 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1366.9,281.3 L 1369.6,282.9 L 1371.2,280.6 L 1371.8,284.4 L 1374.7,284.8 L 1374.2,278.7 L 1370.8,274.6 L 1371.4,280.1 L 1368.7,277.3 L 1366.9,281.3 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1344.2,242.8 L 1348,249.9 L 1350.6,245.6 L 1349.9,241.5 L 1352,241.6 L 1351.9,234.9 L 1348,226.3 L 1349.4,224.6 L 1354.8,251.7 L 1355.4,249.4 L 1357.2,253.7 L 1358.2,242.4 L 1356.3,237.6 L 1358.7,239.6 L 1361.2,256.1 L 1363.2,254.6 L 1363.8,259.4 L 1365.3,256.9 L 1367.7,261 L 1372.2,258 L 1368.3,255.3 L 1369,251 L 1365.8,252.9 L 1363.5,249.1 L 1362,240 L 1363.5,241.1 L 1362.9,235.4 L 1365,233.9 L 1363.2,229.2 L 1360.5,234.5 L 1360.5,228.8 L 1354.5,232.5 L 1356.8,228.3 L 1356.7,224.8 L 1353.7,222.9 L 1356.2,223.2 L 1354.1,218.9 L 1355.9,218.7 L 1356.4,212.9 L 1361,219.8 L 1363.7,218.6 L 1365,223.9 L 1365.2,216.8 L 1362.4,215.6 L 1366.2,214.3 L 1361,210.1 L 1359,200.8 L 1355.9,205.6 L 1357.7,197.8 L 1355.9,193.8 L 1355,197 L 1354.8,194 L 1353.5,198.6 L 1353,191.6 L 1349.9,197.1 L 1349.3,215.2 L 1347.9,213.8 L 1347.1,217 L 1344.2,242.8 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1345,177.9 L 1346.6,172.6 L 1347.6,174.4 L 1347.2,167.3 L 1348.3,182.1 L 1349.5,180.3 L 1350.7,183.4 L 1350.3,177.1 L 1352.2,179.9 L 1352.4,173.4 L 1354.2,174.3 L 1349.3,172.2 L 1351.1,168.1 L 1348.7,167.3 L 1350.1,160.8 L 1348.4,158.1 L 1346.6,160.1 L 1345.4,158.6 L 1344.6,163 L 1346.1,170.8 L 1342.9,180 L 1343.9,182 L 1345,177.9 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1343,260.8 L 1345.1,286.6 L 1349.8,292 L 1352.6,292.2 L 1358.5,285 L 1358.1,279.1 L 1353.9,279.8 L 1353.1,276.9 L 1353.7,273.9 L 1356.7,273.1 L 1356.7,265.5 L 1354.6,264.8 L 1354.9,268.9 L 1353.6,264.5 L 1354.8,256.3 L 1353,258.1 L 1352.1,255.1 L 1346.4,254 L 1344.8,247.5 L 1343,260.8 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1342.6,203.9 L 1343.8,210.3 L 1345.3,209.8 L 1343.8,211.8 L 1346,221.8 L 1349.2,195.2 L 1343.9,195 L 1342.9,199 L 1345.9,203.5 L 1343.2,200.9 L 1342.6,203.9 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1340.3,148.6 L 1343.7,161.3 L 1345.2,156.3 L 1341.8,151 L 1342.8,147.7 L 1345,147.7 L 1343.1,147.2 L 1344.5,144.2 L 1342,143 L 1340.3,148.6 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1309.1,139.3 L 1309.5,144.2 L 1313.6,146.5 L 1310.6,146 L 1311.3,149.9 L 1317.7,152.2 L 1314.6,153.9 L 1317,154.6 L 1313.7,156.5 L 1314.6,159.1 L 1318.6,157.8 L 1317.2,160 L 1321.2,160.1 L 1323.6,158 L 1322.7,154.9 L 1323.8,157.2 L 1325.5,155.6 L 1322.6,147.1 L 1319.9,152.5 L 1320.7,146.6 L 1318.8,143.9 L 1315.5,145.8 L 1318.7,142.4 L 1323,146.1 L 1322.8,141.9 L 1316.8,135.4 L 1314.6,138.8 L 1310.7,137.3 L 1309.1,139.3 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1305.9,128.2 L 1308.6,131.6 L 1310.7,130.6 L 1307.6,133.1 L 1308.7,137.3 L 1310.8,133.5 L 1314.6,138.2 L 1316.8,135.2 L 1313,127.1 L 1319.3,134.2 L 1322.6,130.7 L 1323.6,132 L 1322.8,126.5 L 1319.5,129.1 L 1318.6,120.7 L 1316.6,124.2 L 1315.8,119.9 L 1314.8,122.6 L 1313.4,121.5 L 1320.8,114.2 L 1320.1,111.9 L 1324.6,114.8 L 1324.7,110.7 L 1327.1,109.9 L 1325.1,107.4 L 1321.6,112.4 L 1323.1,109.4 L 1321.2,105.3 L 1319.5,106.1 L 1317.4,113 L 1314.8,111 L 1313.6,118.1 L 1308.5,115.8 L 1309.9,121.8 L 1305.9,128.2 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1296,176.7 L 1307.2,177.5 L 1311.7,181.6 L 1313.4,177.7 L 1310,170.2 L 1312.4,173.6 L 1318.7,174.9 L 1316.4,175.5 L 1318.2,183.3 L 1320,185.6 L 1321.5,183.9 L 1318.6,170.2 L 1313.4,163.2 L 1307.3,162.2 L 1305.1,166.4 L 1306.8,172.2 L 1303.5,168.8 L 1300.5,169 L 1296,176.7 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1289.6,72.5 L 1290.9,79.4 L 1293.6,74.8 L 1292.7,77 L 1296.4,80.8 L 1297.6,75.3 L 1292.9,64.9 L 1291.2,65.2 L 1294.9,74.5 L 1292.1,69.7 L 1292.3,74.6 L 1291.1,71.7 L 1289.6,72.5 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1289.3,90.4 L 1292.7,91.6 L 1290,92.2 L 1291.6,95.1 L 1297.2,96.3 L 1295.8,98.1 L 1292,96.8 L 1292.5,98.7 L 1298.5,103.6 L 1294.5,103.3 L 1298.7,112.5 L 1299.8,104.3 L 1301.2,104.9 L 1300.3,113.9 L 1304.1,120.5 L 1306.4,117.9 L 1305.9,112.8 L 1313.5,112.8 L 1311.5,107.2 L 1315.3,107 L 1313.5,103.1 L 1316.2,97.7 L 1314.8,89.5 L 1313.9,94.3 L 1312.4,92.5 L 1313.3,99.8 L 1310.5,95.9 L 1306.9,102.1 L 1307.3,96.7 L 1304.4,98.4 L 1303.8,96.8 L 1307.5,95.3 L 1308,90.2 L 1304.7,90.6 L 1301.4,97.3 L 1301.7,86.1 L 1299.8,86.3 L 1298.9,94.2 L 1298.9,88.7 L 1296.6,91.6 L 1298.4,83.5 L 1296,84.6 L 1295.4,80.1 L 1292.3,77.4 L 1295,90.6 L 1290.1,86.1 L 1289.3,90.4 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1265.8,35 L 1270,43.8 L 1273.7,45.1 L 1276.2,54 L 1274,54.3 L 1281.6,71.1 L 1278.9,71.2 L 1285.3,74.4 L 1281,75.7 L 1289.2,88.6 L 1288,72.1 L 1286.5,71.8 L 1286.7,75.7 L 1278.8,62.4 L 1280.4,47.4 L 1277.5,47 L 1274.8,40.6 L 1273.2,42.2 L 1274.1,38.4 L 1271,36.1 L 1270.1,38.5 L 1268.8,34.1 L 1265.8,35 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1263.8,143.4 L 1266.1,145.8 L 1270,145.4 L 1276.1,128.5 L 1280.6,124.7 L 1281.1,121.1 L 1278,117 L 1280.1,117.7 L 1278.6,108.2 L 1282.9,118.5 L 1283.3,106.4 L 1285.1,111.2 L 1289.3,107.2 L 1288.6,103.2 L 1294.9,112.4 L 1295.1,106.7 L 1281.8,81.3 L 1282.1,93.8 L 1286.6,101.3 L 1282.6,96.8 L 1281.4,103.2 L 1280.6,94.5 L 1272.9,94.5 L 1271,91.5 L 1269.7,98.6 L 1266.2,102.2 L 1267.8,105.2 L 1272.5,101.3 L 1269,106.1 L 1271.2,110.1 L 1263.9,119.9 L 1265.4,134.5 L 1263.8,143.4 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1255.4,67.4 L 1258,70 L 1261.2,68.4 L 1260.7,66.2 L 1261.7,68.2 L 1265.4,66.1 L 1266.4,60.2 L 1262.1,63.5 L 1264.1,59.3 L 1261.4,62.4 L 1262.9,56.1 L 1259.1,58.6 L 1255.4,67.4 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1323.9,169.1 L 1324,173.4 L 1331.2,167.3 L 1332.7,171 L 1330.1,169.3 L 1325.6,174 L 1331.3,188.1 L 1325.2,175.5 L 1322.2,175.3 L 1320.5,163.4 L 1316.3,161.6 L 1326.8,188.2 L 1324.9,190 L 1322.5,186.5 L 1320.7,192.7 L 1325,194.1 L 1327.2,198.6 L 1329.5,195.9 L 1328.1,199.3 L 1329.7,201.3 L 1332.8,200.7 L 1329.4,202.5 L 1321.6,198 L 1324.3,205.9 L 1327.1,204.8 L 1329.1,206.8 L 1327,206.4 L 1327.1,209.9 L 1323.3,208.4 L 1323.7,211.1 L 1327.3,219.7 L 1335.2,211 L 1336.3,214.7 L 1334.1,214.1 L 1330.7,217.7 L 1331.6,222.1 L 1327.4,222.1 L 1328.1,227.4 L 1314,190.7 L 1303.6,187.2 L 1294.4,214.6 L 1290.5,215.5 L 1288.2,207.1 L 1292.9,185.6 L 1289.3,177.8 L 1286.9,180.4 L 1285.9,177.1 L 1276.4,178.7 L 1274.8,181.6 L 1278.1,181.2 L 1278.2,184.3 L 1273.7,189.7 L 1272,188.9 L 1272.6,182.6 L 1269.2,183.5 L 1267.7,178.5 L 1266.5,188.4 L 1270.5,195.5 L 1267,203.1 L 1263.6,206.5 L 1259.8,206.2 L 1256.6,212 L 1265.1,221.4 L 1259.7,234.4 L 1263.9,239.7 L 1343,239.6 L 1341.2,233.1 L 1344.3,235.4 L 1345.7,225.4 L 1341.6,205 L 1338.8,206.8 L 1338.9,203.8 L 1341,203.3 L 1341.3,195.5 L 1338.9,194.1 L 1341.7,193.9 L 1342,189.9 L 1340.1,190 L 1342.4,187.1 L 1341.9,182 L 1335.7,186.3 L 1341.3,181.1 L 1339.3,172.1 L 1340.7,171.2 L 1342.1,180.4 L 1343.7,172.2 L 1340.7,164.1 L 1337.4,168.2 L 1338,161.4 L 1335.8,165.1 L 1335.3,162.4 L 1338.8,158.2 L 1334,160.6 L 1335.3,149.8 L 1333.8,152.5 L 1330.3,148.3 L 1331.5,145.6 L 1333.8,147.6 L 1332.6,146 L 1335.7,142.5 L 1333.9,138.4 L 1332.5,139.7 L 1334.6,137.2 L 1332.8,136.3 L 1334.3,128.4 L 1329.5,124.8 L 1327.5,125.7 L 1331.3,135.4 L 1328.9,133.5 L 1330.4,139.8 L 1325.8,131.1 L 1325.5,134.7 L 1329.6,141.2 L 1328.7,142.9 L 1325.9,138.5 L 1327.6,147.1 L 1326.1,145 L 1324.5,147 L 1327.5,159.1 L 1323.1,164 L 1323.9,169.1 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1243.8,48.9 L 1252.5,61.4 L 1245.8,49.6 L 1247.6,49.9 L 1245.6,43.9 L 1243.8,48.9 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1243.4,51.1 L 1250.5,66.6 L 1255.3,67.5 L 1254.8,63 L 1253.1,65.7 L 1243.4,51.1 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1237,56.7 L 1242,65.3 L 1248.5,70.2 L 1244.5,62.2 L 1243,63.9 L 1241.1,55 L 1242.1,59.3 L 1240.1,55.5 L 1237,56.7 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1234.6,33.8 L 1235.9,38.3 L 1240.8,34.5 L 1240.2,36.8 L 1245.3,32 L 1245.9,28.3 L 1234.6,33.8 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1233.7,26.8 L 1236.2,31.9 L 1243.7,28.9 L 1245.3,24.1 L 1241.3,22.5 L 1233.7,26.8 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1230.2,41.5 L 1236.5,56.4 L 1239.4,54.9 L 1237,46.2 L 1230.2,41.5 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1223.8,56.4 L 1231,58.4 L 1236.4,65.3 L 1236.7,59.7 L 1233.6,59.4 L 1231.2,50.5 L 1229,50.3 L 1228.9,53.5 L 1226,53.2 L 1223.8,56.4 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1213.9,20.4 L 1216.4,20.8 L 1216.6,24.8 L 1219.3,24.5 L 1218.2,22.4 L 1226.2,18.9 L 1227.2,14.5 L 1224,13.3 L 1222.3,17.9 L 1220.9,16.6 L 1218.8,19.5 L 1217,17 L 1213.9,20.4 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1211.8,37.7 L 1215,41.4 L 1215.4,39.3 L 1219,39.5 L 1216.4,35 L 1221,31.1 L 1222.1,23.5 L 1220.3,23.4 L 1218.6,28.5 L 1217.3,25.1 L 1215.4,26.9 L 1211.8,37.7 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1194.8,36.7 L 1197,43.8 L 1208,45.7 L 1205.1,42.2 L 1209.3,35 L 1206.5,32.9 L 1204.8,37.1 L 1205,33.4 L 1208,31 L 1207.1,28.2 L 1203.8,30.9 L 1204.3,26 L 1200.8,26.7 L 1202.5,37.8 L 1197.9,37.9 L 1195.8,35.1 L 1194.8,36.7 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1192.8,30.4 L 1194.3,34.1 L 1199.6,35 L 1198.6,36.8 L 1201.6,35.1 L 1200.3,27.3 L 1195.3,26.5 L 1195.5,31 L 1194.3,27 L 1192.8,30.4 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1186.1,12.1 L 1187.5,22.4 L 1191.5,17.4 L 1190.1,14 L 1192.2,16.8 L 1198,14.5 L 1196.7,10.1 L 1194.9,9.3 L 1193.6,11.6 L 1193.3,7.4 L 1190.5,12.1 L 1187.4,8.5 L 1186.1,12.1 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1199.7,50.3 L 1197.2,50.6 L 1199.4,47 L 1192.3,38 L 1187.9,42.9 L 1187,34.9 L 1184.3,39.9 L 1186,46.2 L 1193.4,51 L 1194,48 L 1197.1,53 L 1199.6,53.3 L 1199.7,50.3 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1169.4,14.5 L 1172,15.4 L 1170.4,19.9 L 1173,20.4 L 1172,26 L 1175.6,32.2 L 1177.8,30.2 L 1177.6,24.2 L 1178.4,26.8 L 1183.1,19 L 1183.6,21.5 L 1186.2,19.9 L 1185.2,13.4 L 1180,18.1 L 1182.6,8.7 L 1175.2,10.8 L 1175.9,16 L 1176.7,12.9 L 1178.7,17.6 L 1175.4,20.4 L 1172.4,11.4 L 1170.2,11 L 1169.4,14.5 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1159,6.3 L 1155.5,5.5 L 1154.8,12.8 L 1165,19.5 L 1164.4,12.8 L 1159.9,12.5 L 1163.9,3.7 L 1161.3,3.2 L 1159,6.3 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1134.2,23 L 1136.9,30.4 L 1144.3,28.9 L 1140.3,24.3 L 1138.9,17.7 L 1134.2,23 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1139.5,4.8 L 1131.8,15.1 L 1136.8,16.5 L 1138.4,14.9 L 1142.8,8.8 L 1141.2,3.7 L 1139.5,4.8 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1126,16.8 L 1128.2,22.7 L 1130.5,23.9 L 1130.7,21.1 L 1131.9,24.4 L 1135.9,18.1 L 1135.9,16.1 L 1131.5,15.1 L 1135.5,9.4 L 1130.5,3.4 L 1126.6,7.1 L 1127.1,10.7 L 1129.9,8.5 L 1127,12.5 L 1129.4,13.3 L 1127.4,13.4 L 1128.4,17.1 L 1126,16.8 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1300.1,129.7 L 1301.5,127.5 L 1299.6,120.5 L 1289.9,109.4 L 1284.8,115.7 L 1284.9,121.4 L 1288.7,122.3 L 1291.4,117.5 L 1291.4,119.9 L 1289.4,124.9 L 1284.2,124.8 L 1284,129.9 L 1291.5,133.2 L 1294.6,125.3 L 1295.9,126.3 L 1291.8,134 L 1283.5,134.1 L 1280,147.7 L 1271.9,155.2 L 1269.1,153.2 L 1268.8,146.5 L 1260.4,140.3 L 1259.2,116 L 1264.1,111.1 L 1261.9,106.5 L 1258.7,112.2 L 1261.3,106.4 L 1259.6,97.3 L 1265.7,93 L 1262.4,96.7 L 1264.6,102.8 L 1270.6,91.5 L 1272.6,93.7 L 1277.2,93.4 L 1279.9,87.6 L 1276.7,85.9 L 1279.9,85.5 L 1276.8,76.8 L 1272.6,86.2 L 1273.8,82.7 L 1269.5,72.6 L 1269.1,83.1 L 1267,81.8 L 1265.3,83.5 L 1260.6,79.3 L 1265.1,80.8 L 1266.4,79 L 1265.7,77.4 L 1264,79.6 L 1263.4,77.2 L 1266.6,70.8 L 1268.2,71.6 L 1267.3,67.5 L 1264.4,71.9 L 1262.6,69.3 L 1260.8,74.1 L 1259.1,72.3 L 1257.7,74.4 L 1255.8,69.9 L 1254.4,73.3 L 1251.1,71.7 L 1248.6,73.3 L 1242.1,67.1 L 1241.8,69.5 L 1247.3,73.8 L 1245.2,76.6 L 1248.3,79.5 L 1247.6,83.3 L 1244.5,84 L 1242.8,91.9 L 1248.5,87.5 L 1246.9,91.9 L 1250.6,94.3 L 1243.5,100.1 L 1243.6,97.2 L 1248.3,94.6 L 1242,93.3 L 1243.2,95 L 1239.8,95.2 L 1238.4,98.3 L 1248.1,107.2 L 1253.2,105.4 L 1252.9,101.6 L 1258,93.7 L 1255.9,100.7 L 1257.6,106.7 L 1255.4,103 L 1253,108 L 1248.2,109.5 L 1242.2,103 L 1238.5,103.3 L 1237.7,109.9 L 1234.9,108.3 L 1232.4,110.1 L 1225.6,101.9 L 1221.8,89.2 L 1219.8,89.2 L 1221.4,83.6 L 1222.9,89.9 L 1225.9,88.6 L 1223.2,91.9 L 1231.3,107.7 L 1234.5,103.6 L 1233.9,99.6 L 1229,85.2 L 1225.7,81.7 L 1232.8,91.8 L 1231.9,87.5 L 1234.2,90.6 L 1236.8,85.1 L 1233.5,92.6 L 1235.3,94.8 L 1238.3,87.6 L 1243.9,86.7 L 1244,84.1 L 1228.9,79.3 L 1246.2,82.7 L 1242.8,74.2 L 1235.9,70.2 L 1233.8,72.1 L 1240.1,77.8 L 1231.5,71.8 L 1229.9,74.9 L 1229.8,70.2 L 1233,67.9 L 1227.3,63.8 L 1227.1,60.9 L 1224,64.4 L 1223,59.1 L 1218.1,61.8 L 1226.7,71.9 L 1215.5,68.6 L 1213.7,66 L 1211.7,67.6 L 1215,69.5 L 1212.1,68.7 L 1208.9,66 L 1211.3,66.6 L 1214.2,61.7 L 1210.5,59.4 L 1211.9,54.4 L 1207.4,53.3 L 1204.8,57 L 1203.9,54.9 L 1207,51.2 L 1203.7,49.9 L 1200.4,54.9 L 1200.6,62.7 L 1203.8,66.2 L 1202.7,69.2 L 1199.1,62.4 L 1198.9,67.6 L 1198.1,65.3 L 1192.9,66.2 L 1193.6,76 L 1188.6,66.7 L 1184.9,72.7 L 1187.6,66.3 L 1197.1,64.1 L 1199.5,57.2 L 1196.8,53.9 L 1194.1,56.4 L 1196.4,53.7 L 1186.9,48.6 L 1189.3,62 L 1185.1,53.5 L 1182.6,58.2 L 1185.6,50.5 L 1184,47.2 L 1180.9,49.5 L 1178.7,48.2 L 1183.7,46.3 L 1176.8,34.4 L 1173.3,38.9 L 1174.7,41.3 L 1172.1,38.9 L 1170.4,43.8 L 1178.4,52.6 L 1179.5,59.2 L 1176.8,52.5 L 1168.7,46.2 L 1166.9,47.7 L 1170.7,61.8 L 1169.3,57.8 L 1166.7,64 L 1165.7,61.2 L 1169,57.4 L 1165.5,47.3 L 1162,47.4 L 1161.2,56.9 L 1161.3,48.7 L 1157,47.9 L 1153.3,55.6 L 1155.5,58.5 L 1154.1,61.4 L 1159.2,65.9 L 1157.2,67 L 1157.1,64.6 L 1152.7,62 L 1152.1,55.7 L 1143.7,56.9 L 1146.4,65.2 L 1142.3,58.5 L 1141.3,53 L 1143.6,55 L 1153.2,53.1 L 1148,45 L 1136.5,46.5 L 1137.3,44.8 L 1134.9,43.9 L 1131.6,47.7 L 1129.9,44.6 L 1127.2,44.6 L 1123.7,47.3 L 1124.3,59.5 L 1143.7,89.5 L 1150.7,90 L 1166.4,73.4 L 1170,77.1 L 1175.1,74.3 L 1180.3,79.6 L 1181.8,77.1 L 1188,79.5 L 1192.7,86.9 L 1198.4,85.1 L 1191.5,101 L 1193.8,105.3 L 1191,109.3 L 1193,115.9 L 1196.4,113.7 L 1200.8,117.1 L 1205.1,116.6 L 1205.9,112.9 L 1208.9,111.7 L 1213.7,116.8 L 1217.2,113 L 1218.4,115.1 L 1223.5,113.9 L 1225.8,110.6 L 1226.1,114.6 L 1229.9,115.5 L 1236,127.2 L 1239.7,125.1 L 1240.5,192.9 L 1245.9,210.1 L 1245.8,220.1 L 1250.4,231.9 L 1252.3,246 L 1254.1,245.4 L 1247.6,218.7 L 1250,211 L 1254.3,210.2 L 1259.6,203.9 L 1257.8,198 L 1263.6,185.6 L 1266.3,163.8 L 1268.3,168 L 1272.8,162.9 L 1273.7,166.5 L 1289.8,159.5 L 1296.7,161.7 L 1303.7,160 L 1307.7,148.8 L 1302.5,130.7 L 1300.8,128.2 L 1300.1,129.7 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1156.1,16 L 1155.5,14.6 L 1153.5,16.7 L 1152.7,14.1 L 1151.2,16.7 L 1152.5,14 L 1149.7,14 L 1151.2,11.3 L 1143.9,9.4 L 1143.2,13.6 L 1149,17.1 L 1148.8,24.3 L 1148.5,17.7 L 1142.9,14.2 L 1142.4,17.3 L 1146.3,20.9 L 1143.1,18.8 L 1142.5,24.3 L 1140.3,22.2 L 1144.8,29.3 L 1136.9,32.1 L 1133.9,27.8 L 1132.2,31.5 L 1133.3,26.6 L 1129.9,25.1 L 1128.1,30.3 L 1129.3,24.8 L 1126.1,24.5 L 1127.8,29.3 L 1125.5,25.5 L 1122.5,32.5 L 1125.6,32.2 L 1122.1,34.9 L 1123.9,38.6 L 1127.7,39.4 L 1124.5,39.8 L 1123.7,42.6 L 1145.2,45.1 L 1151.2,43.1 L 1151.6,40.5 L 1155.8,43.2 L 1156.6,40.4 L 1158.2,45.1 L 1161.2,45.2 L 1160.5,42.1 L 1161.8,44.5 L 1166.3,44.2 L 1168.8,41.1 L 1167.1,38.3 L 1169.1,40.9 L 1171.7,36.8 L 1170.2,28.9 L 1167,35.9 L 1165.9,34.3 L 1168.7,28.9 L 1167.3,27.5 L 1160.8,33.5 L 1163.1,30.1 L 1161.9,28.3 L 1155.4,28.7 L 1155.9,31.6 L 1153,28.8 L 1147,35.7 L 1148.5,34.3 L 1146.7,31.6 L 1149.4,33.5 L 1153.3,26.7 L 1151.1,26.1 L 1155.2,25.1 L 1154.2,22.8 L 1157.6,24.8 L 1156.2,26.9 L 1159.8,24.4 L 1160.4,27.2 L 1162.5,26.9 L 1166.2,24.1 L 1164.4,20.2 L 1156.1,16 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1116,14.1 L 1114.1,16.4 L 1119.6,16.5 L 1122.9,8.9 L 1121.5,5.5 L 1119.7,12.1 L 1120.6,8.2 L 1118,12.1 L 1119.8,5 L 1113.6,6.2 L 1113.1,14.8 L 1116,14.1 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1102.8,34.9 L 1112.3,40.1 L 1113.3,36.5 L 1115,39.5 L 1120.2,41.1 L 1119.2,43.3 L 1122.6,42.7 L 1119.3,26.1 L 1115.6,25.5 L 1112.5,30.1 L 1112.3,32.5 L 1116,34.1 L 1114.6,36.1 L 1109,32.3 L 1102.8,34.9 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1101.1,18.8 L 1101.6,24.9 L 1106.2,31.4 L 1104.8,33.4 L 1111.7,32 L 1114.4,25.1 L 1108,20.7 L 1106.7,22 L 1106.8,19.8 L 1101.4,17.3 L 1101.1,18.8 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1098.6,13.9 L 1114.8,23.7 L 1119.7,24.3 L 1123.1,18.3 L 1111,15.5 L 1113.4,10.3 L 1112.2,7.7 L 1110.5,12.5 L 1110.4,10 L 1106.7,11 L 1106.4,8.3 L 1101.7,6.8 L 1098.6,13.9 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1094.1,25.1 L 1097.7,26.7 L 1100.1,32.8 L 1101.3,27.3 L 1102.3,31.4 L 1104,30.8 L 1101.1,21.6 L 1098.5,25.7 L 1097.7,24 L 1099.8,17.2 L 1094.1,25.1 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1094.2,57 L 1092.3,59.5 L 1093.3,65.8 L 1096.1,65.7 L 1097.4,49.4 L 1094.8,42.4 L 1090.9,50.1 L 1093,58.2 L 1094.1,54.6 L 1095.8,56.7 L 1094.2,57 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1023,74 L 1024.2,81 L 1039.3,69.6 L 1026.9,70.4 L 1023,74 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1008.2,45 L 1009.4,48.9 L 1014.3,52.2 L 1017,51.2 L 1020.2,43.1 L 1014,41.8 L 1008.2,45 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1007.8,69.2 L 1009.5,73.6 L 1014.4,72.7 L 1014.8,70 L 1016.7,72.3 L 1019.6,70.9 L 1014.5,64.4 L 1007.8,69.2 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1005.1,66.1 L 1004.7,55.2 L 1001.5,52.8 L 999.6,56.5 L 1001.8,58.7 L 1001.2,63.9 L 1005.1,66.1 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 991.9,64.7 L 996.5,68.8 L 1002.6,68.5 L 1001.5,59 L 997.7,56.2 L 998.3,50.9 L 995.1,50.3 L 993.5,52.4 L 991.9,64.7 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 987.5,53.5 L 988.7,59.7 L 991.4,61.5 L 992.5,45.2 L 987.5,53.5 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 978,54.6 L 978.6,60.6 L 981.8,63.2 L 985.6,50.2 L 982.2,46.3 L 982.9,53.9 L 981.5,44.7 L 978.7,45.2 L 978,54.6 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 975.8,68.9 L 977.9,72.2 L 980.9,70.3 L 982.1,72.8 L 983.6,66.9 L 978.1,62.2 L 979.1,65.2 L 977.1,64.6 L 975.8,68.9 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 969.9,92.7 L 972.4,95.1 L 975.3,93.1 L 972.1,96.3 L 975.8,102.4 L 979.9,98.4 L 978.3,93.1 L 980.9,99 L 983,97.8 L 988.9,88.7 L 989.9,83 L 986.4,78.6 L 985.4,85.2 L 985.4,79.8 L 979.6,76.6 L 977.4,78.9 L 979.5,84.8 L 976.2,82.4 L 977.1,87.9 L 974.7,83.5 L 972.5,83.5 L 971.7,89.5 L 974.1,90.8 L 970.8,88.5 L 969.9,92.7 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 1088.9,43.6 L 1090.4,40.9 L 1088.2,35 L 1081.5,41.2 L 1082.1,45.3 L 1084.5,46.4 L 1087.5,42.2 L 1086.2,49 L 1089.1,50.9 L 1085.9,49.7 L 1085.7,56.2 L 1084.9,50.1 L 1084.3,59.7 L 1084.1,54.9 L 1080.7,59.7 L 1084.2,49.5 L 1081.9,48.3 L 1080.2,52.5 L 1082,46.7 L 1079.3,44.1 L 1078.2,48.9 L 1078.1,41.8 L 1070,51 L 1073.5,51.9 L 1070,51.7 L 1070.3,54.7 L 1075,55.7 L 1070.1,55 L 1066.7,59.2 L 1069.1,53.3 L 1066.3,51.7 L 1061.9,58 L 1062.1,55.3 L 1056.4,49.6 L 1054.7,50.8 L 1053.3,41.7 L 1055.5,43.6 L 1055.3,38.8 L 1057.6,36.7 L 1054.1,25.6 L 1049.8,23.1 L 1043.4,27.3 L 1049.6,20.9 L 1052.1,8.3 L 1056.4,4.9 L 1053.1,8.6 L 1053.3,12.9 L 1056,10.6 L 1057.2,14.1 L 1058.8,11.7 L 1058.1,15.9 L 1061,13.9 L 1061.7,8.1 L 1056.4,2.8 L 1048.7,4.4 L 1048.4,10.2 L 1046.8,7.6 L 1044.9,15 L 1043.4,13.4 L 1041.7,18.8 L 1038.5,19.3 L 1041,24.8 L 1038.8,20.9 L 1035.8,23.2 L 1037.9,28.7 L 1035.8,27.3 L 1033.2,29.8 L 1035.4,33.1 L 1031.9,32.1 L 1029.3,35.9 L 1027,35.1 L 1031.7,29.1 L 1031.8,24 L 1029.5,22.5 L 1028,26.7 L 1026.7,22.4 L 1023.1,22.6 L 1025.1,28.8 L 1022.9,26.8 L 1021.3,35.1 L 1024.1,35.5 L 1021.8,37.2 L 1022.1,40.5 L 1029,44.3 L 1026.1,46.1 L 1022.3,42.7 L 1020.7,46.4 L 1021.4,55.7 L 1024,53.5 L 1025,57.6 L 1026.9,57.8 L 1028.9,50.7 L 1028.4,55.8 L 1031.6,56.2 L 1033,50.5 L 1031.7,56.8 L 1027.6,57.1 L 1030.5,60.2 L 1035.6,53.2 L 1034.9,43.4 L 1037.1,47.9 L 1034.4,58.3 L 1035.9,57.4 L 1040.2,64 L 1035.9,58.5 L 1032.9,59.8 L 1032.6,62.8 L 1037.2,67.5 L 1047.7,60.2 L 1048.7,63.9 L 1045.2,67.5 L 1046.9,69.8 L 1045.6,71.5 L 1046,67.6 L 1042.6,67.5 L 1038.9,71.8 L 1039.1,77.6 L 1037.5,73.1 L 1029.1,80.1 L 1026,79.5 L 1021.8,86.1 L 1023.3,90.9 L 1021.4,86.6 L 1023.7,84.2 L 1022.5,74.3 L 1017.4,78.7 L 1016.4,86.8 L 1014.1,82 L 1020,72.8 L 1008.2,75.8 L 1002.8,85.2 L 1008.2,92.5 L 1009.6,97.4 L 1007.7,98.6 L 1005.8,97.9 L 1006.4,91.6 L 1000.9,84.8 L 1002.7,80 L 999.4,74.7 L 1001.3,77.4 L 999.4,77 L 997.7,82.6 L 995.9,81 L 995.1,82.7 L 994.7,79.5 L 990.8,80 L 990.7,88.5 L 983.3,100.6 L 984.3,102.2 L 980.4,101.3 L 974.8,105.9 L 969.4,106 L 974.7,101.4 L 967.9,94.2 L 965.7,85.7 L 962.7,87.6 L 963.5,82.7 L 959.3,84.8 L 959.8,88.9 L 956,87.7 L 949.7,92.5 L 950.5,98.6 L 947.7,90.2 L 946.2,93.8 L 947.8,96.7 L 944.2,98.7 L 948.8,99.8 L 949.7,108.8 L 945.4,114.3 L 950.1,117.4 L 951,116 L 953.4,122.8 L 955,122.1 L 955.4,132 L 959.3,134.3 L 960.9,130.6 L 964.8,132.8 L 970.9,131.5 L 971.9,151.2 L 973.7,154.8 L 977.7,155.9 L 978.9,151.9 L 983.6,152.2 L 985.7,149.8 L 983.1,143.3 L 985.4,130.5 L 983.8,123.3 L 988.9,124.1 L 991.6,140.3 L 1002.7,148.3 L 1006.3,141.4 L 1010,143.1 L 1012.1,133.5 L 1022,133.3 L 1026.9,138.4 L 1031,135.1 L 1032.8,128.4 L 1037.9,134.8 L 1052.2,137.3 L 1056.7,127 L 1062.4,126.9 L 1063.7,129.5 L 1066,127 L 1068.1,130.2 L 1071.3,130 L 1070.9,125.5 L 1075.3,123.9 L 1079.4,114 L 1084.2,115 L 1090,108.6 L 1096.5,107.7 L 1097.7,111 L 1100.9,110.6 L 1101.3,113.4 L 1110,117.8 L 1111.2,112.6 L 1112.4,113.8 L 1116.9,110.6 L 1116,106 L 1127,107.6 L 1132.7,98.9 L 1132.3,93.6 L 1141.7,87 L 1123.7,58.4 L 1124.2,50 L 1119.5,46 L 1115.3,53.2 L 1119.3,60.8 L 1117,58.1 L 1113.9,58.8 L 1113.1,63.6 L 1111.1,51.5 L 1109.6,60.9 L 1110.6,50.8 L 1106.3,49.6 L 1103.1,43.1 L 1100.6,43.9 L 1101.8,39.3 L 1098.1,38.1 L 1096.2,41.6 L 1098.8,48.5 L 1106.6,52.9 L 1098.7,49.4 L 1097.6,56.3 L 1101.5,64.3 L 1099.6,67.8 L 1102.1,67 L 1103.3,73.3 L 1107.2,71.9 L 1105.6,74 L 1107.2,76.7 L 1104.6,77 L 1107.4,82.8 L 1106.7,86 L 1106.2,80.6 L 1101.7,84.2 L 1105,81.1 L 1103.1,76.7 L 1099.7,73.2 L 1097.8,75.1 L 1098.7,71.9 L 1094.8,71 L 1097.3,85 L 1096.7,77.3 L 1092.8,75.2 L 1090.2,68.9 L 1082.4,70.1 L 1082.7,67.7 L 1082.8,70.5 L 1087.9,67.1 L 1090.7,67.7 L 1092.6,62.5 L 1090.5,57.5 L 1090.9,47.6 L 1089,47.6 L 1090.6,41.1 L 1088.9,43.6 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 294.1,241.8 L 299.4,240.3 L 325.3,247.3 L 329.1,241.4 L 336.4,240.3 L 351.5,251.3 L 355.8,250.2 L 358.6,241.3 L 360.7,240.7 L 357.9,233.9 L 361.2,231.2 L 364.9,232.4 L 369.7,227.1 L 372.8,228.4 L 376.3,224.7 L 386.3,222.4 L 388.7,218.5 L 397.8,213.2 L 396.5,211.4 L 401.6,208.8 L 403.9,204.6 L 430.1,199.8 L 432,194.4 L 436.6,192.3 L 443.1,194.4 L 443.9,187.1 L 438.6,182.5 L 438.9,177.3 L 426.9,174.2 L 429.9,162.3 L 438,157.1 L 435.4,153 L 431.9,152.3 L 430.3,147.3 L 431.8,142.4 L 422,141.7 L 414,149.2 L 410,148.5 L 402.6,153.7 L 394.1,152.9 L 384.7,155.4 L 377.8,158.1 L 376.5,162.5 L 360.4,160 L 358.7,164 L 354.5,166.2 L 350.1,164.7 L 339.3,169.8 L 332.9,169.3 L 331.3,171.7 L 321.1,170.7 L 315.3,182.9 L 317.7,190.2 L 315.3,195.9 L 317.3,208.8 L 313.9,212.1 L 314,218.2 L 312,223.2 L 296.9,227 L 297.8,233.8 L 294.1,241.8 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 499.1,137 L 473.3,136.2 L 469.4,137.8 L 471,141.7 L 467,146 L 460.7,145.1 L 457.8,149.9 L 452.5,147.7 L 447.2,149.5 L 437.6,148.1 L 431.8,142.4 L 430.3,147.3 L 431.9,152.3 L 435.4,153 L 438,157.1 L 429.9,162.3 L 426.9,174.2 L 438.9,177.3 L 438.6,182.5 L 443.9,187.1 L 443.1,194.4 L 455.9,196.9 L 463.9,194 L 466.2,199.2 L 474.4,194.3 L 473,187.6 L 476.1,188.9 L 478.2,186.2 L 493.5,182 L 497.8,183.7 L 502.2,179.3 L 499.2,177.6 L 502.9,175.2 L 517.6,173.8 L 520.8,176.8 L 526.3,177.5 L 530.2,185.7 L 533.5,183.1 L 533.3,179.7 L 536.5,182.6 L 541.2,182 L 541.2,178.1 L 537.8,177.4 L 536.4,170.8 L 533.6,170.7 L 532.4,168 L 534.5,161.5 L 532.8,157.7 L 537.6,153.5 L 536.2,152 L 538.8,147.7 L 538,140.9 L 528,142.4 L 526.4,140.3 L 523.5,142.1 L 499.1,137 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 537.9,140.9 L 538.8,147.7 L 536.2,152 L 537.6,153.5 L 532.8,157.7 L 534.5,161.5 L 532.8,169.2 L 536.4,170.8 L 537.8,177.4 L 541.2,178.1 L 543.4,185.5 L 546.8,184.8 L 550.7,188.7 L 558.4,188.3 L 564,193.1 L 573.7,184.6 L 567.8,178.2 L 570.2,175.7 L 565,172.5 L 566.3,158.6 L 574.1,159 L 575.4,151.9 L 580.3,151.6 L 581.8,147.6 L 587.8,148.1 L 591.3,144.4 L 594,146.9 L 594.4,140.5 L 598,140.4 L 601,134.8 L 599.8,130.9 L 597.6,131.2 L 592.3,136.8 L 585.8,138.8 L 581.8,135.5 L 577.8,137.2 L 570.3,134.4 L 567.6,140.4 L 559,141 L 554.4,144.6 L 550.1,143.1 L 545.6,145.4 L 537.9,140.9 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 565.4,170.6 L 565,172.5 L 570.2,175.7 L 568.3,179.3 L 573.7,184.6 L 568.9,189.6 L 578.5,192.7 L 577.3,199.5 L 601.2,196 L 602.9,198.7 L 607.3,197.1 L 611.3,199.3 L 612.5,191.1 L 603.7,186.6 L 604.4,181.3 L 597.4,178.7 L 600.1,166 L 603.8,165.3 L 605.6,161.4 L 607.7,162 L 609.1,156.7 L 604.1,149.3 L 605.2,145.9 L 601.4,135.2 L 598,140.4 L 594.4,140.5 L 594,146.9 L 591.3,144.4 L 587.8,148.1 L 581.8,147.6 L 580.3,151.6 L 575.4,151.9 L 574.1,159 L 566.5,158.4 L 565.4,170.6 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 706.9,113.7 L 706,103.7 L 705,106.6 L 698.9,105.2 L 694.9,98.6 L 689.7,98.2 L 689.5,95.9 L 673.6,99.7 L 679,113.4 L 680.7,114.1 L 680.8,111.6 L 682.5,112.9 L 680.8,117.5 L 682.2,120.4 L 677.8,122.1 L 682.6,126.4 L 682.6,131.8 L 692.6,148 L 689,150.2 L 687.2,157.1 L 697.6,158.9 L 697.5,155.3 L 703.3,153.1 L 706.7,156.2 L 708,152.3 L 713,155.3 L 711.9,145.5 L 709,141.9 L 713.5,140.4 L 712.7,132.4 L 715.3,129.2 L 715.8,116.2 L 710.5,119.3 L 706.9,113.7 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 626.9,124.3 L 635.6,135.7 L 632.8,136.9 L 634.7,146.8 L 630.9,148.7 L 630.4,154.6 L 633.4,160.5 L 633,167 L 637.4,171.8 L 635.6,174.6 L 638.2,180.5 L 644.1,180.1 L 645,174.8 L 647.6,173.2 L 649.3,178.2 L 660.3,178.7 L 667,182.2 L 669,178.7 L 675,180.3 L 678.9,178.6 L 678.1,173.6 L 683.1,169 L 688.6,168.7 L 687.7,162.9 L 691.2,160 L 686.2,155.3 L 692.6,148 L 682.6,131.8 L 682.6,126.4 L 677.8,122.1 L 682.2,120.4 L 680.8,117.5 L 682.5,112.9 L 680.8,111.6 L 679.8,114.2 L 678.5,108.6 L 676,108.9 L 673.9,99.3 L 666.3,106.4 L 657.8,104.7 L 654.4,109 L 645.9,112.5 L 641.5,118.8 L 634.3,119.4 L 626.9,124.3 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 608.5,125.5 L 599.2,131.1 L 603.7,139.4 L 602.1,140.2 L 605.2,145.9 L 604.1,149.3 L 609.1,156.7 L 607.7,162 L 605.6,161.4 L 603.8,165.3 L 600.1,166 L 597.3,177.9 L 598.4,180.2 L 604.4,181.3 L 604.2,187.1 L 616.5,192.5 L 629,182.5 L 630.9,184.4 L 638.2,180.5 L 635.6,174.6 L 637.4,171.8 L 633,167 L 633.4,160.5 L 630.4,154.6 L 630.9,148.7 L 634.7,146.8 L 632.8,136.9 L 635.6,135.7 L 626.9,123.6 L 608.5,125.5 Z" fill="#b5bdc7" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 878.4,62.2 L 881,62.2 L 880.9,58.3 L 881.9,63 L 878.9,69.5 L 880.1,75.7 L 884.2,72.8 L 888.7,77.9 L 892,75.6 L 895.5,80.5 L 898.1,79.7 L 899.7,69.5 L 903,68.8 L 905,71.9 L 906.1,67.4 L 901.4,66.7 L 905.2,64.7 L 914.2,75.4 L 917.4,76.2 L 916.9,67.7 L 920.6,73.4 L 923.9,74.2 L 923.1,70.8 L 926.6,75.6 L 925.7,66.8 L 932.8,69.6 L 931.7,63.6 L 935.2,65.2 L 936.7,63.7 L 931,44.6 L 915.8,53 L 909.5,54.1 L 901.9,51.8 L 895.5,52.4 L 888.6,57.2 L 883.7,56.3 L 882,58.3 L 880.2,56.2 L 878,58.2 L 878.4,62.2 Z" fill="#EDB115" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 868.2,96.9 L 869.4,90.3 L 871.6,88.5 L 875.6,90.5 L 878.7,86.4 L 877,66.9 L 872,70.2 L 872.1,74.5 L 868.7,77.9 L 872.1,71.5 L 868.1,68.1 L 871.7,68.2 L 866.8,63.4 L 850.1,60 L 848.4,63 L 838.7,63.9 L 835,67.6 L 824.4,67.2 L 827.4,89.1 L 839.3,105 L 836.2,131 L 841.6,126.7 L 852.9,131.6 L 863.4,128.5 L 866,131 L 872.1,129.3 L 878.4,133.4 L 884.7,132.4 L 889.7,134.7 L 892.8,128 L 890.1,123.7 L 891.7,119.1 L 899.7,121.1 L 900.3,124.2 L 903.4,125.1 L 910.7,119.5 L 918,120.7 L 928.6,134.6 L 932.6,134.4 L 933,129.1 L 937.7,127.8 L 938.7,130.6 L 941.1,129.9 L 940.6,133 L 944.6,139.6 L 949.4,133.8 L 955,137.3 L 959.3,134.3 L 954.5,130.3 L 955.4,123.2 L 951,116 L 950.1,117.4 L 945.4,114.3 L 949.7,108.8 L 948.8,99.8 L 944.2,98.7 L 947.8,96.7 L 946.2,93.8 L 947.7,90.2 L 942.9,95.7 L 940.5,90.2 L 933,89.7 L 929.8,96.2 L 926.1,94.8 L 922.5,96.6 L 924,101 L 919.3,98.2 L 920.4,100.9 L 918.4,101.5 L 913.2,96.7 L 904.6,98 L 906.3,108.4 L 896.6,97.4 L 892.7,105.7 L 903.3,111.9 L 896.8,109.6 L 895.2,112.8 L 893.6,110 L 891.9,113 L 890.5,109.7 L 885.3,111.1 L 887.8,106.2 L 883,95.9 L 876.6,104.1 L 874.6,113.3 L 868.4,115.9 L 864.5,116.1 L 864.6,114.3 L 873.2,113.1 L 876,106.3 L 868.2,96.9 Z" fill="#EDB115" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 797.8,121.6 L 794.6,127.5 L 797.2,134.9 L 809.5,135.9 L 812.1,139.2 L 818.9,136.4 L 818.4,131.3 L 822.9,131.2 L 828.1,137 L 830.1,131.3 L 834.8,130.2 L 837.7,126.4 L 839.3,105 L 827.4,89.1 L 827.2,78.2 L 824.7,76.4 L 825.8,71.9 L 823.9,67.8 L 819.9,69.8 L 814,69 L 809.9,76 L 813.3,78.7 L 811.5,79.2 L 813.4,82.2 L 810.7,83.3 L 812.3,86.9 L 809.6,82.9 L 804.1,85.6 L 810.1,82.2 L 810.6,78.2 L 805.2,78 L 798.9,83.2 L 793.6,83.6 L 794.6,86.1 L 790.3,91 L 790,96.6 L 794.5,95.7 L 797.8,121.6 Z" fill="#EDB115" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 730,99.4 L 732.6,104.2 L 731.8,108.9 L 738.7,112 L 744,122 L 744.1,126.6 L 746.9,129 L 745.6,133.8 L 755.4,137.5 L 747.4,146.4 L 747.5,156.2 L 750.4,159.3 L 759.5,159.7 L 765.4,164.9 L 771.4,161.7 L 771.1,156 L 777,144.8 L 789.8,146.6 L 798.7,141.2 L 800.6,143.4 L 802.3,142.1 L 794.7,128.1 L 798.6,118.2 L 797.9,116.4 L 796.3,117.5 L 797.8,114.6 L 794.5,95.7 L 790,96.6 L 790.3,91 L 794.6,86.1 L 793.6,83.6 L 788.8,84.2 L 761.4,74.4 L 758.6,79.5 L 761.7,82.6 L 756.2,80.9 L 750.3,89.2 L 747.9,89.2 L 746.1,84.9 L 737.5,91 L 734.3,90.9 L 734.2,88 L 731.2,89.3 L 730,99.4 Z" fill="#EDB115" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M 754.8,82.5 L 757.3,80.3 L 761.7,82.6 L 758.6,79.5 L 761.4,74.4 L 747.2,76.5 L 731.2,68.9 L 726.7,72 L 718,69.5 L 714.1,72.1 L 717.5,78.8 L 714.8,85.4 L 704.3,86.7 L 701.1,84.5 L 699.6,87.5 L 695.3,87.8 L 699,88.2 L 699.4,92.1 L 694,92 L 689.3,95.2 L 689.7,98.2 L 694.9,98.6 L 698.9,105.2 L 705,106.6 L 706,103.7 L 705.8,112.6 L 709.8,118.9 L 715.8,116.2 L 715.3,129.2 L 712.7,132.4 L 713.5,140.4 L 709,141.9 L 711.9,145.5 L 712.7,155.9 L 718.5,151.8 L 726.3,155.2 L 733.3,152 L 748.3,159.4 L 747.4,146.4 L 755.4,137.5 L 745.6,133.8 L 747,129.8 L 744.1,126.6 L 744.8,123.8 L 738.7,112 L 731.8,108.9 L 732.6,104.2 L 729.8,96.8 L 730.7,90.4 L 733.5,87.9 L 734.3,90.9 L 737.5,91 L 746.1,84.9 L 747.9,89.2 L 750.3,89.2 L 754.8,82.5 Z" fill="#EDB115" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+
+    <circle cx="897" cy="106" r="19" fill="white" filter="url(#icon-shadow)"/>
+    <g transform="translate(897,106)">
+      <rect x="-8" y="-7" width="16" height="13" rx="1.2" fill="#EDB115"/>
+      <line x1="-8" y1="-2.3" x2="8" y2="-2.3" stroke="white" stroke-width="1.4"/>
+      <line x1="-8" y1="2.4" x2="8" y2="2.4" stroke="white" stroke-width="1.4"/>
+      <line x1="-2.7" y1="-7" x2="-2.7" y2="6" stroke="white" stroke-width="1.4"/>
+      <line x1="2.7" y1="-7" x2="2.7" y2="6" stroke="white" stroke-width="1.4"/>
+      <line x1="0" y1="-11.5" x2="0" y2="-9.5" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="3.5" y1="-10.5" x2="2.5" y2="-9" stroke="#f59e0b" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="-3.5" y1="-10.5" x2="-2.5" y2="-9" stroke="#f59e0b" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="0" cy="-13" r="2.5" fill="#f59e0b"/>
+    </g>
+
+    <circle cx="814" cy="103" r="19" fill="white" filter="url(#icon-shadow)"/>
+    <g transform="translate(814,103)">
+      <rect x="-8" y="-7" width="16" height="13" rx="1.2" fill="#EDB115"/>
+      <line x1="-8" y1="-2.3" x2="8" y2="-2.3" stroke="white" stroke-width="1.4"/>
+      <line x1="-8" y1="2.4" x2="8" y2="2.4" stroke="white" stroke-width="1.4"/>
+      <line x1="-2.7" y1="-7" x2="-2.7" y2="6" stroke="white" stroke-width="1.4"/>
+      <line x1="2.7" y1="-7" x2="2.7" y2="6" stroke="white" stroke-width="1.4"/>
+      <line x1="0" y1="-11.5" x2="0" y2="-9.5" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="3.5" y1="-10.5" x2="2.5" y2="-9" stroke="#f59e0b" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="-3.5" y1="-10.5" x2="-2.5" y2="-9" stroke="#f59e0b" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="0" cy="-13" r="2.5" fill="#f59e0b"/>
+    </g>
+
+    <circle cx="765" cy="120" r="19" fill="white" filter="url(#icon-shadow)"/>
+    <g transform="translate(765,120)">
+      <rect x="-8" y="-7" width="16" height="13" rx="1.2" fill="#EDB115"/>
+      <line x1="-8" y1="-2.3" x2="8" y2="-2.3" stroke="white" stroke-width="1.4"/>
+      <line x1="-8" y1="2.4" x2="8" y2="2.4" stroke="white" stroke-width="1.4"/>
+      <line x1="-2.7" y1="-7" x2="-2.7" y2="6" stroke="white" stroke-width="1.4"/>
+      <line x1="2.7" y1="-7" x2="2.7" y2="6" stroke="white" stroke-width="1.4"/>
+      <line x1="0" y1="-11.5" x2="0" y2="-9.5" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="3.5" y1="-10.5" x2="2.5" y2="-9" stroke="#f59e0b" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="-3.5" y1="-10.5" x2="-2.5" y2="-9" stroke="#f59e0b" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="0" cy="-13" r="2.5" fill="#f59e0b"/>
+    </g>
+
+    <circle cx="727" cy="111" r="19" fill="white" filter="url(#icon-shadow)"/>
+    <g transform="translate(727,111)">
+      <rect x="-8" y="-7" width="16" height="13" rx="1.2" fill="#EDB115"/>
+      <line x1="-8" y1="-2.3" x2="8" y2="-2.3" stroke="white" stroke-width="1.4"/>
+      <line x1="-8" y1="2.4" x2="8" y2="2.4" stroke="white" stroke-width="1.4"/>
+      <line x1="-2.7" y1="-7" x2="-2.7" y2="6" stroke="white" stroke-width="1.4"/>
+      <line x1="2.7" y1="-7" x2="2.7" y2="6" stroke="white" stroke-width="1.4"/>
+      <line x1="0" y1="-11.5" x2="0" y2="-9.5" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="3.5" y1="-10.5" x2="2.5" y2="-9" stroke="#f59e0b" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="-3.5" y1="-10.5" x2="-2.5" y2="-9" stroke="#f59e0b" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="0" cy="-13" r="2.5" fill="#f59e0b"/>
+    </g>
+      </svg>
+      <p class="chile-svg-caption">Servicio disponible desde <strong>Concepción</strong> hasta <strong>Puerto Montt</strong></p>
+    </div>
+  </section>
+
+  <!-- CALCULADORA -->
+  <section class="section section--gray" id="calculadora">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Calculadora de ahorro</p>
+        <h2 class="section-title">¿Cuánto ahorrarías<br/>con paneles solares?</h2>
+        <p class="section-desc">Mueve el slider con tu cuenta de luz mensual y calcula tu ahorro al instante.</p>
       </div>
-      <p class="coverage__note reveal-up">¿Tu ciudad no está en la lista? Consúltanos igualmente.</p>
+      <div class="calc__wrap reveal-up">
+
+        <div class="calc__input-side">
+          <label class="calc__label">¿Cuánto pagas de luz al mes?</label>
+          <div class="calc__amount-display">
+            <span class="calc__currency">$</span>
+            <span class="calc__value" id="calcValue">100.000</span>
+            <span class="calc__unit">CLP/mes</span>
+          </div>
+          <input type="range" class="calc__slider" id="calcSlider"
+                 min="20000" max="500000" step="5000" value="100000">
+          <div class="calc__slider-labels">
+            <span>$20.000</span>
+            <span>$500.000</span>
+          </div>
+          <div class="calc__bar-wrap">
+            <div class="calc__bar-bg">
+              <div class="calc__bar-fill" id="calcBarFill"></div>
+            </div>
+            <div class="calc__bar-labels">
+              <span>Sin paneles</span>
+              <span id="calcBarSaving">$85.000 ahorrado</span>
+              <span>Cuenta original</span>
+            </div>
+          </div>
+          <p class="calc__note">* Estimación orientativa basada en datos del sur de Chile. La propuesta real puede variar según ubicación y consumo exacto.</p>
+        </div>
+
+        <div class="calc__results">
+          <div class="calc__result-card calc__result-card--main">
+            <div class="calc__result-icon">
+              <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#EDB115" opacity=".2"/><path d="M10 17l4 4 8-8" stroke="#EDB115" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <span class="calc__result-value" id="resMonthlySaving">$85.000</span>
+              <span class="calc__result-label">Ahorro mensual estimado</span>
+            </div>
+          </div>
+
+          <div class="calc__result-grid">
+            <div class="calc__result-card">
+              <span class="calc__result-icon-sm">⚡</span>
+              <span class="calc__result-value calc__result-value--sm" id="resSystemSize">6 kWp</span>
+              <span class="calc__result-label">Sistema recomendado</span>
+            </div>
+            <div class="calc__result-card">
+              <span class="calc__result-icon-sm">📅</span>
+              <span class="calc__result-value calc__result-value--sm" id="resPayback">5–7 años</span>
+              <span class="calc__result-label">Retorno de inversión</span>
+            </div>
+            <div class="calc__result-card">
+              <span class="calc__result-icon-sm">🌱</span>
+              <span class="calc__result-value calc__result-value--sm" id="resAnnualSaving">$1.020.000</span>
+              <span class="calc__result-label">Ahorro anual</span>
+            </div>
+            <div class="calc__result-card">
+              <span class="calc__result-icon-sm">🏠</span>
+              <span class="calc__result-value calc__result-value--sm" id="res25years">$25.500.000</span>
+              <span class="calc__result-label">Ahorro en 25 años</span>
+            </div>
+          </div>
+
+          <a href="#contacto" class="btn btn--primary calc__cta">Cotizar mi sistema gratis →</a>
+        </div>
+
+      </div>
     </div>
   </section>
 
