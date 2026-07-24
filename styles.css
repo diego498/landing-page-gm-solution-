@@ -2197,6 +2197,8 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 #testimonios .testimonial__author { border-top-color: rgba(255,255,255,.1); }
 #testimonios .testimonial__author strong { color: var(--white); }
 #testimonios .testimonial__author span { color: rgba(255,255,255,.45); }
+#testimonios .testimonial__meta strong { color: #ffffff; }
+#testimonios .testimonial__meta span { color: rgba(255,255,255,.55); }
 #testimonios .testimonial__avatar {
   background: var(--teal);
   border-radius: 0;
