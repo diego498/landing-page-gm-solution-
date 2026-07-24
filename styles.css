@@ -3686,7 +3686,7 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 =========================== */
 /* ===== BILL DOC — diseño boleta real ===== */
 .bill-doc {
-  width: 315px;
+  width: 380px;
   background: #ffffff;
   border-radius: 6px;
   overflow: hidden;
@@ -3714,112 +3714,147 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 0.7rem 0.8rem 0.6rem;
+  padding: 0.75rem 0.85rem 0.65rem;
   border-bottom: 2px solid #0a283c;
+  gap: 0.6rem;
+}
+
+.bill-doc__logo-cell {
+  display: flex;
+  align-items: flex-start;
   gap: 0.5rem;
 }
 
-.bill-doc__brand {
-  font-size: 0.82rem;
+.bill-doc__logo-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.bill-doc__company {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.bill-doc__company-name {
+  font-size: 0.75rem;
   font-weight: 900;
   color: #0a283c;
   letter-spacing: 0.01em;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  line-height: 1.2;
 }
 
-.bill-doc__brand-sub {
+.bill-doc__company-line {
+  font-size: 0.53rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.bill-doc__id-box {
+  border: 1.5px solid #0a283c;
+  border-radius: 4px;
+  padding: 0.35rem 0.55rem;
+  text-align: center;
+  flex-shrink: 0;
+  min-width: 95px;
+}
+
+.bill-doc__id-rut {
   font-size: 0.54rem;
-  color: #777;
-  margin-top: 3px;
+  color: #555;
+  margin-bottom: 2px;
+}
+
+.bill-doc__id-type {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #0a283c;
+  letter-spacing: 0.01em;
+}
+
+.bill-doc__id-num {
+  font-size: 0.78rem;
+  font-weight: 900;
+  color: #000;
+  margin-top: 2px;
+}
+
+/* Barra región */
+.bill-doc__region {
+  background: #0a283c;
+  color: #fff;
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bill-doc__region-num {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #EDB115;
   letter-spacing: 0.02em;
 }
 
-.bill-doc__id-cell {
-  text-align: right;
-  line-height: 1.55;
-}
-
-.bill-doc__rut {
-  font-size: 0.57rem;
-  color: #666;
-}
-
-.bill-doc__type {
-  font-size: 0.6rem;
-  font-weight: 700;
-  color: #0a283c;
-  background: #eef2f6;
-  padding: 1px 5px;
-  border-radius: 2px;
-  display: inline-block;
-  margin-top: 1px;
-}
-
-.bill-doc__num {
-  font-size: 0.72rem;
-  font-weight: 900;
-  color: #000;
-  margin-top: 1px;
-}
-
-/* Barra cliente navy */
-.bill-doc__clientbar {
-  background: #0a283c;
-  padding: 0.3rem 0.8rem;
+/* Fila cliente */
+.bill-doc__clientrow {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.3rem 0.85rem;
+  border-bottom: 1px dotted #ccc;
   gap: 0.5rem;
 }
 
-.bill-doc__clientbar-left {
+.bill-doc__clientrow-left {
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
 
-.bill-doc__clientbar-lbl {
-  font-size: 0.54rem;
+.bill-doc__clientbadge {
+  font-size: 0.52rem;
   font-weight: 700;
-  color: rgba(255,255,255,.75);
+  color: #fff;
+  background: #0a283c;
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
-.bill-doc__clientbar-val {
+.bill-doc__clientval {
   background: #EDB115;
   color: #0a283c;
   font-weight: 900;
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   padding: 0.1rem 0.45rem;
   border-radius: 2px;
-  letter-spacing: 0.03em;
 }
 
-.bill-doc__clientbar-right {
-  font-size: 0.53rem;
-  color: rgba(255,255,255,.55);
+.bill-doc__clientrow-right {
+  font-size: 0.54rem;
+  color: #666;
 }
 
-/* Info empresa */
-.bill-doc__info {
-  background: #f7f8fa;
-  padding: 0.28rem 0.8rem;
-  border-bottom: 1px dotted #ccc;
-  line-height: 1.65;
-  font-size: 0.57rem;
-  color: #555;
+/* Separador punteado */
+.bill-doc__sep {
+  border-top: 1px dotted #bbb;
+  margin: 0 0.85rem;
 }
 
 /* Destinatario */
 .bill-doc__recipient {
-  padding: 0.32rem 0.8rem;
-  border-bottom: 1px dotted #ccc;
-  font-size: 0.61rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.6rem;
   color: #333;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .bill-doc__recipient strong {
@@ -3827,49 +3862,60 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   color: #0a283c;
 }
 
-/* Total — fondo navy */
+/* Total */
 .bill-doc__total {
   display: flex;
-  align-items: stretch;
-  background: #0a283c;
+  align-items: center;
+  padding: 0.55rem 0.85rem;
+  gap: 0.5rem;
+  border-top: 1px dotted #bbb;
 }
 
 .bill-doc__total-q {
   font-size: 0.6rem;
   font-weight: 700;
-  color: rgba(255,255,255,.85);
+  color: #0a283c;
   line-height: 1.35;
   flex: 0 0 auto;
-  padding: 0.65rem 0.7rem;
-  max-width: 58px;
-  border-right: 1px solid rgba(255,255,255,.12);
+  max-width: 52px;
+  border-right: 1px solid #ddd;
+  padding-right: 0.5rem;
 }
 
-.bill-doc__total-right {
+.bill-doc__total-center {
   flex: 1;
-  padding: 0.5rem 0.75rem;
 }
 
 .bill-doc__total-lbl {
-  font-size: 0.63rem;
-  font-weight: 600;
-  color: rgba(255,255,255,.7);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.bill-doc__total-sub {
+  font-size: 0.53rem;
+  color: #EDB115;
+  font-weight: 700;
 }
 
 .bill-doc__total-amount {
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   font-weight: 900;
-  color: #EDB115;
+  color: #0a283c;
   font-family: Arial Black, Impact, sans-serif;
   letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin: 0.08rem 0;
+  white-space: nowrap;
 }
 
-.bill-doc__total-period {
-  font-size: 0.5rem;
-  color: rgba(255,255,255,.45);
-  margin-top: 2px;
+/* Período row */
+.bill-doc__period-row {
+  background: #f7f8fa;
+  padding: 0.22rem 0.85rem;
+  font-size: 0.52rem;
+  color: #666;
+  border-top: 1px dotted #ccc;
+  border-bottom: 1px dotted #ccc;
+  line-height: 1.5;
 }
 
 /* Nota amarilla */
@@ -3877,7 +3923,7 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   background: #fff8e1;
   border-top: 1px solid #EDB115;
   border-bottom: 1px solid #EDB115;
-  padding: 0.22rem 0.8rem;
+  padding: 0.22rem 0.85rem;
   font-size: 0.52rem;
   color: #7a5800;
   font-style: italic;
@@ -3886,8 +3932,7 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 /* Vencimiento */
 .bill-doc__due {
   display: flex;
-  align-items: center;
-  gap: 0;
+  align-items: stretch;
   background: #fff;
 }
 
@@ -3898,57 +3943,58 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   line-height: 1.4;
   flex: 0 0 auto;
   padding: 0.55rem 0.7rem;
-  max-width: 68px;
+  max-width: 72px;
   border-right: 1px dotted #ccc;
 }
 
 .bill-doc__due-box {
   flex: 1;
-  padding: 0.45rem 0.75rem;
+  padding: 0.4rem 0.75rem;
 }
 
 .bill-doc__due-lbl {
-  font-size: 0.56rem;
+  font-size: 0.55rem;
   color: #777;
 }
 
 .bill-doc__due-date {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 900;
-  color: #0a283c;
+  color: #EDB115;
   font-family: Arial Black, sans-serif;
   letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.bill-doc__due-note {
+  font-size: 0.48rem;
+  color: #999;
+  margin-top: 3px;
+  line-height: 1.45;
 }
 
 /* Cupón */
 .bill-doc__coupon {
   background: #f2f4f7;
   border-top: 2px dashed #bbb;
-  padding: 0.42rem 0.8rem 0.45rem;
+  padding: 0.4rem 0.85rem 0.45rem;
 }
 
 .bill-doc__coupon-title {
-  font-size: 0.58rem;
+  font-size: 0.57rem;
   font-weight: 700;
   color: #0a283c;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-bottom: 0.28rem;
+  margin-bottom: 0.25rem;
 }
 
 .bill-doc__coupon-row {
   display: flex;
   justify-content: space-between;
-  font-size: 0.56rem;
+  font-size: 0.55rem;
   color: #555;
-  margin-bottom: 0.18rem;
-}
-
-.bill-doc__coupon-total {
-  font-size: 0.63rem;
-  color: #0a283c;
-  font-weight: 700;
-  margin-bottom: 0.38rem;
+  margin-bottom: 0.35rem;
 }
 
 .bill-doc__barcode {

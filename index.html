@@ -69,79 +69,90 @@
       <div class="hero__bill-side">
         <div class="bill-doc" id="billDoc">
 
-          <!-- Encabezado -->
+          <!-- ENCABEZADO: logo izq | caja datos der -->
           <div class="bill-doc__head">
             <div class="bill-doc__logo-cell">
-              <div class="bill-doc__brand">
-                <svg viewBox="0 0 14 14" width="13" height="13" fill="#EDB115" style="flex-shrink:0"><polygon points="7,1 8.8,5.3 13.5,5.3 9.8,8.2 11.2,12.5 7,9.8 2.8,12.5 4.2,8.2 0.5,5.3 5.2,5.3"/></svg>
-                GM SOLUTION SPA.
+              <img src="assets/logo.svg" alt="GM Solution" class="bill-doc__logo-img" />
+              <div class="bill-doc__company">
+                <div class="bill-doc__company-name">GM SOLUTION SPA.</div>
+                <div class="bill-doc__company-line">R.U.T: XX.XXX.XXX-X</div>
+                <div class="bill-doc__company-line">GIRO: Energía Solar Fotovoltaica</div>
+                <div class="bill-doc__company-line">Vicuña Mackenna 678 Of.502, Temuco</div>
               </div>
-              <div class="bill-doc__brand-sub">Energía Solar Fotovoltaica · Sur de Chile</div>
             </div>
-            <div class="bill-doc__id-cell">
-              <div class="bill-doc__rut">R.U.T: XX.XXX.XXX-X</div>
-              <div class="bill-doc__type">BOLETA ELECTRÓNICA</div>
-              <div class="bill-doc__num">N°0000002026</div>
+            <div class="bill-doc__id-box">
+              <div class="bill-doc__id-rut">R.U.T: XX.XXX.XXX-X</div>
+              <div class="bill-doc__id-type">BOLETA ELECTRÓNICA</div>
+              <div class="bill-doc__id-num">N° 000001</div>
             </div>
           </div>
 
-          <!-- Barra cliente navy -->
-          <div class="bill-doc__clientbar">
-            <div class="bill-doc__clientbar-left">
-              <span class="bill-doc__clientbar-lbl">Nº CLIENTE</span>
-              <span class="bill-doc__clientbar-val">00002026</span>
+          <!-- BARRA REGIÓN -->
+          <div class="bill-doc__region">
+            <span>XXX: SUR DE CHILE – LA ARAUCANÍA</span>
+            <span class="bill-doc__region-num">000001</span>
+          </div>
+
+          <!-- FILA CLIENTE + EMISIÓN -->
+          <div class="bill-doc__clientrow">
+            <div class="bill-doc__clientrow-left">
+              <span class="bill-doc__clientbadge">Nº CLIENTE</span>
+              <span class="bill-doc__clientval">00002026</span>
             </div>
-            <div class="bill-doc__clientbar-right">Emisión: 22 Feb 20XX</div>
+            <div class="bill-doc__clientrow-right">Fecha de emisión: 22 Feb 20XX</div>
           </div>
 
-          <!-- Info empresa -->
-          <div class="bill-doc__info">
-            <div>GIRO: Instalaciones de Energía Solar Fotovoltaica</div>
-            <div>CASA MATRIZ: Vicuña Mackenna 678 Of.502, Temuco</div>
-          </div>
+          <div class="bill-doc__sep"></div>
 
-          <!-- Destinatario -->
+          <!-- DESTINATARIO -->
           <div class="bill-doc__recipient">
             <div>Sr.(a) <strong>Nombre y Apellido</strong></div>
             <div>Dirección de Envío: CALLE NOMBRE N°</div>
             <div>CIUDAD, SUR DE CHILE</div>
           </div>
 
-          <!-- Total a pagar -->
+          <div class="bill-doc__sep"></div>
+
+          <!-- TOTAL -->
           <div class="bill-doc__total">
             <div class="bill-doc__total-q">¿Cuánto<br/>debo?</div>
-            <div class="bill-doc__total-right">
+            <div class="bill-doc__total-center">
               <div class="bill-doc__total-lbl">Total a pagar</div>
-              <div class="bill-doc__total-amount" id="heroCounter">$150.786</div>
-              <div class="bill-doc__total-period">Período 23 ENE – 20 FEB</div>
+              <div class="bill-doc__total-sub">Con GM Solution →</div>
             </div>
+            <div class="bill-doc__total-amount" id="heroCounter">$150.786</div>
           </div>
 
-          <!-- Nota amarilla -->
+          <div class="bill-doc__period-row">
+            Monto del Período 19 FEB – 20 MAR · Incluye saldo anterior.
+          </div>
+
+          <!-- NOTA AMARILLA -->
           <div class="bill-doc__yellownote">
             *Revisa el detalle de tu cuenta al reverso de esta página →
           </div>
 
-          <!-- Vencimiento -->
+          <!-- VENCIMIENTO -->
           <div class="bill-doc__due">
             <div class="bill-doc__due-q">¿Hasta cuándo<br/>puedo pagar?</div>
             <div class="bill-doc__due-box">
               <div class="bill-doc__due-lbl">Fecha de vencimiento</div>
               <div class="bill-doc__due-date">04 Abr 20XX</div>
+              <div class="bill-doc__due-note">(A partir de esta fecha se cobrarán intereses por pago fuera de plazo)</div>
             </div>
           </div>
 
-          <!-- Cupón de pago -->
+          <!-- CUPÓN -->
           <div class="bill-doc__coupon">
             <div class="bill-doc__coupon-title">✂ &nbsp;Cupón de pago</div>
             <div class="bill-doc__coupon-row">
               <span>Nº cliente: <strong>00002026</strong></span>
               <span>Vence: <strong>04 Abr 20XX</strong></span>
+              <span>Total: <strong>$0</strong></span>
             </div>
-            <div class="bill-doc__coupon-total">Total a pagar: <strong>$0</strong></div>
-            <svg class="bill-doc__barcode" viewBox="0 0 200 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="2" y="0" width="2" height="20" fill="#111"/><rect x="6" y="0" width="1" height="20" fill="#111"/><rect x="9" y="0" width="3" height="20" fill="#111"/><rect x="14" y="0" width="1" height="20" fill="#111"/><rect x="17" y="0" width="2" height="20" fill="#111"/><rect x="21" y="0" width="3" height="20" fill="#111"/><rect x="26" y="0" width="1" height="20" fill="#111"/><rect x="29" y="0" width="2" height="20" fill="#111"/><rect x="33" y="0" width="1" height="20" fill="#111"/><rect x="36" y="0" width="3" height="20" fill="#111"/><rect x="41" y="0" width="2" height="20" fill="#111"/><rect x="45" y="0" width="1" height="20" fill="#111"/><rect x="48" y="0" width="2" height="20" fill="#111"/><rect x="52" y="0" width="3" height="20" fill="#111"/><rect x="57" y="0" width="1" height="20" fill="#111"/><rect x="60" y="0" width="2" height="20" fill="#111"/><rect x="64" y="0" width="1" height="20" fill="#111"/><rect x="67" y="0" width="3" height="20" fill="#111"/><rect x="72" y="0" width="2" height="20" fill="#111"/><rect x="76" y="0" width="1" height="20" fill="#111"/><rect x="79" y="0" width="2" height="20" fill="#111"/><rect x="83" y="0" width="1" height="20" fill="#111"/><rect x="86" y="0" width="3" height="20" fill="#111"/><rect x="91" y="0" width="2" height="20" fill="#111"/><rect x="95" y="0" width="1" height="20" fill="#111"/><rect x="98" y="0" width="2" height="20" fill="#111"/><rect x="102" y="0" width="3" height="20" fill="#111"/><rect x="107" y="0" width="1" height="20" fill="#111"/><rect x="110" y="0" width="2" height="20" fill="#111"/><rect x="114" y="0" width="1" height="20" fill="#111"/><rect x="117" y="0" width="3" height="20" fill="#111"/><rect x="122" y="0" width="2" height="20" fill="#111"/><rect x="126" y="0" width="1" height="20" fill="#111"/><rect x="129" y="0" width="2" height="20" fill="#111"/><rect x="133" y="0" width="1" height="20" fill="#111"/><rect x="136" y="0" width="3" height="20" fill="#111"/><rect x="141" y="0" width="2" height="20" fill="#111"/><rect x="145" y="0" width="1" height="20" fill="#111"/><rect x="148" y="0" width="2" height="20" fill="#111"/><rect x="152" y="0" width="3" height="20" fill="#111"/><rect x="157" y="0" width="1" height="20" fill="#111"/><rect x="160" y="0" width="2" height="20" fill="#111"/><rect x="164" y="0" width="1" height="20" fill="#111"/><rect x="167" y="0" width="3" height="20" fill="#111"/><rect x="172" y="0" width="2" height="20" fill="#111"/><rect x="176" y="0" width="1" height="20" fill="#111"/><rect x="179" y="0" width="2" height="20" fill="#111"/><rect x="183" y="0" width="3" height="20" fill="#111"/><rect x="188" y="0" width="2" height="20" fill="#111"/><rect x="193" y="0" width="1" height="20" fill="#111"/><rect x="196" y="0" width="2" height="20" fill="#111"/>
-              <text x="100" y="26" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#444">XXXXXXXXXXXXXXXXX · GM SOLUTION</text>
+            <svg class="bill-doc__barcode" viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="2" y="0" width="2" height="18" fill="#111"/><rect x="6" y="0" width="1" height="18" fill="#111"/><rect x="9" y="0" width="3" height="18" fill="#111"/><rect x="14" y="0" width="1" height="18" fill="#111"/><rect x="17" y="0" width="2" height="18" fill="#111"/><rect x="21" y="0" width="3" height="18" fill="#111"/><rect x="26" y="0" width="1" height="18" fill="#111"/><rect x="29" y="0" width="2" height="18" fill="#111"/><rect x="33" y="0" width="1" height="18" fill="#111"/><rect x="36" y="0" width="3" height="18" fill="#111"/><rect x="41" y="0" width="2" height="18" fill="#111"/><rect x="45" y="0" width="1" height="18" fill="#111"/><rect x="48" y="0" width="2" height="18" fill="#111"/><rect x="52" y="0" width="3" height="18" fill="#111"/><rect x="57" y="0" width="1" height="18" fill="#111"/><rect x="60" y="0" width="2" height="18" fill="#111"/><rect x="64" y="0" width="1" height="18" fill="#111"/><rect x="67" y="0" width="3" height="18" fill="#111"/><rect x="72" y="0" width="2" height="18" fill="#111"/><rect x="76" y="0" width="1" height="18" fill="#111"/><rect x="79" y="0" width="2" height="18" fill="#111"/><rect x="83" y="0" width="1" height="18" fill="#111"/><rect x="86" y="0" width="3" height="18" fill="#111"/><rect x="91" y="0" width="2" height="18" fill="#111"/><rect x="95" y="0" width="1" height="18" fill="#111"/><rect x="98" y="0" width="2" height="18" fill="#111"/><rect x="103" y="0" width="3" height="18" fill="#111"/><rect x="108" y="0" width="1" height="18" fill="#111"/><rect x="111" y="0" width="2" height="18" fill="#111"/><rect x="115" y="0" width="1" height="18" fill="#111"/><rect x="118" y="0" width="3" height="18" fill="#111"/><rect x="123" y="0" width="2" height="18" fill="#111"/><rect x="127" y="0" width="1" height="18" fill="#111"/><rect x="130" y="0" width="2" height="18" fill="#111"/><rect x="134" y="0" width="1" height="18" fill="#111"/><rect x="137" y="0" width="3" height="18" fill="#111"/><rect x="142" y="0" width="2" height="18" fill="#111"/><rect x="146" y="0" width="1" height="18" fill="#111"/><rect x="149" y="0" width="2" height="18" fill="#111"/><rect x="153" y="0" width="3" height="18" fill="#111"/><rect x="158" y="0" width="1" height="18" fill="#111"/><rect x="161" y="0" width="2" height="18" fill="#111"/><rect x="165" y="0" width="1" height="18" fill="#111"/><rect x="168" y="0" width="3" height="18" fill="#111"/><rect x="173" y="0" width="2" height="18" fill="#111"/><rect x="177" y="0" width="1" height="18" fill="#111"/><rect x="180" y="0" width="2" height="18" fill="#111"/><rect x="184" y="0" width="3" height="18" fill="#111"/><rect x="189" y="0" width="2" height="18" fill="#111"/><rect x="193" y="0" width="1" height="18" fill="#111"/><rect x="196" y="0" width="2" height="18" fill="#111"/><rect x="200" y="0" width="3" height="18" fill="#111"/><rect x="205" y="0" width="1" height="18" fill="#111"/><rect x="208" y="0" width="2" height="18" fill="#111"/><rect x="212" y="0" width="3" height="18" fill="#111"/><rect x="217" y="0" width="1" height="18" fill="#111"/><rect x="220" y="0" width="2" height="18" fill="#111"/><rect x="224" y="0" width="1" height="18" fill="#111"/><rect x="227" y="0" width="3" height="18" fill="#111"/><rect x="232" y="0" width="2" height="18" fill="#111"/><rect x="236" y="0" width="1" height="18" fill="#111"/><rect x="239" y="0" width="2" height="18" fill="#111"/><rect x="243" y="0" width="3" height="18" fill="#111"/><rect x="248" y="0" width="2" height="18" fill="#111"/><rect x="252" y="0" width="1" height="18" fill="#111"/><rect x="255" y="0" width="2" height="18" fill="#111"/>
+              <text x="130" y="24" text-anchor="middle" font-family="monospace" font-size="5" fill="#444">XXXXXXXXXXXXXXXXX · GM SOLUTION SPA.</text>
             </svg>
           </div>
 
