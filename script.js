@@ -162,7 +162,7 @@ sections.forEach(s => sectionObserver.observe(s));
   if (!counter) return;
 
   const START_VAL  = 150786;
-  const END_VAL    = 12786;
+  const END_VAL    = 0;
   const COUNT_DUR  = 3000;   // ms para bajar el contador
   const PAUSE_DUR  = 2200;   // ms que se ve el valor bajo antes de reiniciar
   const LOOP_DELAY = 1000;   // ms antes de volver a animar
