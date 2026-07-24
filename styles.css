@@ -3613,7 +3613,7 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 .testimonial__meta strong {
   font-size: .9rem;
   font-weight: 700;
-  color: #0a283c;
+  color: #ffffff;
 }
 
 .testimonial__meta span {
