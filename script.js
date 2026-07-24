@@ -354,3 +354,11 @@ if (paymentCards.length) {
   slider.addEventListener('input', update);
   update();
 })();
+
+/* ---- Timeline bar animation ---- */
+const tlBar = document.querySelector('.tl-bar');
+if (tlBar) {
+  new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) tlBar.classList.add('in-view');
+  }, { threshold: 0.3 }).observe(tlBar);
+}
