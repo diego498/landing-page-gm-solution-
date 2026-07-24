@@ -599,6 +599,15 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 =========================== */
 .section--gray { background: var(--gray-50); }
 .section--teal-light { background: var(--teal); }
+.section--navy { background: #0a283c; }
+
+/* Textos en sección navy */
+.section--navy .section-tag { color: #EDB115; }
+.section--navy .section-title { color: #ffffff; }
+.section--navy .why-card { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.1); }
+.section--navy .why-card h3 { color: #ffffff; }
+.section--navy .why-card p { color: rgba(255,255,255,.7); }
+.section--navy .why-card__num { color: #EDB115; opacity: 1; }
 
 .calc__wrap {
   display: grid;
