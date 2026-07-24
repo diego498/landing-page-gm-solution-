@@ -3518,10 +3518,10 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 }
 
 .payment-card__list li::before {
-  content: "¹3";
+  content: "✓";
   position: absolute;
   left: 0;
-  color: #00d563;
+  color: #EDB115;
   font-weight: 700;
 }
 
